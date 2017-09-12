@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<COMBO>
+  <DESCRIPTION>Combo: cad_uf</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT &#xD;
+ aux_uf.seq_uf, aux_uf.dsc_uf_descricao, aux_uf.dsc_uf_sigla &#xD;
+FROM aux_uf</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <KEY>|seq_uf|</KEY>
+  <TEXT>|dsc_uf_sigla| - |dsc_uf_descricao|</TEXT>
+</COMBO>
+

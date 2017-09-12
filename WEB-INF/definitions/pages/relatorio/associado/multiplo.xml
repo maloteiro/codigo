@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Multiplo</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>ON</NOLOGIN>
+    <SECURITY>OFF</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <REPORTREFS>
+      <REPORTREF SEQ="1">
+        <REPORTID>rel_multiplo</REPORTID>
+        <CONDITION>true</CONDITION>
+        <PARAMETERS>
+          <PARAMETER ID="tmp.associado" VALUE="|tmp.associado.seq_associado|" />
+        </PARAMETERS>
+      </REPORTREF>
+    </REPORTREFS>
+    <LISTS>
+      <LIST SEQ="1">
+        <DESCRIPTION>Lista tmp.associado</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>tmp.associado</WIOBJ>
+        <SQL>SELECT &#xD;
+ rel_associado.seq_associado &#xD;
+FROM rel_associado&#xD;
+where seq_usuario=?|pvt.login.seq_usuario|&#xD;
+</SQL>
+        <SQLFILTER>%*?'"</SQLFILTER>
+        <DATABASE>principal</DATABASE>
+        <SEP>,</SEP>
+      </LIST>
+    </LISTS>
+    <INDEX>
+      <LISTS SEQ="1" />
+      <REPORTREFS SEQ="1" />
+    </INDEX>
+  </PREPAGE>
+</PAGE>
+

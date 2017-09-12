@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Página teste/email</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>ON</NOLOGIN>
+    <SECURITY>OFF</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <SENDMAILS>
+      <SENDMAIL SEQ="1">
+        <DESCRIPTION>Enviar e-mail para charlles.sousa@centralit.com.br</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <HOSTID>email</HOSTID>
+        <FROM>citcomunica@ebserh.gov.br</FROM>
+        <SENDER>citcomunica@ebserh.gov.br</SENDER>
+        <SUBJECT>[CIT Comunica] Envio de Teste </SUBJECT>
+        <TO>charlles.sousa@centralit.com.br</TO>
+        <MIME>PLAIN</MIME>
+        <EACHONE>OFF</EACHONE>
+        <NOTIFICATION>OFF</NOTIFICATION>
+        <ATTACHREMOVE>OFF</ATTACHREMOVE>
+        <HTMLCONTENT><![CDATA[Envio de E-mail através da aplicação. ]]></HTMLCONTENT>
+      </SENDMAIL>
+    </SENDMAILS>
+    <INDEX>
+      <SENDMAILS SEQ="1" />
+    </INDEX>
+  </PREPAGE>
+</PAGE>
+

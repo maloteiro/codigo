@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<COMBO>
+  <DESCRIPTION>Combo: cad_examindadora</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT &#xD;
+ tbl_examinadora.seq_examinadora, tbl_examinadora.dsc_examinadora_descricao &#xD;
+FROM tbl_examinadora&#xD;
+WHERE (tbl_examinadora.flg_examinadora_ativa = 'S')&#xD;
+ORDER BY tbl_examinadora.dsc_examinadora_descricao</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <KEY>|seq_examinadora|</KEY>
+  <TEXT>|dsc_examinadora_descricao|</TEXT>
+</COMBO>
+

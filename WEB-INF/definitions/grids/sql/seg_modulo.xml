@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<GRID TYPE="SQL">
+  <DESCRIPTION>Grid SQL: seg_modulo</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT DISTINCT mo.*, (select count(0) from seg_rotina r where r.seq_modulo=mo.seq_modulo) filhos&#xD;
+FROM seg_permissao per&#xD;
+INNER JOIN seg_rotina rot ON per.seq_rotina=rot.seq_rotina&#xD;
+INNER JOIN seg_modulo mo ON rot.seq_modulo=mo.seq_modulo&#xD;
+WHERE mo.flg_modulo_ativo='S'&#xD;
+AND per.seq_perfil='|pvt.login.seq_perfil|'&#xD;
+ORDER BY mo.num_modulo_ordem;</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <HDISPOSITION>H</HDISPOSITION>
+  <CONTENT>
+    <UNIQUE />
+    <START><![CDATA[<nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                  	<li>
+                        <a href="#" onclick="javascript:wiOpen('/|wi.proj.id|/admin/home.wsp');" target="_self"><i class="fa fa-dashboard"></i> In&iacute;cio</a>
+                    </li>
+
+
+]]></START>
+    <ROWSTART />
+    <REGISTER><![CDATA[<li>
+     <a href="#"><i class="fa fa-sitemap"></i> |dsc_modulo_descricao| |$if(|filhos|!=0,<span class="fa arrow"></span>)$|</a>
+  		|grid.seg_rotina|
+</li>
+
+
+<!--li class="current"><a href="#">|dsc_modulo_descricao|</a>
+ |grid.seg_rotina|
+</li-->
+
+
+<!--td>|seq_modulo|&nbsp;</td>
+<td>|dsc_modulo_descricao|&nbsp;</td>
+<td>|num_modulo_ordem|&nbsp;</td>
+<td>|flg_modulo_ativo|&nbsp;</td-->
+]]></REGISTER>
+    <NOREGISTER />
+    <NOROW />
+    <ROWEND />
+    <END><![CDATA[				</ul>
+
+            </div>
+
+        </nav>]]></END>
+  </CONTENT>
+</GRID>
+

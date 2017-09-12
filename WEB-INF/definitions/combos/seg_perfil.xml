@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<COMBO>
+  <DESCRIPTION>Combo: seg_perfil</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT &#xD;
+ seg_perfil.seq_perfil, seg_perfil.dsc_perfil_nome, seg_perfil.flg_perfil_status &#xD;
+FROM seg_perfil&#xD;
+WHERE (seg_perfil.flg_perfil_status = 1)</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <KEY>|seq_perfil|</KEY>
+  <TEXT>|dsc_perfil_nome|</TEXT>
+</COMBO>
+

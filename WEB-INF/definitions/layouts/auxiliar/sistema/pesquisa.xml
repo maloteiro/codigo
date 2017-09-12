@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LAYOUT>
+  <HEAD>
+    <SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/js/page.js">***EMPTY_TEXT***</SCRIPT>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="expires" CONTENT="0" />
+    <META HTTP-EQUIV="cache-control" CONTENT="no-cache" />
+    <TITLE>|wi.page.title|</TITLE>
+    <TEMPLATE>padrao_ac.html</TEMPLATE>
+  </HEAD>
+  <INDEX>
+    <FORMS SEQ="1" />
+    <TEXTFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="2" />
+    <TEXTFIELDS SEQ="3" />
+    <GENERICFIELDS SEQ="1" />
+  </INDEX>
+  <TEXTFIELDS>
+    <TEXTFIELD SEQ="1">
+      <NAME>wi.page.prev</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.page.id|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="2">
+      <NAME>wi.token</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.token|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="3">
+      <NAME>tmp.argumento_pesquisa</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <SIZE>50</SIZE>
+      <VALUE>|tmp.argumento_pesquisa|</VALUE>
+      <INPUTCLASSNAME>field</INPUTCLASSNAME>
+      <LABEL>Argumento de pesquisa:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+  </TEXTFIELDS>
+  <GENERICFIELDS>
+    <GENERICFIELD SEQ="1">
+      <NAME>Texto5</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;br/&gt;&#xD;
+&lt;table align="center"&gt;&#xD;
+  &lt;tr&gt;&#xD;
+    &lt;td align="center" &gt;      &#xD;
+      &lt;button type="button" name="tmp.btn_add_novo" id="btn_add_novo" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para voltar" alt="Clique no botão para voltar" onclick="wiOpen('/|wi.proj.id|/auxiliar/sistema/cadastro.wsp');"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Voltar&lt;/span&gt;&#xD;
+      &lt;/button&gt;&#xD;
+      &lt;button type="submit" name="tmp.btn_pesquisar" id="btn_pesquisar" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para pesquisar" alt="Clique no botão para pesquisar"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Pesquisar&lt;/span&gt;&#xD;
+      &lt;/button&gt;																		&#xD;
+    &lt;/td&gt;						&#xD;
+  &lt;/tr&gt;&#xD;
+&lt;/table&gt;&#xD;
+&lt;br&gt;&#xD;
+|grid.aux_consulta_sistema|</VALUE>
+    </GENERICFIELD>
+  </GENERICFIELDS>
+  <FORMS>
+    <FORM SEQ="1">
+      <NAME>tmp.form</NAME>
+      <ACTION>/|wi.proj.id|/|wi.page.id|.wsp</ACTION>
+      <METHOD>post</METHOD>
+      <CLASSNAME>frm</CLASSNAME>
+      <LABELPOSITION>1</LABELPOSITION>
+    </FORM>
+  </FORMS>
+</LAYOUT>
+

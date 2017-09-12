@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>individual</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>ON</NOLOGIN>
+    <SECURITY>OFF</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <REPORTREFS>
+      <REPORTREF SEQ="1">
+        <REPORTID>rel_carteirinha</REPORTID>
+        <CONDITION>true</CONDITION>
+        <PARAMETERS />
+      </REPORTREF>
+    </REPORTREFS>
+    <INDEX>
+      <REPORTREFS SEQ="1" />
+    </INDEX>
+  </PREPAGE>
+</PAGE>
+

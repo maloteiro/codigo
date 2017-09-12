@@ -1,0 +1,1 @@
+criaTabs('protocolo');

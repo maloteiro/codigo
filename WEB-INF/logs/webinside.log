@@ -1,0 +1,351 @@
+<LOG DATE="2017-02-19" TIME="10:05:08" CLASS="DatabaseDrivers - Mysql JConnector(MysqlJC) in jdbc:mysql://localhost/emprego">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36</USER-AGENT>
+<TEXT><![CDATA[java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2975)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:798)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:3700)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1203)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2572)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:1485)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:266)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at br.com.webinside.runtime.database.DatabaseDrivers.connection(DatabaseDrivers.java:267)
+	at br.com.webinside.runtime.database.DatabaseDrivers.jdbc(DatabaseDrivers.java:188)
+	at br.com.webinside.runtime.database.impl.ConnectionSql.connect(ConnectionSql.java:146)
+	at br.com.webinside.runtime.database.DatabaseManager.dbGenericConnect(DatabaseManager.java:508)
+	at br.com.webinside.runtime.database.DatabaseManager.connect(DatabaseManager.java:177)
+	at br.com.webinside.runtime.integration.DatabaseAliases.connect(DatabaseAliases.java:313)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:203)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:175)
+	at br.com.webinside.runtime.core.CoreObjectElement.execute(CoreObjectElement.java:77)
+	at br.com.webinside.runtime.component.taglib.ExecuteCore.doStartTag(ExecuteCore.java:99)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspx_meth_w_005fexecuteCore_005f1(index_005fpre_jsp.java:220)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspService(index_005fpre_jsp.java:111)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http...]]></TEXT>
+</LOG>
+<LOG DATE="2017-02-19" TIME="10:05:08" CLASS="DatabaseDrivers - Mysql JConnector(MysqlJC) in jdbc:mysql://localhost/emprego">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36</USER-AGENT>
+<TEXT><![CDATA[java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2975)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:798)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:3700)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1203)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2572)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:1485)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:266)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at br.com.webinside.runtime.database.DatabaseDrivers.connection(DatabaseDrivers.java:267)
+	at br.com.webinside.runtime.database.DatabaseDrivers.jdbc(DatabaseDrivers.java:188)
+	at br.com.webinside.runtime.database.impl.ConnectionSql.connect(ConnectionSql.java:146)
+	at br.com.webinside.runtime.database.DatabaseManager.dbGenericConnect(DatabaseManager.java:508)
+	at br.com.webinside.runtime.database.DatabaseManager.connect(DatabaseManager.java:177)
+	at br.com.webinside.runtime.integration.DatabaseAliases.connect(DatabaseAliases.java:313)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:203)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:175)
+	at br.com.webinside.runtime.core.CoreObjectElement.execute(CoreObjectElement.java:77)
+	at br.com.webinside.runtime.component.taglib.ExecuteCore.doStartTag(ExecuteCore.java:99)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspx_meth_w_005fexecuteCore_005f1(index_005fpre_jsp.java:220)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspService(index_005fpre_jsp.java:111)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http...]]></TEXT>
+</LOG>
+<LOG DATE="2017-02-19" TIME="10:05:08" CLASS="DatabaseDrivers - Mysql JConnector(MysqlJC) in jdbc:mysql://localhost/emprego">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36</USER-AGENT>
+<TEXT><![CDATA[java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2975)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:798)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:3700)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1203)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2572)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:1485)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:266)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at br.com.webinside.runtime.database.DatabaseDrivers.connection(DatabaseDrivers.java:267)
+	at br.com.webinside.runtime.database.DatabaseDrivers.jdbc(DatabaseDrivers.java:188)
+	at br.com.webinside.runtime.database.impl.ConnectionSql.connect(ConnectionSql.java:146)
+	at br.com.webinside.runtime.database.DatabaseManager.dbGenericConnect(DatabaseManager.java:508)
+	at br.com.webinside.runtime.database.DatabaseManager.connect(DatabaseManager.java:177)
+	at br.com.webinside.runtime.integration.DatabaseAliases.connect(DatabaseAliases.java:313)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:203)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:175)
+	at br.com.webinside.runtime.core.CoreObjectElement.execute(CoreObjectElement.java:77)
+	at br.com.webinside.runtime.component.taglib.ExecuteCore.doStartTag(ExecuteCore.java:99)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspx_meth_w_005fexecuteCore_005f1(index_005fpre_jsp.java:220)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspService(index_005fpre_jsp.java:111)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http...]]></TEXT>
+</LOG>
+<LOG DATE="2017-02-19" TIME="10:05:08" CLASS="DatabaseDrivers - Mysql JConnector(MysqlJC) in jdbc:mysql://localhost/emprego">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36</USER-AGENT>
+<TEXT><![CDATA[java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2975)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:798)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:3700)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1203)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2572)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:1485)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:266)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at br.com.webinside.runtime.database.DatabaseDrivers.connection(DatabaseDrivers.java:267)
+	at br.com.webinside.runtime.database.DatabaseDrivers.jdbc(DatabaseDrivers.java:188)
+	at br.com.webinside.runtime.database.impl.ConnectionSql.connect(ConnectionSql.java:146)
+	at br.com.webinside.runtime.database.DatabaseManager.dbGenericConnect(DatabaseManager.java:508)
+	at br.com.webinside.runtime.database.DatabaseManager.connect(DatabaseManager.java:177)
+	at br.com.webinside.runtime.integration.DatabaseAliases.connect(DatabaseAliases.java:313)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:203)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:175)
+	at br.com.webinside.runtime.core.CoreObjectElement.execute(CoreObjectElement.java:77)
+	at br.com.webinside.runtime.component.taglib.ExecuteCore.doStartTag(ExecuteCore.java:99)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspx_meth_w_005fexecuteCore_005f1(index_005fpre_jsp.java:220)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspService(index_005fpre_jsp.java:111)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http...]]></TEXT>
+</LOG>
+<LOG DATE="2017-02-19" TIME="10:05:08" CLASS="DatabaseDrivers - Mysql JConnector(MysqlJC) in jdbc:mysql://localhost/emprego">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36</USER-AGENT>
+<TEXT><![CDATA[java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2975)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:798)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:3700)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1203)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2572)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:1485)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:266)
+	at java.sql.DriverManager.getConnection(DriverManager.java:582)
+	at java.sql.DriverManager.getConnection(DriverManager.java:185)
+	at br.com.webinside.runtime.database.DatabaseDrivers.connection(DatabaseDrivers.java:267)
+	at br.com.webinside.runtime.database.DatabaseDrivers.jdbc(DatabaseDrivers.java:188)
+	at br.com.webinside.runtime.database.impl.ConnectionSql.connect(ConnectionSql.java:146)
+	at br.com.webinside.runtime.database.DatabaseManager.dbGenericConnect(DatabaseManager.java:508)
+	at br.com.webinside.runtime.database.DatabaseManager.connect(DatabaseManager.java:177)
+	at br.com.webinside.runtime.integration.DatabaseAliases.connect(DatabaseAliases.java:313)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:203)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:175)
+	at br.com.webinside.runtime.core.CoreObjectElement.execute(CoreObjectElement.java:77)
+	at br.com.webinside.runtime.component.taglib.ExecuteCore.doStartTag(ExecuteCore.java:99)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspx_meth_w_005fexecuteCore_005f1(index_005fpre_jsp.java:220)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspService(index_005fpre_jsp.java:111)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http...]]></TEXT>
+</LOG>
+<LOG DATE="2017-09-02" TIME="11:41:38" CLASS="DatabaseDrivers - Mysql JConnector(MysqlJC) in jdbc:mysql://localhost/emprego">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0</USER-AGENT>
+<TEXT><![CDATA[java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:946)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2985)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:885)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:3421)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1247)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2775)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:1555)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:285)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at br.com.webinside.runtime.database.DatabaseDrivers.connection(DatabaseDrivers.java:267)
+	at br.com.webinside.runtime.database.DatabaseDrivers.jdbc(DatabaseDrivers.java:188)
+	at br.com.webinside.runtime.database.impl.ConnectionSql.connect(ConnectionSql.java:146)
+	at br.com.webinside.runtime.database.DatabaseManager.dbGenericConnect(DatabaseManager.java:508)
+	at br.com.webinside.runtime.database.DatabaseManager.connect(DatabaseManager.java:177)
+	at br.com.webinside.runtime.integration.DatabaseAliases.connect(DatabaseAliases.java:313)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:203)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:175)
+	at br.com.webinside.runtime.core.CoreObjectElement.execute(CoreObjectElement.java:77)
+	at br.com.webinside.runtime.component.taglib.ExecuteCore.doStartTag(ExecuteCore.java:99)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspx_meth_w_005fexecuteCore_005f1(index_005fpre_jsp.java:220)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspService(index_005fpre_jsp.java:111)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http...]]></TEXT>
+</LOG>
+<LOG DATE="2017-09-02" TIME="11:41:38" CLASS="DatabaseDrivers - Mysql JConnector(MysqlJC) in jdbc:mysql://localhost/emprego">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0</USER-AGENT>
+<TEXT><![CDATA[java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:946)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2985)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:885)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:3421)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1247)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2775)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:1555)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:285)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at br.com.webinside.runtime.database.DatabaseDrivers.connection(DatabaseDrivers.java:267)
+	at br.com.webinside.runtime.database.DatabaseDrivers.jdbc(DatabaseDrivers.java:188)
+	at br.com.webinside.runtime.database.impl.ConnectionSql.connect(ConnectionSql.java:146)
+	at br.com.webinside.runtime.database.DatabaseManager.dbGenericConnect(DatabaseManager.java:508)
+	at br.com.webinside.runtime.database.DatabaseManager.connect(DatabaseManager.java:177)
+	at br.com.webinside.runtime.integration.DatabaseAliases.connect(DatabaseAliases.java:313)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:203)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:175)
+	at br.com.webinside.runtime.core.CoreObjectElement.execute(CoreObjectElement.java:77)
+	at br.com.webinside.runtime.component.taglib.ExecuteCore.doStartTag(ExecuteCore.java:99)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspx_meth_w_005fexecuteCore_005f1(index_005fpre_jsp.java:220)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspService(index_005fpre_jsp.java:111)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http...]]></TEXT>
+</LOG>
+<LOG DATE="2017-09-02" TIME="11:41:38" CLASS="DatabaseDrivers - Mysql JConnector(MysqlJC) in jdbc:mysql://localhost/emprego">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0</USER-AGENT>
+<TEXT><![CDATA[java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:946)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2985)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:885)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:3421)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1247)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2775)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:1555)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:285)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at br.com.webinside.runtime.database.DatabaseDrivers.connection(DatabaseDrivers.java:267)
+	at br.com.webinside.runtime.database.DatabaseDrivers.jdbc(DatabaseDrivers.java:188)
+	at br.com.webinside.runtime.database.impl.ConnectionSql.connect(ConnectionSql.java:146)
+	at br.com.webinside.runtime.database.DatabaseManager.dbGenericConnect(DatabaseManager.java:508)
+	at br.com.webinside.runtime.database.DatabaseManager.connect(DatabaseManager.java:177)
+	at br.com.webinside.runtime.integration.DatabaseAliases.connect(DatabaseAliases.java:313)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:203)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:175)
+	at br.com.webinside.runtime.core.CoreObjectElement.execute(CoreObjectElement.java:77)
+	at br.com.webinside.runtime.component.taglib.ExecuteCore.doStartTag(ExecuteCore.java:99)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspx_meth_w_005fexecuteCore_005f1(index_005fpre_jsp.java:220)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspService(index_005fpre_jsp.java:111)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http...]]></TEXT>
+</LOG>
+<LOG DATE="2017-09-02" TIME="11:41:38" CLASS="DatabaseDrivers - Mysql JConnector(MysqlJC) in jdbc:mysql://localhost/emprego">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0</USER-AGENT>
+<TEXT><![CDATA[java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:946)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2985)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:885)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:3421)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1247)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2775)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:1555)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:285)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at br.com.webinside.runtime.database.DatabaseDrivers.connection(DatabaseDrivers.java:267)
+	at br.com.webinside.runtime.database.DatabaseDrivers.jdbc(DatabaseDrivers.java:188)
+	at br.com.webinside.runtime.database.impl.ConnectionSql.connect(ConnectionSql.java:146)
+	at br.com.webinside.runtime.database.DatabaseManager.dbGenericConnect(DatabaseManager.java:508)
+	at br.com.webinside.runtime.database.DatabaseManager.connect(DatabaseManager.java:177)
+	at br.com.webinside.runtime.integration.DatabaseAliases.connect(DatabaseAliases.java:313)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:203)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:175)
+	at br.com.webinside.runtime.core.CoreObjectElement.execute(CoreObjectElement.java:77)
+	at br.com.webinside.runtime.component.taglib.ExecuteCore.doStartTag(ExecuteCore.java:99)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspx_meth_w_005fexecuteCore_005f1(index_005fpre_jsp.java:220)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspService(index_005fpre_jsp.java:111)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http...]]></TEXT>
+</LOG>
+<LOG DATE="2017-09-02" TIME="11:41:38" CLASS="DatabaseDrivers - Mysql JConnector(MysqlJC) in jdbc:mysql://localhost/emprego">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0</USER-AGENT>
+<TEXT><![CDATA[java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:946)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2985)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:885)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:3421)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1247)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2775)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:1555)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:285)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at br.com.webinside.runtime.database.DatabaseDrivers.connection(DatabaseDrivers.java:267)
+	at br.com.webinside.runtime.database.DatabaseDrivers.jdbc(DatabaseDrivers.java:188)
+	at br.com.webinside.runtime.database.impl.ConnectionSql.connect(ConnectionSql.java:146)
+	at br.com.webinside.runtime.database.DatabaseManager.dbGenericConnect(DatabaseManager.java:508)
+	at br.com.webinside.runtime.database.DatabaseManager.connect(DatabaseManager.java:177)
+	at br.com.webinside.runtime.integration.DatabaseAliases.connect(DatabaseAliases.java:313)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:203)
+	at br.com.webinside.runtime.integration.DatabaseAliases.get(DatabaseAliases.java:175)
+	at br.com.webinside.runtime.core.CoreObjectElement.execute(CoreObjectElement.java:77)
+	at br.com.webinside.runtime.component.taglib.ExecuteCore.doStartTag(ExecuteCore.java:99)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspx_meth_w_005fexecuteCore_005f1(index_005fpre_jsp.java:220)
+	at org.apache.jsp.admin.index_005fpre_jsp._jspService(index_005fpre_jsp.java:111)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http...]]></TEXT>
+</LOG>
+<LOG DATE="2017-09-03" TIME="18:12:49" CLASS="Page: /seguranca/usuario/cadastro_pos - Insert do objeto tmp.edt">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0</USER-AGENT>
+<TEXT><![CDATA[(-1366)Incorrect integer value: '--Selecione--' for column 'seq_perfil' at row 1
+--- SQL ---
+INSERT INTO seg_usuario ( 	seq_perfil,      dsc_usuario_nome,      dsc_usuario_email,      dsc_usuario_email2,      dsc_usuario_cpf,      num_usuario_telefone,      flg_usuario_status,      dsc_usuario_token,      dat_data_cadastro,      seq_usuario_cadastro,     dsc_usuario_senha,     dsc_usuario_assinatura ) VALUES ( 	?|tmp.edt.seq_perfil|,      ?|tmp.edt.dsc_usuario_nome|,      ?|tmp.edt.dsc_usuario_email|,      ?|tmp.edt.dsc_usuario_email2|,      ?|tmp.edt.dsc_usuario_cpf|,      ?|tmp.edt.num_usuario_telefone|,      ?|$if(|tmp.edt.flg_usuario_status| != , 1, 0)$|,     ?|wi.token|,      now(),      ?|pvt.login.seq_usuario|,     md5('102030'),     md5('6748') )
+--- PARAMS ---
+|$if(|tmp.edt.flg_usuario_status|!=,1,0)$| = 0
+|pvt.login.seq_usuario| = 1
+|tmp.edt.dsc_usuario_cpf| = 
+|tmp.edt.dsc_usuario_email2| = 
+|tmp.edt.dsc_usuario_email| = 
+|tmp.edt.dsc_usuario_nome| = 
+|tmp.edt.flg_usuario_status| = 
+|tmp.edt.num_usuario_telefone| = 
+|tmp.edt.seq_perfil| = --Selecione--
+|wi.token| = 6AARFN94IWIVNPUHXTB1
+]]></TEXT>
+</LOG>
+<LOG DATE="2017-09-03" TIME="18:17:29" CLASS="Page: /seguranca/usuario/cadastro_pos - Insert do objeto tmp.edt">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0</USER-AGENT>
+<TEXT><![CDATA[(-1366)Incorrect integer value: '--Selecione--' for column 'seq_perfil' at row 1
+--- SQL ---
+INSERT INTO seg_usuario ( 	seq_perfil,      dsc_usuario_nome,      dsc_usuario_email,      dsc_usuario_email2,      dsc_usuario_cpf,      num_usuario_telefone,      flg_usuario_status,      dsc_usuario_token,      dat_data_cadastro,      seq_usuario_cadastro,     dsc_usuario_senha,     dsc_usuario_assinatura ) VALUES ( 	?|tmp.edt.seq_perfil|,      ?|tmp.edt.dsc_usuario_nome|,      ?|tmp.edt.dsc_usuario_email|,      ?|tmp.edt.dsc_usuario_email2|,      ?|tmp.edt.dsc_usuario_cpf|,      ?|tmp.edt.num_usuario_telefone|,      ?|$if(|tmp.edt.flg_usuario_status| != , 1, 0)$|,     ?|wi.token|,      now(),      ?|pvt.login.seq_usuario|,     md5('102030'),     md5('5073') )
+--- PARAMS ---
+|$if(|tmp.edt.flg_usuario_status|!=,1,0)$| = 0
+|pvt.login.seq_usuario| = 1
+|tmp.edt.dsc_usuario_cpf| = 
+|tmp.edt.dsc_usuario_email2| = 
+|tmp.edt.dsc_usuario_email| = 
+|tmp.edt.dsc_usuario_nome| = 
+|tmp.edt.flg_usuario_status| = 
+|tmp.edt.num_usuario_telefone| = 
+|tmp.edt.seq_perfil| = --Selecione--
+|wi.token| = H2AXT0TTRLCEJW9H9TEN
+]]></TEXT>
+</LOG>
+<LOG DATE="2017-09-03" TIME="18:17:32" CLASS="Page: /seguranca/usuario/cadastro_pos - Insert do objeto tmp.edt">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0</USER-AGENT>
+<TEXT><![CDATA[(-1366)Incorrect integer value: '--Selecione--' for column 'seq_perfil' at row 1
+--- SQL ---
+INSERT INTO seg_usuario ( 	seq_perfil,      dsc_usuario_nome,      dsc_usuario_email,      dsc_usuario_email2,      dsc_usuario_cpf,      num_usuario_telefone,      flg_usuario_status,      dsc_usuario_token,      dat_data_cadastro,      seq_usuario_cadastro,     dsc_usuario_senha,     dsc_usuario_assinatura ) VALUES ( 	?|tmp.edt.seq_perfil|,      ?|tmp.edt.dsc_usuario_nome|,      ?|tmp.edt.dsc_usuario_email|,      ?|tmp.edt.dsc_usuario_email2|,      ?|tmp.edt.dsc_usuario_cpf|,      ?|tmp.edt.num_usuario_telefone|,      ?|$if(|tmp.edt.flg_usuario_status| != , 1, 0)$|,     ?|wi.token|,      now(),      ?|pvt.login.seq_usuario|,     md5('102030'),     md5('1093') )
+--- PARAMS ---
+|$if(|tmp.edt.flg_usuario_status|!=,1,0)$| = 0
+|pvt.login.seq_usuario| = 1
+|tmp.edt.dsc_usuario_cpf| = 
+|tmp.edt.dsc_usuario_email2| = 
+|tmp.edt.dsc_usuario_email| = 
+|tmp.edt.dsc_usuario_nome| = 
+|tmp.edt.flg_usuario_status| = 
+|tmp.edt.num_usuario_telefone| = 
+|tmp.edt.seq_perfil| = --Selecione--
+|wi.token| = C21R2O1S0O23GL6T0TED
+]]></TEXT>
+</LOG>
+<LOG DATE="2017-09-03" TIME="18:17:40" CLASS="Page: /seguranca/usuario/cadastro_pos - Insert do objeto tmp.edt">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0</USER-AGENT>
+<TEXT><![CDATA[(-1366)Incorrect integer value: '--Selecione--' for column 'seq_perfil' at row 1
+--- SQL ---
+INSERT INTO seg_usuario ( 	seq_perfil,      dsc_usuario_nome,      dsc_usuario_email,      dsc_usuario_email2,      dsc_usuario_cpf,      num_usuario_telefone,      flg_usuario_status,      dsc_usuario_token,      dat_data_cadastro,      seq_usuario_cadastro,     dsc_usuario_senha,     dsc_usuario_assinatura ) VALUES ( 	?|tmp.edt.seq_perfil|,      ?|tmp.edt.dsc_usuario_nome|,      ?|tmp.edt.dsc_usuario_email|,      ?|tmp.edt.dsc_usuario_email2|,      ?|tmp.edt.dsc_usuario_cpf|,      ?|tmp.edt.num_usuario_telefone|,      ?|$if(|tmp.edt.flg_usuario_status| != , 1, 0)$|,     ?|wi.token|,      now(),      ?|pvt.login.seq_usuario|,     md5('102030'),     md5('6050') )
+--- PARAMS ---
+|$if(|tmp.edt.flg_usuario_status|!=,1,0)$| = 0
+|pvt.login.seq_usuario| = 1
+|tmp.edt.dsc_usuario_cpf| = 
+|tmp.edt.dsc_usuario_email2| = 
+|tmp.edt.dsc_usuario_email| = 
+|tmp.edt.dsc_usuario_nome| = 
+|tmp.edt.flg_usuario_status| = 
+|tmp.edt.num_usuario_telefone| = 
+|tmp.edt.seq_perfil| = --Selecione--
+|wi.token| = OFQFC1YYW62KH8RR17DS
+]]></TEXT>
+</LOG>
+<LOG DATE="2017-09-03" TIME="23:22:56" CLASS="CoreSendmail - Email retry log">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:55.0) Gecko/20100101 Firefox/55.0</USER-AGENT>
+<TEXT><![CDATA[Emails stored to retry later. Connection failure to 172.17.61.41]]></TEXT>
+</LOG>

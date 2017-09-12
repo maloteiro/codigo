@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LAYOUT>
+  <HEAD>
+    <LINK REL="StyleSheet" TYPE="text/css" HREF="/|wi.proj.id|/css/page.css" />
+    <SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/js/jquery.js">***EMPTY_TEXT***</SCRIPT>
+    <SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/js/page.js">***EMPTY_TEXT***</SCRIPT>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="expires" CONTENT="0" />
+    <META HTTP-EQUIV="cache-control" CONTENT="no-cache" />
+    <TITLE>|wi.page.title|</TITLE>
+  </HEAD>
+  <INDEX>
+    <GENERICFIELDS SEQ="1" />
+    <FORMS SEQ="1" />
+    <TEXTFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="2" />
+    <TEXTFIELDS SEQ="3" />
+    <TEXTFIELDS SEQ="4" />
+    <BUTTONS SEQ="1" />
+  </INDEX>
+  <TEXTFIELDS>
+    <TEXTFIELD SEQ="1">
+      <NAME>wi.page.prev</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.page.id|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="2">
+      <NAME>wi.token</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.token|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="3">
+      <NAME>tmp.arquivo</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>Texto5</VALUE>
+      <LABELPOSITION>0</LABELPOSITION>
+      <TYPE>5</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="4">
+      <NAME>tmp.caminho</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.caminho|</VALUE>
+      <LABEL>Caminho:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+  </TEXTFIELDS>
+  <GENERICFIELDS>
+    <GENERICFIELD SEQ="1">
+      <NAME>title</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <CLASSNAME>title</CLASSNAME>
+      <VALUE>|wi.page.title|</VALUE>
+    </GENERICFIELD>
+  </GENERICFIELDS>
+  <BUTTONS>
+    <BUTTON SEQ="1">
+      <NAME>Texto7</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <LABEL>Texto7</LABEL>
+      <TYPE>submit</TYPE>
+    </BUTTON>
+  </BUTTONS>
+  <FORMS>
+    <FORM SEQ="1">
+      <NAME>Texto2</NAME>
+      <ACTION>/|wi.proj.id|/|wi.page.id|.wsp</ACTION>
+      <ENCTYPE>multipart/form-data</ENCTYPE>
+      <METHOD>post</METHOD>
+      <CLASSNAME>frm</CLASSNAME>
+      <LABELPOSITION>1</LABELPOSITION>
+    </FORM>
+  </FORMS>
+</LAYOUT>
+

@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+
+<jasperReport name="rel_rat" language="java" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="30" bottomMargin="30">
+	<reportFont name="Padrão" isDefault="true" fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="Valores" isDefault="false" fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="Cabecalho" isDefault="false" fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="Titulo" isDefault="false" fontName="Arial" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="fonte_tam_10_bold" isDefault="false" fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="fonte_tam_8_bold" isDefault="false" fontName="Arial" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="fonte_tam_8" isDefault="false" fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<parameter name="reportDB" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["principal"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="reportTemplate" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["br.com.itx.modules.report.templates.DefaultTemplate"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tmp_seq_rat" class="java.lang.String">
+		<parameterDescription><![CDATA[tmp.seq_rat]]></parameterDescription>
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wi_proj_path" class="java.lang.String">
+		<parameterDescription><![CDATA[wi.proj.path]]></parameterDescription>
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString><![CDATA[SELECT *
+ FROM vw_rat r
+ WHERE seq_rat='$P!{tmp_seq_rat}';]]></queryString>
+	<field name="seq_rat" class="java.lang.Integer">
+		<fieldDescription><![CDATA[Seq rat]]></fieldDescription>
+	</field>
+	<field name="seq_local" class="java.lang.Integer">
+		<fieldDescription><![CDATA[Seq local]]></fieldDescription>
+	</field>
+	<field name="seq_tipo_atividade" class="java.lang.Integer">
+		<fieldDescription><![CDATA[Seq tipo atividade]]></fieldDescription>
+	</field>
+	<field name="seq_gerente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[Seq gerente]]></fieldDescription>
+	</field>
+	<field name="seq_responsavel" class="java.lang.Integer">
+		<fieldDescription><![CDATA[Seq responsavel]]></fieldDescription>
+	</field>
+	<field name="dsc_rat_acompanhante" class="java.lang.String">
+		<fieldDescription><![CDATA[Dsc rat acompanhante]]></fieldDescription>
+	</field>
+	<field name="flg_rat_emergencial" class="java.lang.String">
+		<fieldDescription><![CDATA[Flg rat emergencial]]></fieldDescription>
+	</field>
+	<field name="dat_rat_inicio" class="java.lang.String">
+		<fieldDescription><![CDATA[Dat rat inicio]]></fieldDescription>
+	</field>
+	<field name="dat_rat_fim" class="java.lang.String">
+		<fieldDescription><![CDATA[Dat rat fim]]></fieldDescription>
+	</field>
+	<field name="dat_rat_tempo_estimado" class="java.lang.String">
+		<fieldDescription><![CDATA[Dat rat tempo estimado]]></fieldDescription>
+	</field>
+	<field name="num_rat_valor_estimado" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[Num rat valor estimado]]></fieldDescription>
+	</field>
+	<field name="num_rat_analista_alocado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[Num rat analista alocado]]></fieldDescription>
+	</field>
+	<field name="txt_rat_descricao_atividade" class="java.lang.String">
+		<fieldDescription><![CDATA[Txt rat descricao atividade]]></fieldDescription>
+	</field>
+	<field name="txt_rat_risco" class="java.lang.String">
+		<fieldDescription><![CDATA[Txt rat risco]]></fieldDescription>
+	</field>
+	<field name="txt_rat_observacao" class="java.lang.String">
+		<fieldDescription><![CDATA[Txt rat observacao]]></fieldDescription>
+	</field>
+	<field name="flg_rat_criacao_documento" class="java.lang.String">
+		<fieldDescription><![CDATA[Flg rat criacao documento]]></fieldDescription>
+	</field>
+	<field name="flg_rat_entrega_documento" class="java.lang.String">
+		<fieldDescription><![CDATA[Flg rat entrega documento]]></fieldDescription>
+	</field>
+	<field name="flg_rat_acompanhamento" class="java.lang.String">
+		<fieldDescription><![CDATA[Flg rat acompanhamento]]></fieldDescription>
+	</field>
+	<field name="flg_rat_documento_auxiliar" class="java.lang.String">
+		<fieldDescription><![CDATA[Flg rat documento auxiliar]]></fieldDescription>
+	</field>
+	<field name="flg_rat_aprovado_gerente" class="java.lang.String">
+		<fieldDescription><![CDATA[Flg rat aprovado gerente]]></fieldDescription>
+	</field>
+	<field name="flg_rat_avaliacao_execucao" class="java.lang.String">
+		<fieldDescription><![CDATA[Flg rat avaliacao execucao]]></fieldDescription>
+	</field>
+	<field name="dat_rat_assinatura_analista" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[Dat rat assinatura analista]]></fieldDescription>
+	</field>
+	<field name="cod_rat_token_analista" class="java.lang.String">
+		<fieldDescription><![CDATA[Cod rat token analista]]></fieldDescription>
+	</field>
+	<field name="dat_rat_assinatura_gerente" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[Dat rat assinatura gerente]]></fieldDescription>
+	</field>
+	<field name="cod_rat_token_gerente" class="java.lang.String">
+		<fieldDescription><![CDATA[Cod rat token gerente]]></fieldDescription>
+	</field>
+	<field name="flg_rat_situacao" class="java.lang.String">
+		<fieldDescription><![CDATA[Flg rat situacao]]></fieldDescription>
+	</field>
+	<field name="dat_data_cadastro" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[Dat data cadastro]]></fieldDescription>
+	</field>
+	<field name="seq_usuario_cadastro" class="java.lang.Integer">
+		<fieldDescription><![CDATA[Seq usuario cadastro]]></fieldDescription>
+	</field>
+	<field name="dat_data_alteracao" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[Dat data alteracao]]></fieldDescription>
+	</field>
+	<field name="seq_usuario_alteracao" class="java.lang.Integer">
+		<fieldDescription><![CDATA[Seq usuario alteracao]]></fieldDescription>
+	</field>
+	<field name="cod_token_codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[Cod token codigo]]></fieldDescription>
+	</field>
+	<field name="nom_local_nome" class="java.lang.String">
+		<fieldDescription><![CDATA[Nom local nome]]></fieldDescription>
+	</field>
+	<field name="dsc_tipo_atividade" class="java.lang.String">
+		<fieldDescription><![CDATA[Dsc tipo atividade]]></fieldDescription>
+	</field>
+	<field name="dsc_gerente_nome" class="java.lang.String">
+		<fieldDescription><![CDATA[dsc_gerente_nome]]></fieldDescription>
+	</field>
+	<field name="dsc_responsavel_nome" class="java.lang.String">
+		<fieldDescription><![CDATA[dsc_responsavel_nome]]></fieldDescription>
+	</field>
+	<group name="Detalhe">
+	</group>
+	<background>
+		<band>
+		</band>
+	</background>
+	<title>
+		<band>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="60">
+			<rectangle>
+				<reportElement key="element_802751077" positionType="Float" x="0" y="45" width="535" height="4" forecolor="#51a6c2" backcolor="#51a6c2"/>
+				<graphicElement/>
+			</rectangle>
+			<staticText>
+				<reportElement key="element_1732061574" positionType="Float" x="0" y="8" width="535" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[RELATÓRIO DE ATIVIDADE TÉCNICA (R.A.T)]]></text>
+			</staticText>
+			<image hAlign="Right" isUsingCache="true">
+				<reportElement key="element_1153344339" positionType="Float" x="415" y="0" width="120" height="40"/>
+				<graphicElement/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{wi_proj_path}+"/imagens/logo_central.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="510">
+			<staticText>
+				<reportElement key="element_50447978" positionType="Float" x="0" y="0" width="535" height="15"/>
+				<box topBorder="Thin" topBorderColor="#51a6c2" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="0" bottomBorder="Thin" bottomBorderColor="#51a6c2" bottomPadding="0" rightBorder="None" rightBorderColor="#0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font reportFont="fonte_tam_10_bold"/>
+				</textElement>
+				<text><![CDATA[INFORMAÇÕES DO CONTRATO
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="element_1568283969" positionType="Float" x="0" y="25" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Local:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_nom_local_nome" positionType="Float" x="100" y="25" width="435" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nom_local_nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_1661724009" positionType="Float" x="0" y="37" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Gerente do contrato:
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_seq_rat" positionType="Float" x="100" y="37" width="435" height="12"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dsc_gerente_nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_1380721325" positionType="Float" x="0" y="49" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Acompanhado por:
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="element_726814668" positionType="Float" x="0" y="61" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Tipo de atividade:
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_dsc_tipo_atividade" positionType="Float" x="100" y="61" width="435" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dsc_tipo_atividade}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_200733391" positionType="Float" x="0" y="73" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Emergencial? 
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_flg_rat_emergencial" positionType="Float" x="100" y="73" width="435" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{flg_rat_emergencial}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_331656154" positionType="Float" x="0" y="90" width="535" height="15"/>
+				<box topBorder="Thin" topBorderColor="#51a6c2" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="0" bottomBorder="Thin" bottomBorderColor="#51a6c2" bottomPadding="0" rightBorder="None" rightBorderColor="#0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font reportFont="fonte_tam_10_bold"/>
+				</textElement>
+				<text><![CDATA[INFORMAÇÕES DO C.S.C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="element_1423830571" positionType="Float" x="0" y="115" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Analista responsável:
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_seq_responsavel" positionType="Float" x="100" y="115" width="435" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dsc_responsavel_nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_1835639632" positionType="Float" x="0" y="127" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Data início:
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_dat_rat_inicio" positionType="Float" x="100" y="127" width="167" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dat_rat_inicio}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_dsc_rat_acompanhante" positionType="Float" x="100" y="49" width="435" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dsc_rat_acompanhante}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_2061010847" positionType="Float" x="268" y="127" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Data fim:
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_dat_rat_fim" positionType="Float" x="368" y="127" width="167" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dat_rat_fim}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_566507503" positionType="Float" x="0" y="139" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Tempo estimado (hs):
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_dat_rat_tempo_estimado" positionType="Float" x="100" y="139" width="167" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dat_rat_tempo_estimado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_1741115410" positionType="Float" x="268" y="139" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Valor estimado:
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="element_field_num_rat_valor_estimado" positionType="Float" x="368" y="139" width="167" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{num_rat_valor_estimado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_316670237" positionType="Float" x="0" y="151" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Qtd analistas alocados:
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="#,##0" isBlankWhenNull="true">
+				<reportElement key="element_field_num_rat_analista_alocado" positionType="Float" x="100" y="151" width="435" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{num_rat_analista_alocado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_536306182" positionType="Float" x="0" y="168" width="535" height="15"/>
+				<box topBorder="Thin" topBorderColor="#51a6c2" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="0" bottomBorder="Thin" bottomBorderColor="#51a6c2" bottomPadding="0" rightBorder="None" rightBorderColor="#0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font reportFont="fonte_tam_10_bold"/>
+				</textElement>
+				<text><![CDATA[DESCRIÇÃO DA ATIVIDADE
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_txt_rat_descricao_atividade" positionType="Float" x="0" y="193" width="535" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{txt_rat_descricao_atividade}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_1259108120" positionType="Float" x="0" y="210" width="535" height="15"/>
+				<box topBorder="Thin" topBorderColor="#51a6c2" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="0" bottomBorder="Thin" bottomBorderColor="#51a6c2" bottomPadding="0" rightBorder="None" rightBorderColor="#0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font reportFont="fonte_tam_10_bold"/>
+				</textElement>
+				<text><![CDATA[RISCOS ENVOLVIDOS
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_txt_rat_risco" positionType="Float" x="0" y="235" width="535" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{txt_rat_risco}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_37473218" positionType="Float" x="0" y="252" width="535" height="15"/>
+				<box topBorder="Thin" topBorderColor="#51a6c2" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="0" bottomBorder="Thin" bottomBorderColor="#51a6c2" bottomPadding="0" rightBorder="None" rightBorderColor="#0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font reportFont="fonte_tam_10_bold"/>
+				</textElement>
+				<text><![CDATA[OBSERVAÇÕES
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_txt_rat_observacao" positionType="Float" x="0" y="277" width="535" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{txt_rat_observacao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_2144065184" positionType="Float" x="0" y="294" width="535" height="15"/>
+				<box topBorder="Thin" topBorderColor="#51a6c2" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="0" bottomBorder="Thin" bottomBorderColor="#51a6c2" bottomPadding="0" rightBorder="None" rightBorderColor="#0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font reportFont="fonte_tam_10_bold"/>
+				</textElement>
+				<text><![CDATA[DOCUMENTAÇÕES ENTREGUES E ACEITES
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="element_65098897" positionType="Float" x="0" y="319" width="285" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[A consultoria solicitada requer criação de documentação?
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_flg_rat_criacao_documento" positionType="Float" x="285" y="319" width="250" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{flg_rat_criacao_documento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_464105614" positionType="Float" x="0" y="331" width="285" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Acordo da entrega da documentação com o Gerente:
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_flg_rat_entrega_documento" positionType="Float" x="285" y="331" width="250" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{flg_rat_entrega_documento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_1012777981" positionType="Float" x="0" y="343" width="285" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Houve acompanhamento de um analista do contrato?]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_flg_rat_acompanhamento" positionType="Float" x="285" y="343" width="250" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{flg_rat_acompanhamento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_1430502671" positionType="Float" x="0" y="355" width="285" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Houve entrega de uma documentação auxiliar pelo gerente ou equipe?]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_flg_rat_documento_auxiliar" positionType="Float" x="285" y="355" width="250" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{flg_rat_documento_auxiliar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_397214457" positionType="Float" x="0" y="367" width="285" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Serviço aprovado pelo Gerente?]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_flg_rat_aprovado_gerente" positionType="Float" x="285" y="367" width="250" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{flg_rat_aprovado_gerente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_1994138931" positionType="Float" x="0" y="379" width="285" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Avaliação da Execução pelo Gerente]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_flg_rat_avaliacao_execucao" positionType="Float" x="285" y="379" width="250" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{flg_rat_avaliacao_execucao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_833201858" positionType="Float" x="0" y="396" width="535" height="15"/>
+				<box topBorder="Thin" topBorderColor="#51a6c2" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="0" bottomBorder="Thin" bottomBorderColor="#51a6c2" bottomPadding="0" rightBorder="None" rightBorderColor="#0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font reportFont="fonte_tam_10_bold"/>
+				</textElement>
+				<text><![CDATA[OUTRAS INFORMAÇÕES
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="element_1054699894" positionType="Float" x="0" y="421" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Situação:
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_flg_rat_situacao" positionType="Float" x="100" y="421" width="435" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{flg_rat_situacao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_145810024" positionType="Float" x="0" y="433" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Data de cadastro:
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_dat_data_cadastro" positionType="Float" x="100" y="433" width="435" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{dat_data_cadastro}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_1053949426" positionType="Float" x="0" y="445" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Token analista:
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_cod_rat_token_analista" positionType="Float" x="100" y="445" width="167" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cod_rat_token_analista}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_1572941925" positionType="Float" x="268" y="445" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Assinatura analista em:
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_dat_rat_assinatura_analista" positionType="Float" x="368" y="445" width="167" height="12"/>
+				<textElement>
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{dat_rat_assinatura_analista}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_1150274709" positionType="Float" x="0" y="457" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Token gerente:
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_cod_rat_token_gerente" positionType="Float" x="100" y="457" width="167" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cod_rat_token_gerente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element_1592156701" positionType="Float" x="268" y="457" width="100" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Assinatura gerente em:
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_dat_rat_assinatura_gerente" positionType="Float" x="368" y="457" width="167" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{dat_rat_assinatura_gerente}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_cod_token_codigo" positionType="Float" x="0" y="498" width="535" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" isStyledText="true">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["<style pdfFontName='Helvetica-Bold' isBold='true'>CÓDIGO ÚNICO:</style> "+$F{cod_token_codigo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="27">
+			<line>
+				<reportElement key="element_1609266668" positionType="Float" x="0" y="1" width="535" height="1"/>
+				<graphicElement/>
+			</line>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement key="element_1351575441" positionType="Float" x="0" y="3" width="70" height="16"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="element_481102339" positionType="Float" x="360" y="3" width="160" height="16"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Página " + $V{PAGE_NUMBER} + " de "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement key="element_1949529076" positionType="Float" x="515" y="3" width="20" height="16"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band>
+		</band>
+	</summary>
+</jasperReport>

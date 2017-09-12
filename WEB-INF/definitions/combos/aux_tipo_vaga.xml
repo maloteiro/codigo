@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<COMBO>
+  <DESCRIPTION>Combo: aux_tipo_vaga</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT &#xD;
+ aux_auxiliar.codigo,aux_auxiliar.descricao, aux_auxiliar.nome_coluna&#xD;
+FROM aux_auxiliar&#xD;
+WHERE (aux_auxiliar.nome_coluna = 'ind_tipo_vaga')</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <KEY>|codigo|</KEY>
+  <TEXT>|descricao|</TEXT>
+</COMBO>
+

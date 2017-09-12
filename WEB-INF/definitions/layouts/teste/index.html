@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Indexador</TITLE>
+<SCRIPT>
+function reindexar() {
+  with (document.forms[0]) {
+    elements["tmp.acao"].value="update";
+    submit();
+  }
+}
+</SCRIPT>
+</HEAD>
+<BODY> 
+  
+  <FORM NAME="tmp.edt" ACTION="/|wi.proj.id|/|wi.page.id|.wsp" METHOD="post" CLASS="frm"   id="formulario">
+    <INPUT NAME="wi.page.prev" ID="wi.page.prev" VALUE="|wi.page.id|" TYPE="hidden" />
+    <INPUT NAME="wi.token" ID="wi.token" VALUE="|wi.token|" TYPE="hidden" />
+	<INPUT TYPE="hidden" NAME="tmp.acao" VALUE="create">
+	<INPUT TYPE="hidden" NAME="tmp.storeContent" VALUE="">
+	<TABLE BORDER="1" CELLSPACING="0" CELLPADDING="2">
+		<TR>
+			<TD>Nome do índice: <INPUT TYPE="text" NAME="tmp.indexName" VALUE="|tmp.indexName|" SIZE="50"></TD>
+		</TR>
+		<TR>
+			<TD>Propriedades adicionais: <INPUT TYPE="text" NAME="tmp.properties" VALUE="|tmp.properties|" SIZE="50"></TD>
+		</TR>
+    	<TR>
+      		<TD>
+        	  <INPUT TYPE="checkbox" NAME="tmp.parseHTML"> Processar conteúdo HTML
+      		</TD>     	
+		</TR>
+<TR>
+<TH BGCOLOR="#C0C0C0">Fonte de Dados</TH>
+</TR>
+<TR>
+<TD>
+<TABLE CELLSPACING="0" CELLPADDING="2">
+<TR>
+<TD ALIGN="left" NOWRAP><INPUT TYPE="radio" NAME="tmp.dsType" VALUE="dir" CHECKED> Diretório de Arquivos</TD>
+</TR>
+<TR>
+<TD NOWRAP>Diretório de pesquisa: <INPUT TYPE="text" NAME="tmp.dirName" VALUE="|tmp.dirName|" SIZE="70"></TD>
+</TR>
+<TR>
+<TD>Extensões de arquivos a serem processados: <INPUT TYPE="text" NAME="tmp.mask" VALUE="|tmp.mask|"></TD>
+</TR>
+<TR>
+<TD NOWRAP><INPUT TYPE="checkbox" NAME="tmp.recursive"> Pesquisar em sub-diretórios</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR>
+<TD ALIGN="center"><INPUT TYPE="submit" VALUE="Indexar">
+<INPUT TYPE="button" VALUE="Reindexar" onClick="reindexar();"</TD>
+</TR>
+</TABLE>
+</FORM>
+  <wi:out />
+</BODY>
+</HTML>
+

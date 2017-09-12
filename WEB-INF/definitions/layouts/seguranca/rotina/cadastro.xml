@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LAYOUT>
+  <HEAD>
+    <SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/js/page.js">***EMPTY_TEXT***</SCRIPT>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="expires" CONTENT="0" />
+    <META HTTP-EQUIV="cache-control" CONTENT="no-cache" />
+    <TITLE>|wi.page.title|</TITLE>
+    <TEMPLATE>padrao_ac_novo.html</TEMPLATE>
+  </HEAD>
+  <INDEX>
+    <FORMS SEQ="1" />
+    <TEXTFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="2" />
+    <TEXTFIELDS SEQ="3" />
+    <TEXTFIELDS SEQ="4" />
+    <GROUPFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="6" />
+    <TEXTFIELDS SEQ="7" />
+    <TEXTFIELDS SEQ="8" />
+    <CHECKBOXFIELDS SEQ="1" />
+    <USERFIELDS SEQ="1" />
+  </INDEX>
+  <TEXTFIELDS>
+    <TEXTFIELD SEQ="1">
+      <NAME>wi.page.prev</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.page.id|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="2">
+      <NAME>wi.token</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.token|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="3">
+      <NAME>tmp.action</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>save</VALUE>
+      <LABELPOSITION>1</LABELPOSITION>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="4">
+      <NAME>tmp.id</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.id|</VALUE>
+      <DATAFIELD>seg_rotina.seq_rotina</DATAFIELD>
+      <LABEL>seg rotina.seq rotina:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="6">
+      <NAME>tmp.edt.dsc_rotina_descricao</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <MAXLENGTH>255</MAXLENGTH>
+      <SIZE>100</SIZE>
+      <VALUE>|tmp.edt.dsc_rotina_descricao|</VALUE>
+      <DATAFIELD>seg_rotina.dsc_rotina_descricao</DATAFIELD>
+      <INPUTCLASSNAME>required field</INPUTCLASSNAME>
+      <LABEL>Descrição:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="7">
+      <NAME>tmp.edt.dsc_rotina_pagina</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <MAXLENGTH>255</MAXLENGTH>
+      <SIZE>100</SIZE>
+      <VALUE>|tmp.edt.dsc_rotina_pagina|</VALUE>
+      <DATAFIELD>seg_rotina.dsc_rotina_pagina</DATAFIELD>
+      <INPUTCLASSNAME>required field</INPUTCLASSNAME>
+      <LABEL>Página:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="8">
+      <NAME>tmp.edt.num_rotina_ordem</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <MAXLENGTH>13</MAXLENGTH>
+      <SIZE>13</SIZE>
+      <VALUE>|tmp.edt.num_rotina_ordem|</VALUE>
+      <DATAFIELD TYPE="2">seg_rotina.num_rotina_ordem</DATAFIELD>
+      <INPUTCLASSNAME>required field</INPUTCLASSNAME>
+      <LABEL>Ordem:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+      <COMPLEMENT> alt="inteiroSM"</COMPLEMENT>
+      <EVENTS />
+    </TEXTFIELD>
+  </TEXTFIELDS>
+  <CHECKBOXFIELDS>
+    <CHECKBOXFIELD SEQ="1">
+      <NAME>tmp.edt.flg_rotina_ativa</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.edt.flg_rotina_ativa|</VALUE>
+      <DATAFIELD>seg_rotina.flg_rotina_ativa</DATAFIELD>
+      <LABEL>Ativa:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <IFTRUE>S</IFTRUE>
+      <IFFALSE>N</IFFALSE>
+    </CHECKBOXFIELD>
+  </CHECKBOXFIELDS>
+  <GROUPFIELDS>
+    <GROUPFIELD SEQ="1">
+      <NAME>tmp.edt.seq_modulo</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.edt.seq_modulo|</VALUE>
+      <DATAFIELD TYPE="2">seg_rotina.seq_modulo</DATAFIELD>
+      <INPUTCLASSNAME>required field</INPUTCLASSNAME>
+      <LABEL>Modulo:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>COMBO</TYPE>
+      <LABELSLIST>--Selecione--,|combo.seg_modulo|</LABELSLIST>
+      <VALUESLIST>,</VALUESLIST>
+      <ALIGN>LEFT</ALIGN>
+    </GROUPFIELD>
+  </GROUPFIELDS>
+  <USERFIELDS>
+    <USERFIELD SEQ="1">
+      <NEWLINE>ON</NEWLINE>
+      <DATAFIELD>USR:$botoes.xml</DATAFIELD>
+      <NAME>Texto15</NAME>
+      <LABELPOSITION>0</LABELPOSITION>
+      <PARAMETERS>
+        <paginapesquisa>seguranca/rotina/pesquisa.wsp</paginapesquisa>
+      </PARAMETERS>
+    </USERFIELD>
+  </USERFIELDS>
+  <FORMS>
+    <FORM SEQ="1">
+      <NAME>tmp.edt</NAME>
+      <ACTION>/|wi.proj.id|/|wi.page.id|.wsp</ACTION>
+      <METHOD>post</METHOD>
+      <CLASSNAME>frm</CLASSNAME>
+      <LABEL>Objeto tmp.edt</LABEL>
+      <LABELPOSITION>1</LABELPOSITION>
+      <LABELCLASSNAME>text</LABELCLASSNAME>
+      <WIOBJECT>tmp.edt</WIOBJECT>
+      <COMPLEMENT> id="formulario"</COMPLEMENT>
+    </FORM>
+  </FORMS>
+</LAYOUT>
+

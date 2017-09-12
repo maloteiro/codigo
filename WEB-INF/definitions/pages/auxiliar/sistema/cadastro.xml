@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Cadastro de Sistema Operacional</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>OFF</NOLOGIN>
+    <SECURITY>ON</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <DESCRIPTION>Objeto tmp.edt</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>tmp.edt</WIOBJ>
+        <SQL>SELECT aux_sistema.dsc_sistema_descricao, aux_sistema.flg_sistema_ativo, &#xD;
+ aux_sistema.dat_data_cadastro, aux_sistema.seq_usuario_cadastro, aux_sistema.dat_data_alteracao, &#xD;
+ aux_sistema.seq_usuario_alteracao, aux_sistema.cod_token_codigo &#xD;
+FROM aux_sistema&#xD;
+WHERE (aux_sistema.seq_sistema = ?|tmp.id|)</SQL>
+        <SQLFILTER>%*?'</SQLFILTER>
+        <DATABASE>principal</DATABASE>
+      </OBJECT>
+    </OBJECTS>
+    <INDEX>
+      <OBJECTS SEQ="1" />
+    </INDEX>
+  </PREPAGE>
+  <POSPAGE>
+    <UPDATES>
+      <UPDATE SEQ="1">
+        <DESCRIPTION>Insert do objeto tmp.edt</DESCRIPTION>
+        <CONDITION>|tmp.id|= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQL>INSERT INTO aux_sistema (&#xD;
+		dsc_sistema_descricao, &#xD;
+        flg_sistema_ativo, &#xD;
+        dat_data_cadastro, &#xD;
+        seq_usuario_cadastro,&#xD;
+        cod_token_codigo&#xD;
+) VALUES (&#xD;
+		?|tmp.edt.dsc_sistema_descricao|, &#xD;
+        ?|tmp.edt.flg_sistema_ativo|, &#xD;
+        now(), &#xD;
+     	?|pvt.login.seq_usuario|, &#xD;
+     	?|wi.token|&#xD;
+)</SQL>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>Registro inserido com sucesso</MSGTRUE>
+        <MSGFALSE>
+          <NOMESSAGE>|wi.sql.msg|</NOMESSAGE>
+        </MSGFALSE>
+        <AUTOCOMMIT>OFF</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+      </UPDATE>
+      <UPDATE SEQ="2">
+        <DESCRIPTION>Update do objeto tmp.edt</DESCRIPTION>
+        <CONDITION>|tmp.id|!= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQL>UPDATE aux_sistema&#xD;
+ SET 	dsc_sistema_descricao = ?|tmp.edt.dsc_sistema_descricao|, &#xD;
+ 		flg_sistema_ativo = ?|tmp.edt.flg_sistema_ativo|,&#xD;
+        dat_data_alteracao = now(), &#xD;
+        seq_usuario_alteracao = ?|pvt.login.seq_usuario|&#xD;
+ WHERE (seq_sistema = ?|tmp.id|)</SQL>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>Registro alterado com sucesso</MSGTRUE>
+        <MSGFALSE>
+          <NOMESSAGE>|wi.sql.msg|</NOMESSAGE>
+        </MSGFALSE>
+        <AUTOCOMMIT>OFF</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+      </UPDATE>
+    </UPDATES>
+    <INDEX>
+      <UPDATES SEQ="1" />
+      <UPDATES SEQ="2" />
+      <OBJECTS SEQ="1" />
+      <SETS SEQ="1" />
+    </INDEX>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <CONDITION>|tmp.id|= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <DESCRIPTION>Localiza chaves do registro recém-inserido</DESCRIPTION>
+        <SQLFILTER>%*?'"</SQLFILTER>
+        <SQL>SELECT aux_sistema.seq_sistema AS key1&#xD;
+ FROM aux_sistema&#xD;
+ WHERE cod_token_codigo = ?|wi.token|&#xD;
+ ORDER BY aux_sistema.seq_sistema DESC</SQL>
+        <WIOBJ>tmp.wi</WIOBJ>
+      </OBJECT>
+    </OBJECTS>
+    <SETS>
+      <SET SEQ="1">
+        <CONDITION>|tmp.id|= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DESCRIPTION>Grava chaves em variáveis</DESCRIPTION>
+        <WIOBJ>tmp.id</WIOBJ>
+        <IFTRUE>|tmp.wi.key1|</IFTRUE>
+        <FROMOBJECT>tmp.edt</FROMOBJECT>
+      </SET>
+    </SETS>
+  </POSPAGE>
+</PAGE>
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Gráfico de Situação das RATs</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>ON</NOLOGIN>
+    <SECURITY>OFF</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <DESCRIPTION>Objeto tmp.grafico</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>tmp.grafico</WIOBJ>
+        <SQL>SELECT CASE IFNULL(flg_rat_situacao,'') &#xD;
+		WHEN '' THEN 'Não Assinada'&#xD;
+        WHEN 'RA' THEN 'Não Assinada'&#xD;
+        WHEN 'AA' THEN 'Assinada Pelo Analista' &#xD;
+        WHEN 'AG' THEN 'Assinada Pelo Gerente do Contrato' END Assinatura, &#xD;
+       COUNT(0) Quantidade&#xD;
+FROM tbl_rat&#xD;
+WHERE MONTH(dat_data_cadastro) = MONTH(NOW())&#xD;
+AND YEAR(dat_data_cadastro) = YEAR(NOW())&#xD;
+group by flg_rat_situacao</SQL>
+        <SQLFILTER>%*?'</SQLFILTER>
+        <DATABASE>principal</DATABASE>
+        <MULTIPLE>ON</MULTIPLE>
+      </OBJECT>
+    </OBJECTS>
+    <INDEX>
+      <OBJECTS SEQ="1" />
+      <CONNECTORS SEQ="1" />
+    </INDEX>
+    <CONNECTORS>
+      <CONNECTOR SEQ="1">
+        <DESCRIPTION>Gráfico em fatias</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <CLASSNAME>br.com.webinside.modules.chart.PieChart</CLASSNAME>
+        <NAMESPACE>webinside.com.br</NAMESPACE>
+        <PLUGIN>PieChart</PLUGIN>
+        <INPREPAGE>ON</INPREPAGE>
+        <PARAMETERS>
+          <PARAMETER ID="tmp.chart.draw3d" VALUE="true" />
+          <PARAMETER ID="tmp.chart.plot.foregroundAlpha" VALUE="0.8" />
+          <PARAMETER ID="tmp.chart.backgroundColor" VALUE="#FFFFFF" />
+          <PARAMETER ID="tmp.chart.dataset.objectId" VALUE="tmp.grafico" />
+          <PARAMETER ID="tmp.chart.pie.sectionLabelType" VALUE="name_and_value" />
+        </PARAMETERS>
+      </CONNECTOR>
+    </CONNECTORS>
+  </PREPAGE>
+</PAGE>
+

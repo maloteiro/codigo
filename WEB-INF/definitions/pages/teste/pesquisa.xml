@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Página teste/pesquisa</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>ON</NOLOGIN>
+    <SECURITY>OFF</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <JAVAGRIDS>
+      <JAVAGRID SEQ="1">
+        <DESCRIPTION>Grid Java: resultadoPesquisa</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <CLASSNAME>br.com.webinside.modules.search.SearchGrid</CLASSNAME>
+        <GRIDID>resultadoPesquisa</GRIDID>
+        <PARAMETERS>
+          <PARAMETER ID="tmp.indexName" VALUE="documentos" />
+        </PARAMETERS>
+      </JAVAGRID>
+    </JAVAGRIDS>
+    <INDEX>
+      <JAVAGRIDS SEQ="1" />
+    </INDEX>
+  </PREPAGE>
+</PAGE>
+

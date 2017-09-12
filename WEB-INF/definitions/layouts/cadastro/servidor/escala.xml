@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LAYOUT>
+  <HEAD>
+    <SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/js/page.js">***EMPTY_TEXT***</SCRIPT>
+    <SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/libs/js/jquery/autocomplete/jquery.select-to-autocomplete.js">***EMPTY_TEXT***</SCRIPT>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="expires" CONTENT="0" />
+    <META HTTP-EQUIV="cache-control" CONTENT="no-cache" />
+    <TITLE>|wi.page.title|</TITLE>
+    <TEMPLATE>padrao_ac_novo.html</TEMPLATE>
+    <CODE>&lt;script&gt;&#xD;
+	  (function($){&#xD;
+	    $(function(){&#xD;
+	      $('#seq_responsavel').selectToAutocomplete();	      &#xD;
+	    });&#xD;
+	  })(jQuery);&#xD;
+	&lt;/script&gt;</CODE>
+  </HEAD>
+  <INDEX>
+    <GENERICFIELDS SEQ="1" />
+    <FORMS SEQ="1" />
+    <TEXTFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="2" />
+    <TEXTFIELDS SEQ="3" />
+    <TEXTFIELDS SEQ="4" />
+    <TEXTFIELDS SEQ="5" />
+    <GENERICFIELDS SEQ="4" />
+    <GENERICFIELDS SEQ="5" />
+    <GROUPFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="8" />
+    <TEXTFIELDS SEQ="9" />
+    <GENERICFIELDS SEQ="2" />
+    <GENERICFIELDS SEQ="3" />
+  </INDEX>
+  <TEXTFIELDS>
+    <TEXTFIELD SEQ="1">
+      <NAME>wi.page.prev</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.page.id|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="2">
+      <NAME>wi.token</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.token|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="3">
+      <NAME>tmp.action</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>save</VALUE>
+      <LABELPOSITION>1</LABELPOSITION>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="4">
+      <NAME>tmp.id</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.id|</VALUE>
+      <DATAFIELD>aux_escala.seq_escala</DATAFIELD>
+      <LABEL>aux escala.seq escala:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="5">
+      <NAME>tmp.seq_servidor</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.seq_servidor|</VALUE>
+      <DATAFIELD TYPE="2">aux_escala.seq_servidor</DATAFIELD>
+      <LABEL>seq servidor:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>4</TYPE>
+      <EVENTS />
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="8">
+      <NAME>tmp.tip_escala_evento</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.tip_escala_evento|</VALUE>
+      <DATAFIELD>aux_escala.tip_escala_evento</DATAFIELD>
+      <LABEL>tip escala evento:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="9">
+      <NAME>tmp.edt.txt_escala_observacoes</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <SIZE>60</SIZE>
+      <ROWS>5</ROWS>
+      <VALUE>|tmp.edt.txt_escala_observacoes|</VALUE>
+      <DATAFIELD>aux_escala.txt_escala_observacoes</DATAFIELD>
+      <INPUTCLASSNAME>field</INPUTCLASSNAME>
+      <LABEL>Observações:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+  </TEXTFIELDS>
+  <GROUPFIELDS>
+    <GROUPFIELD SEQ="1">
+      <NAME>tmp.edt.seq_janela</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.edt.seq_janela|</VALUE>
+      <DATAFIELD TYPE="2">aux_escala.seq_janela</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Janela de Acionamento:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>COMBO</TYPE>
+      <LABELSLIST>--Selecione--,|combo.aux_janela|</LABELSLIST>
+      <VALUESLIST>,</VALUESLIST>
+      <ALIGN>LEFT</ALIGN>
+    </GROUPFIELD>
+  </GROUPFIELDS>
+  <GENERICFIELDS>
+    <GENERICFIELD SEQ="1">
+      <NAME>title</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <CLASSNAME>title</CLASSNAME>
+    </GENERICFIELD>
+    <GENERICFIELD SEQ="2">
+      <NAME>space</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;br&gt;</VALUE>
+    </GENERICFIELD>
+    <GENERICFIELD SEQ="3">
+      <NAME>tmp.edt_new</NAME>
+      <STYLE>text-align:center</STYLE>
+      <LABELCLASSNAME>center</LABELCLASSNAME>
+      <VALUE>&lt;br/&gt;&#xD;
+&lt;table align="center" width="100%"&gt;&#xD;
+  &lt;tr&gt;&#xD;
+    &lt;td align="center"&gt;      &#xD;
+      &lt;!--button type="button" name="tmp.btn_add_novo" id="btn_add_novo" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para novo cadastro" alt="Clique no botão para novo cadastro" onclick="wiOpen('/|wi.proj.id|/cadastro/chamado/cadastro.wsp');"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Novo chamado&lt;/span&gt;&#xD;
+      &lt;/button--&gt;&#xD;
+      &lt;button type="button" name="tmp.btn_voltar" id="btn_voltar" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para novo cadastro" alt="Clique no botão para voltar" onclick="wiOpen('/|wi.proj.id|/cadastro/servidor/cadastro.wsp?tmp.id=|tmp.seq_servidor|');"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Voltar&lt;/span&gt;&#xD;
+      &lt;/button&gt;&#xD;
+      &lt;button type="submit" name="tmp.btn_salvar" id="btn_salvar" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para salvar" alt="Clique no botão para salvar"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Salvar&lt;/span&gt;&#xD;
+      &lt;/button&gt;																	&#xD;
+    &lt;/td&gt;						&#xD;
+  &lt;/tr&gt;&#xD;
+&lt;/table&gt;&#xD;
+&lt;br&gt;</VALUE>
+      <DATAFIELD TYPE="USR:$botoes.xml">USR:$botoes.xml</DATAFIELD>
+    </GENERICFIELD>
+    <GENERICFIELD SEQ="4">
+      <NAME>Texto14</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;div&gt;&#xD;
+|$if(|tmp.tip_escala_evento|==D,&lt;span style="color:red;"&gt;&lt;strong&gt;Desastre e Alta&lt;/strong&gt;&lt;/span&gt;,&lt;span style="color:yellow;"&gt;&lt;strong&gt;Média e Atenção&lt;/strong&gt;&lt;/span&gt;)$|&#xD;
+  &lt;br /&gt;&#xD;
+   &lt;br /&gt;&#xD;
+&lt;/div&gt;</VALUE>
+    </GENERICFIELD>
+    <GENERICFIELD SEQ="5">
+      <NAME>Texto15</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;label&gt;Responsável:&lt;/label&gt;&#xD;
+&lt;div class="ui-widget" style="width:320px;"&gt;	&#xD;
+	&lt;select name="tmp.edt.seq_responsavel" id="seq_responsavel" class="field" style="width:320px;"&gt;&#xD;
+         &lt;OPTION VALUE=""&gt;--Selecione--&lt;/OPTION&gt;&#xD;
+		|combo.cad_responsavel|&#xD;
+	&lt;/select&gt;&#xD;
+&lt;/div&gt;</VALUE>
+    </GENERICFIELD>
+  </GENERICFIELDS>
+  <FORMS>
+    <FORM SEQ="1">
+      <NAME>tmp.edt</NAME>
+      <ACTION>/|wi.proj.id|/|wi.page.id|.wsp</ACTION>
+      <METHOD>post</METHOD>
+      <CLASSNAME>frm</CLASSNAME>
+      <LABEL>Objeto tmp.edt</LABEL>
+      <LABELPOSITION>1</LABELPOSITION>
+      <LABELCLASSNAME>text</LABELCLASSNAME>
+      <WIOBJECT>tmp.edt</WIOBJECT>
+      <COMPLEMENT> id="formulario"</COMPLEMENT>
+    </FORM>
+  </FORMS>
+</LAYOUT>
+

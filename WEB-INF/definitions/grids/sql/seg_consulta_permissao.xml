@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<GRID TYPE="SQL">
+  <DESCRIPTION>Grid SQL: seg_consulta_permissao</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT DISTINCT rot.*,&#xD;
+CASE IFNULL(per.seq_rotina,0) WHEN 0 THEN 0 ELSE 1 END checado&#xD;
+FROM seg_rotina rot&#xD;
+LEFT JOIN seg_permissao per ON rot.seq_rotina=per.seq_rotina&#xD;
+AND seq_perfil='|tmp.edt.seq_perfil|'&#xD;
+WHERE rot.seq_modulo='|tmp.edt.seq_modulo|'</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <HDISPOSITION>H</HDISPOSITION>
+  <CONTENT>
+    <UNIQUE />
+    <START><![CDATA[<table align="center" id="tb_perfil" class="display dataTables">
+  <thead>
+    <tr>            	
+      <th width="50px">
+        <b>&nbsp;</b>
+      </th>                            	
+      <th>
+        <b>Rotina</b>
+      </th>                
+    </tr>
+  </thead>
+  <tbody>
+]]></START>
+    <ROWSTART><![CDATA[<tr>
+]]></ROWSTART>
+    <REGISTER><![CDATA[<td>
+<b><input |$if(|checado|==1,checked)$| type="checkbox" name="tmp.update|rowseq|.seq_rotina" id="tmp.update|rowseq|.seq_rotina" value="|seq_rotina|" onclick="salvar('tmp.update|rowseq|.seq_rotina')"/></b>
+</td>
+<td>
+  <b>|dsc_rotina_descricao|</b>
+</td>                
+
+]]></REGISTER>
+    <NOREGISTER />
+    <NOROW />
+    <ROWEND><![CDATA[</tr>
+]]></ROWEND>
+    <END><![CDATA[	</tbody>
+</table>
+]]></END>
+  </CONTENT>
+</GRID>
+

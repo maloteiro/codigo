@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<COMBO>
+  <DESCRIPTION>Combo: aux_sistema</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT &#xD;
+ aux_sistema.seq_sistema, aux_sistema.dsc_sistema_descricao &#xD;
+FROM aux_sistema&#xD;
+WHERE (aux_sistema.flg_sistema_ativo = 'S')</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <KEY>|seq_sistema|</KEY>
+  <TEXT>|dsc_sistema_descricao|</TEXT>
+</COMBO>
+

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<GRID TYPE="SQL">
+  <DESCRIPTION>Grid SQL: cad_consulta_responsavel</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT &#xD;
+ tbl_responsavel.seq_responsavel, &#xD;
+ tbl_responsavel.nom_responsavel_nome, &#xD;
+ tbl_responsavel.dsc_responsavel_email, &#xD;
+ tbl_responsavel.num_responsavel_fixo1, &#xD;
+ tbl_responsavel.num_responsavel_fixo2, &#xD;
+ tbl_responsavel.num_responsavel_celular1, &#xD;
+ tbl_responsavel.num_responsavel_celular2, &#xD;
+ tbl_responsavel.num_responsavel_celular3, &#xD;
+ tbl_responsavel.flg_responsavel_ativo &#xD;
+FROM tbl_responsavel&#xD;
+where (tbl_responsavel.nom_responsavel_nome like '%|tmp.argumento_pesquisa|%'&#xD;
+or tbl_responsavel.dsc_responsavel_email like '%|tmp.argumento_pesquisa|%'&#xD;
+or tbl_responsavel.num_responsavel_fixo1 like '%|tmp.argumento_pesquisa|%'&#xD;
+or tbl_responsavel.num_responsavel_fixo2 like '%|tmp.argumento_pesquisa|%'&#xD;
+or tbl_responsavel.num_responsavel_celular1 like '%|tmp.argumento_pesquisa|%'&#xD;
+or tbl_responsavel.num_responsavel_celular2 like '%|tmp.argumento_pesquisa|%'&#xD;
+or tbl_responsavel.num_responsavel_celular3 like '%|tmp.argumento_pesquisa|%')&#xD;
+and flg_responsavel_excluido='N'</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <HDISPOSITION>H</HDISPOSITION>
+  <CONTENT>
+    <UNIQUE />
+    <START><![CDATA[<table align="center" id="tb_entrevista" class="display dataTables">
+  <thead>
+    <tr>            	
+      <th>
+        <b>Nome</b>
+      </th>                            	
+      <th>
+        <b>E-mail</b>
+      </th>
+      <th>
+        <b>Ativo</b>
+      </th>             
+      
+      <th width="1%">
+        <b>Ações</b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+]]></START>
+    <ROWSTART><![CDATA[<tr>
+]]></ROWSTART>
+    <REGISTER><![CDATA[<td width="40%">
+  <b>|nom_responsavel_nome|</b>
+</td>
+<td align="left" width="150px">
+  <b>|dsc_responsavel_email|</b>
+</td>
+<td width="150px">
+  <b>|$if(|flg_responsavel_ativo|==S,SIM,NÃO)$|</b>
+</td>                         
+
+<td align="center" width="150px">
+  <img src="/|wi.proj.id|/imgs/icones/page_white_edit.png" title="Editar" class="btn_editar tooltip" onclick="wiOpen('/|wi.proj.id|/cadastro/responsavel/cadastro.wsp?tmp.id=|seq_responsavel|')"/>				
+</td>
+]]></REGISTER>
+    <NOREGISTER />
+    <NOROW />
+    <ROWEND><![CDATA[</tr>
+]]></ROWEND>
+    <END><![CDATA[	</tbody>
+</table>
+]]></END>
+  </CONTENT>
+</GRID>
+

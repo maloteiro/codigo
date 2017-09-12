@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LAYOUT>
+  <HEAD>
+    <SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/js/page.js">***EMPTY_TEXT***</SCRIPT>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="expires" CONTENT="0" />
+    <META HTTP-EQUIV="cache-control" CONTENT="no-cache" />
+    <TITLE>|wi.page.title|</TITLE>
+    <TEMPLATE>login.html</TEMPLATE>
+  </HEAD>
+  <INDEX>
+    <FORMS SEQ="1" />
+    <TEXTFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="2" />
+    <GENERICFIELDS SEQ="1" />
+  </INDEX>
+  <TEXTFIELDS>
+    <TEXTFIELD SEQ="1">
+      <NAME>wi.page.prev</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.page.id|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="2">
+      <NAME>wi.token</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.token|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+  </TEXTFIELDS>
+  <GENERICFIELDS>
+    <GENERICFIELD SEQ="1">
+      <NAME>Texto4</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;br /&gt;&#xD;
+&lt;table cellpadding="0" cellspacing="0" border="0" class="login_box"&gt;&#xD;
+			&lt;tr&gt;&#xD;
+				&lt;td colspan="2" class="login_box_e_d_t"&gt;					&#xD;
+					&lt;br /&gt;&#xD;
+				&lt;/td&gt;&#xD;
+			&lt;/tr&gt;&#xD;
+			&lt;tr valign="center" height="30px"&gt;				&#xD;
+				&lt;td align="right" class="login_box_e"&gt;&#xD;
+					&lt;label class="login_txt_label"&gt;&#xD;
+						  E-mail&#xD;
+					&lt;/label&gt;								&#xD;
+				&lt;/td&gt;				&#xD;
+				&lt;td align="right" width="300px" class="login_box_d"&gt;&#xD;
+					&lt;div style="margin-right:20px;"&gt;					&#xD;
+						&lt;input class="campo_login email required" name="tmp.user" id="tmp.user" type="text" size="40"&gt;					&#xD;
+					&lt;/div&gt;&#xD;
+				&lt;/td&gt;				&#xD;
+			&lt;/tr&gt;			&#xD;
+					&#xD;
+			&lt;!--tr valign="top" height="25px"&gt;&#xD;
+				&lt;td align="right" class="login_box_e"&gt;&#xD;
+					&lt;label class="login_txt_label"&gt;&#xD;
+						  Senha&#xD;
+					&lt;/label&gt;								&#xD;
+				&lt;/td&gt;&#xD;
+				&lt;td align="right" width="295px" class="login_box_d"&gt;&#xD;
+					&lt;div style="margin-right:20px;"&gt;						&#xD;
+						&lt;input class="campo_login required" name="tmp.pass" id="tmp.pass" type="password" size="40"&gt;						&#xD;
+					&lt;/div&gt;&#xD;
+				&lt;/td&gt;&#xD;
+			&lt;/tr--&gt;&#xD;
+					&#xD;
+			&lt;tr&gt;&#xD;
+				&lt;td colspan="2" class="login_box_e_d"&gt;					&#xD;
+					&lt;br /&gt;&#xD;
+				&lt;/td&gt;&#xD;
+			&lt;/tr&gt;					&#xD;
+			&lt;tr valign="top"&gt;&#xD;
+				&lt;td align="right" class="login_box_e"&gt;&#xD;
+					 								&#xD;
+				&lt;/td&gt;&#xD;
+				&lt;td align="center" width="295px" class="login_box_d_txt_center"&gt;&#xD;
+					&#xD;
+						&lt;button type="submit" name="bt_salvar" id="bt_salvar" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para envio de nova senha" alt="Clique no botão para envio de nova senha"&gt;&#xD;
+							&lt;span class="ui-button-text"&gt;ENVIAR&lt;/span&gt;&#xD;
+						&lt;/button&gt;																								&#xD;
+                  &lt;button type="button" name="bt_esqueci" id="bt_esqueci" onclick="wiOpen('/|wi.proj.id|/index.wsp')" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para voltar" alt="Clique no botão para voltar"&gt;&#xD;
+							&lt;span class="ui-button-text"&gt;VOLTAR&lt;/span&gt;&#xD;
+						&lt;/button&gt;&#xD;
+					&#xD;
+				&lt;/td&gt;													&#xD;
+			&lt;/tr&gt;&#xD;
+			&lt;tr&gt;&#xD;
+				&lt;td colspan="2" class="login_box_e_d_b"&gt;					&#xD;
+					&lt;br /&gt;&#xD;
+				&lt;/td&gt;&#xD;
+			&lt;/tr&gt;&#xD;
+		&lt;/table&gt;&#xD;
+		&lt;br /&gt;</VALUE>
+    </GENERICFIELD>
+  </GENERICFIELDS>
+  <FORMS>
+    <FORM SEQ="1">
+      <NAME>formulario</NAME>
+      <ACTION>/|wi.proj.id|/|wi.page.id|.wsp</ACTION>
+      <METHOD>post</METHOD>
+      <CLASSNAME>frm</CLASSNAME>
+      <LABELPOSITION>1</LABELPOSITION>
+      <COMPLEMENT> id="formulario"</COMPLEMENT>
+    </FORM>
+  </FORMS>
+</LAYOUT>
+

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Cadastro de Perfil de Acesso</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>OFF</NOLOGIN>
+    <SECURITY>ON</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <DESCRIPTION>Objeto tmp.edt</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>tmp.edt</WIOBJ>
+        <SQL>SELECT &#xD;
+ 	seg_perfil.seq_perfil, &#xD;
+	seg_perfil.dsc_perfil_nome, &#xD;
+    seg_perfil.sig_perfil_sigla, &#xD;
+ 	seg_perfil.flg_perfil_status, &#xD;
+    seg_perfil.dat_data_cadastro, &#xD;
+    seg_perfil.seq_usuario_cadastro, &#xD;
+ 	seg_perfil.dat_data_alteracao, &#xD;
+    seg_perfil.seq_usuario_alteracao, &#xD;
+    seg_perfil.cod_token_codigo &#xD;
+FROM seg_perfil&#xD;
+WHERE (seg_perfil.seq_perfil = ?|tmp.id|)</SQL>
+        <SQLFILTER>%*?'</SQLFILTER>
+        <DATABASE>principal</DATABASE>
+      </OBJECT>
+    </OBJECTS>
+    <INDEX>
+      <OBJECTS SEQ="1" />
+    </INDEX>
+  </PREPAGE>
+  <POSPAGE>
+    <UPDATES>
+      <UPDATE SEQ="1">
+        <DESCRIPTION>Insert do objeto tmp.edt</DESCRIPTION>
+        <CONDITION>|tmp.id|= &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQL>INSERT INTO seg_perfil (&#xD;
+	dsc_perfil_nome, &#xD;
+    sig_perfil_sigla, &#xD;
+    flg_perfil_status, &#xD;
+    dat_data_cadastro, &#xD;
+    seq_usuario_cadastro,     &#xD;
+    cod_token_codigo&#xD;
+) VALUES (&#xD;
+	?|tmp.edt.dsc_perfil_nome|, &#xD;
+    ?|tmp.edt.sig_perfil_sigla|, &#xD;
+    ?|tmp.edt.flg_perfil_status|, &#xD;
+    now(), &#xD;
+    ?|pvt.login.seq_usuario|,      &#xD;
+    ?|wi.token|&#xD;
+)</SQL>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>Registro inserido com sucesso</MSGTRUE>
+        <MSGFALSE>
+          <NOMESSAGE>|wi.sql.msg|</NOMESSAGE>
+        </MSGFALSE>
+        <AUTOCOMMIT>OFF</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+      </UPDATE>
+      <UPDATE SEQ="2">
+        <DESCRIPTION>Update do objeto tmp.edt</DESCRIPTION>
+        <CONDITION>|tmp.id|!= &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQL>UPDATE seg_perfil&#xD;
+ SET 	dsc_perfil_nome = ?|tmp.edt.dsc_perfil_nome|, &#xD;
+ 		sig_perfil_sigla = ?|tmp.edt.sig_perfil_sigla|, &#xD;
+     	flg_perfil_status = ?|tmp.edt.flg_perfil_status|, &#xD;
+     	dat_data_alteracao = now(), &#xD;
+     	seq_usuario_alteracao = ?|pvt.login.seq_usuario|&#xD;
+        &#xD;
+ WHERE (seg_perfil.seq_perfil = ?|tmp.id|)</SQL>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>Registro alterado com sucesso</MSGTRUE>
+        <MSGFALSE>
+          <NOMESSAGE>|wi.sql.msg|</NOMESSAGE>
+        </MSGFALSE>
+        <AUTOCOMMIT>OFF</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+      </UPDATE>
+    </UPDATES>
+    <INDEX>
+      <UPDATES SEQ="1" />
+      <UPDATES SEQ="2" />
+      <OBJECTS SEQ="1" />
+      <SETS SEQ="1" />
+    </INDEX>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <CONDITION>|tmp.id|= &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <DESCRIPTION>Localiza chaves do registro recém-inserido</DESCRIPTION>
+        <SQLFILTER>%*?'"</SQLFILTER>
+        <SQL>SELECT seg_perfil.seq_perfil AS key1&#xD;
+ FROM seg_perfil&#xD;
+ WHERE cod_token_codigo = ?|wi.token|&#xD;
+ ORDER BY seg_perfil.seq_perfil DESC</SQL>
+        <WIOBJ>tmp.wi</WIOBJ>
+      </OBJECT>
+    </OBJECTS>
+    <SETS>
+      <SET SEQ="1">
+        <CONDITION>|tmp.id|= &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DESCRIPTION>Grava chaves em variáveis</DESCRIPTION>
+        <WIOBJ>tmp.id</WIOBJ>
+        <IFTRUE>|tmp.wi.key1|</IFTRUE>
+      </SET>
+    </SETS>
+  </POSPAGE>
+</PAGE>
+

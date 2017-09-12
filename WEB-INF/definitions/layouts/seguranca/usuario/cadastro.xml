@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LAYOUT>
+  <HEAD>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="expires" CONTENT="0" />
+    <META HTTP-EQUIV="cache-control" CONTENT="no-cache" />
+    <TITLE>|wi.page.title|</TITLE>
+    <TEMPLATE>malote_padrao_rotina.html</TEMPLATE>
+  </HEAD>
+  <INDEX>
+    <FORMS SEQ="1" />
+    <TEXTFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="2" />
+    <TEXTFIELDS SEQ="3" />
+    <TEXTFIELDS SEQ="4" />
+    <USERFIELDS SEQ="2" />
+    <USERFIELDS SEQ="1" />
+    <USERFIELDS SEQ="3" />
+    <USERFIELDS SEQ="4" />
+    <USERFIELDS SEQ="5" />
+    <USERFIELDS SEQ="6" />
+    <USERFIELDS SEQ="7" />
+    <GENERICFIELDS SEQ="2" />
+    <USERFIELDS SEQ="8" />
+    <GENERICFIELDS SEQ="3" />
+  </INDEX>
+  <TEXTFIELDS>
+    <TEXTFIELD SEQ="1">
+      <NAME>wi.page.prev</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.page.id|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="2">
+      <NAME>wi.token</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.token|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="3">
+      <NAME>tmp.action</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>save</VALUE>
+      <LABELPOSITION>1</LABELPOSITION>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="4">
+      <NAME>tmp.id</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.id|</VALUE>
+      <DATAFIELD>seg_usuario.seq_usuario</DATAFIELD>
+      <LABEL>seg usuario.seq usuario:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+  </TEXTFIELDS>
+  <GENERICFIELDS>
+    <GENERICFIELD SEQ="2">
+      <NAME>space</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;br&gt;</VALUE>
+    </GENERICFIELD>
+    <GENERICFIELD SEQ="3">
+      <NAME>Texto15</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>Por padrão o sistema gera a senha (102030)&#xD;
+&lt;br /&gt;&#xD;
+&lt;br /&gt;</VALUE>
+    </GENERICFIELD>
+  </GENERICFIELDS>
+  <USERFIELDS>
+    <USERFIELD SEQ="2">
+      <NEWLINE>ON</NEWLINE>
+      <DATAFIELD>USR:$bstrap_Select.xml</DATAFIELD>
+      <NAME>tmp.edt.seq_perfil</NAME>
+      <LABELPOSITION>0</LABELPOSITION>
+      <PARAMETERS>
+        <nomecombo>seg_perfil</nomecombo>
+        <obrigatório>required</obrigatório>
+        <id>tmp.edt.seq_perfil</id>
+        <nome>tmp.edt.seq_perfil</nome>
+        <label>Perfil</label>
+      </PARAMETERS>
+    </USERFIELD>
+    <USERFIELD SEQ="1">
+      <NEWLINE>ON</NEWLINE>
+      <DATAFIELD>USR:$bstrap_InputText.xml</DATAFIELD>
+      <NAME>tmp.edt.dsc_usuario_nome</NAME>
+      <LABELPOSITION>0</LABELPOSITION>
+      <PARAMETERS>
+        <obrigatório>required</obrigatório>
+        <alinhamentovertical>bottom</alinhamentovertical>
+        <id>tmp.edt.dsc_usuario_nome</id>
+        <valor>|tmp.edt.dsc_usuario_nome|</valor>
+        <nome>tmp.edt.dsc_usuario_nome</nome>
+        <label>Nome</label>
+      </PARAMETERS>
+    </USERFIELD>
+    <USERFIELD SEQ="3">
+      <NEWLINE>ON</NEWLINE>
+      <DATAFIELD>USR:$bstrap_InputEmail.xml</DATAFIELD>
+      <NAME>tmp.edt.dsc_usuario_email</NAME>
+      <LABELPOSITION>0</LABELPOSITION>
+      <PARAMETERS>
+        <obrigatório>required</obrigatório>
+        <id>tmp.edt.dsc_usuario_email</id>
+        <valor>|tmp.edt.dsc_usuario_email|</valor>
+        <nome>tmp.edt.dsc_usuario_email</nome>
+        <label>E-mail</label>
+      </PARAMETERS>
+    </USERFIELD>
+    <USERFIELD SEQ="4">
+      <NEWLINE>ON</NEWLINE>
+      <DATAFIELD>USR:$bstrap_InputEmail.xml</DATAFIELD>
+      <NAME>tmp.edt.dsc_usuario_email2</NAME>
+      <LABELPOSITION>0</LABELPOSITION>
+      <PARAMETERS>
+        <obrigatório>n</obrigatório>
+        <id>tmp.edt.dsc_usuario_email2</id>
+        <valor>|tmp.edt.dsc_usuario_email2|</valor>
+        <nome>tmp.edt.dsc_usuario_email2</nome>
+        <label>E-mail Secundário (Opcional)</label>
+      </PARAMETERS>
+    </USERFIELD>
+    <USERFIELD SEQ="5">
+      <NEWLINE>ON</NEWLINE>
+      <DATAFIELD>USR:$bstrap_InputCPF.xml</DATAFIELD>
+      <NAME>tmp.edt.dsc_usuario_cpf</NAME>
+      <LABELPOSITION>0</LABELPOSITION>
+      <PARAMETERS>
+        <obrigatório>n</obrigatório>
+        <id>tmp.edt.dsc_usuario_cpf</id>
+        <valor>|tmp.edt.dsc_usuario_cpf|</valor>
+        <nome>tmp.edt.dsc_usuario_cpf</nome>
+        <label>CPF</label>
+      </PARAMETERS>
+    </USERFIELD>
+    <USERFIELD SEQ="6">
+      <NEWLINE>ON</NEWLINE>
+      <DATAFIELD>USR:#bstrap_InputTelefone.xml</DATAFIELD>
+      <NAME>tmp.edt.num_usuario_telefone</NAME>
+      <LABELPOSITION>0</LABELPOSITION>
+      <PARAMETERS>
+        <obrigatório>required</obrigatório>
+        <id>tmp.edt.num_usuario_telefone</id>
+        <valor>|tmp.edt.num_usuario_telefone|</valor>
+        <nome>tmp.edt.num_usuario_telefone</nome>
+        <label>Telefone</label>
+      </PARAMETERS>
+    </USERFIELD>
+    <USERFIELD SEQ="7">
+      <NEWLINE>ON</NEWLINE>
+      <DATAFIELD>USR:$bstrap_checkbox.xml</DATAFIELD>
+      <NAME>tmp.edt.flg_usuario_status</NAME>
+      <LABELPOSITION>0</LABELPOSITION>
+      <PARAMETERS>
+        <texto>Sim</texto>
+        <obrigatório>n</obrigatório>
+        <id>tmp.edt.flg_usuario_status</id>
+        <valor>|tmp.edt.flg_usuario_status|</valor>
+        <nome>tmp.edt.flg_usuario_status</nome>
+        <valorchecado>1</valorchecado>
+        <label>Ativo:</label>
+      </PARAMETERS>
+    </USERFIELD>
+    <USERFIELD SEQ="8">
+      <NEWLINE>ON</NEWLINE>
+      <DATAFIELD>USR:$bstrap_botoesPadrao.xml</DATAFIELD>
+      <NAME>Texto16</NAME>
+      <LABELPOSITION>0</LABELPOSITION>
+      <PARAMETERS>
+        <paginapesquisa>seguranca/usuario/pesquisa.wsp</paginapesquisa>
+      </PARAMETERS>
+    </USERFIELD>
+  </USERFIELDS>
+  <FORMS>
+    <FORM SEQ="1">
+      <NAME>tmp.edt</NAME>
+      <ACTION>/|wi.proj.id|/|wi.page.id|.wsp</ACTION>
+      <METHOD>post</METHOD>
+      <CLASSNAME>frm</CLASSNAME>
+      <LABEL>Objeto tmp.edt</LABEL>
+      <LABELPOSITION>1</LABELPOSITION>
+      <LABELCLASSNAME>text</LABELCLASSNAME>
+      <WIOBJECT>tmp.edt</WIOBJECT>
+      <COMPLEMENT> id="formulario"</COMPLEMENT>
+    </FORM>
+  </FORMS>
+</LAYOUT>
+

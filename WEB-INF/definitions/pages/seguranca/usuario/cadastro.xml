@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Cadastro de Usuários</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>OFF</NOLOGIN>
+    <SECURITY>ON</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <DESCRIPTION>Objeto tmp.edt</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>tmp.edt</WIOBJ>
+        <SQL>SELECT &#xD;
+ 	seg_usuario.seq_usuario,     &#xD;
+    seg_usuario.seq_perfil,  	&#xD;
+    seg_usuario.dsc_usuario_nome, &#xD;
+    seg_usuario.dsc_usuario_email, &#xD;
+ 	seg_usuario.dsc_usuario_email2, &#xD;
+    seg_usuario.num_usuario_telefone, &#xD;
+    seg_usuario.dsc_usuario_cpf, &#xD;
+ 	seg_usuario.flg_usuario_status, &#xD;
+    seg_usuario.dsc_usuario_token, &#xD;
+    seg_usuario.dat_data_cadastro, &#xD;
+ 	seg_usuario.seq_usuario_cadastro, &#xD;
+    seg_usuario.dat_data_alteracao, &#xD;
+    seg_usuario.seq_usuario_alteracao &#xD;
+FROM seg_usuario&#xD;
+WHERE (seg_usuario.seq_usuario = ?|tmp.id|)</SQL>
+        <SQLFILTER>%*?'</SQLFILTER>
+        <DATABASE>principal</DATABASE>
+      </OBJECT>
+    </OBJECTS>
+    <COMBOREFS>
+      <COMBOREF SEQ="1">
+        <COMBOID>seg_perfil</COMBOID>
+        <CONDITION>true</CONDITION>
+        <SELECTED>|tmp.edt.seq_perfil|</SELECTED>
+      </COMBOREF>
+    </COMBOREFS>
+    <INDEX>
+      <OBJECTS SEQ="1" />
+      <COMBOREFS SEQ="1" />
+    </INDEX>
+  </PREPAGE>
+  <POSPAGE>
+    <UPDATES>
+      <UPDATE SEQ="1">
+        <DESCRIPTION>Insert do objeto tmp.edt</DESCRIPTION>
+        <CONDITION>|tmp.id|= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQL>INSERT INTO seg_usuario (&#xD;
+	seq_perfil, &#xD;
+    dsc_usuario_nome, &#xD;
+    dsc_usuario_email, &#xD;
+    dsc_usuario_email2, &#xD;
+    dsc_usuario_cpf, &#xD;
+    num_usuario_telefone, &#xD;
+    flg_usuario_status, &#xD;
+    dsc_usuario_token, &#xD;
+    dat_data_cadastro, &#xD;
+    seq_usuario_cadastro,&#xD;
+    dsc_usuario_senha,&#xD;
+    dsc_usuario_assinatura&#xD;
+) VALUES (&#xD;
+	?|tmp.edt.seq_perfil|, &#xD;
+    ?|tmp.edt.dsc_usuario_nome|, &#xD;
+    ?|tmp.edt.dsc_usuario_email|, &#xD;
+    ?|tmp.edt.dsc_usuario_email2|, &#xD;
+    ?|tmp.edt.dsc_usuario_cpf|, &#xD;
+    ?|tmp.edt.num_usuario_telefone|, &#xD;
+    ?|$if(|tmp.edt.flg_usuario_status| != , 1, 0)$|,&#xD;
+    ?|wi.token|, &#xD;
+    now(), &#xD;
+    ?|pvt.login.seq_usuario|,&#xD;
+    md5('102030'),&#xD;
+    md5('|tmp.assinatura|')&#xD;
+)</SQL>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>Registro inserido com sucesso</MSGTRUE>
+        <MSGFALSE>
+          <NOMESSAGE>|wi.sql.msg|</NOMESSAGE>
+        </MSGFALSE>
+        <AUTOCOMMIT>OFF</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+      </UPDATE>
+      <UPDATE SEQ="2">
+        <DESCRIPTION>Update do objeto tmp.edt</DESCRIPTION>
+        <CONDITION>|tmp.id|!= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQL>UPDATE seg_usuario&#xD;
+ SET 	seq_perfil = ?|tmp.edt.seq_perfil|, &#xD;
+ 		dsc_usuario_nome = ?|tmp.edt.dsc_usuario_nome|, &#xD;
+     	dsc_usuario_email = ?|tmp.edt.dsc_usuario_email|, &#xD;
+        dsc_usuario_email2 = ?|tmp.edt.dsc_usuario_email2|, &#xD;
+    	dsc_usuario_cpf = ?|tmp.edt.dsc_usuario_cpf|, &#xD;
+        num_usuario_telefone = ?|tmp.edt.num_usuario_telefone|, &#xD;
+     	flg_usuario_status = ?|$if(|tmp.edt.flg_usuario_status| != , 1, 0)$|,         &#xD;
+     	dat_data_alteracao = now(), &#xD;
+        seq_usuario_alteracao = ?|pvt.login.seq_usuario|&#xD;
+ WHERE (seg_usuario.seq_usuario = ?|tmp.id|)</SQL>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>Registro alterado com sucesso</MSGTRUE>
+        <MSGFALSE>
+          <NOMESSAGE>|wi.sql.msg|</NOMESSAGE>
+        </MSGFALSE>
+        <AUTOCOMMIT>OFF</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+      </UPDATE>
+    </UPDATES>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <CONDITION>|tmp.id|= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <DESCRIPTION>Localiza chaves do registro recém-inserido</DESCRIPTION>
+        <SQLFILTER>%*?'"</SQLFILTER>
+        <SQL>SELECT seg_usuario.seq_usuario AS key1&#xD;
+ FROM seg_usuario&#xD;
+ WHERE dsc_usuario_token = ?|wi.token|  &#xD;
+ ORDER BY seg_usuario.seq_usuario DESC</SQL>
+        <WIOBJ>tmp.wi</WIOBJ>
+      </OBJECT>
+    </OBJECTS>
+    <SETS>
+      <SET SEQ="1">
+        <CONDITION>|tmp.id|= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DESCRIPTION>Grava chaves em variáveis</DESCRIPTION>
+        <WIOBJ>tmp.id</WIOBJ>
+        <IFTRUE>|tmp.wi.key1|</IFTRUE>
+        <FROMOBJECT>tmp.edt</FROMOBJECT>
+      </SET>
+      <SET SEQ="2">
+        <DESCRIPTION>Gravar tmp.assinatura</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>tmp.assinatura</WIOBJ>
+        <IFTRUE>|$random(4,true)$|</IFTRUE>
+      </SET>
+    </SETS>
+    <SENDMAILS>
+      <SENDMAIL SEQ="1">
+        <DESCRIPTION>Enviar e-mail para |tmp.edt.dsc_usuario_email|</DESCRIPTION>
+        <CONDITION>|tmp.id|= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true &amp;&amp; |tmp.message|=Registro inserido com sucesso</CONDITION>
+        <HOSTID>email</HOSTID>
+        <FROM>citcomunica@ebserh.gov.br</FROM>
+        <SENDER>CIT Comunica</SENDER>
+        <SUBJECT>[CITComunica] Nova senha</SUBJECT>
+        <TO>|tmp.edt.dsc_usuario_email|</TO>
+        <MIME>PLAIN</MIME>
+        <EACHONE>OFF</EACHONE>
+        <NOTIFICATION>OFF</NOTIFICATION>
+        <ATTACHREMOVE>OFF</ATTACHREMOVE>
+        <HTMLCONTENT><![CDATA[Olá,
+
+Sua senha para o sistema CIT Comunica foi gerada com sucesso.
+
+Por favor, troque a senha e não passe para ninguém.
+
+Senha: 102030
+
+Att,
+CIT Comunica]]></HTMLCONTENT>
+      </SENDMAIL>
+    </SENDMAILS>
+    <INDEX>
+      <SETS SEQ="2" />
+      <UPDATES SEQ="1" />
+      <SENDMAILS SEQ="1" />
+      <UPDATES SEQ="2" />
+      <OBJECTS SEQ="1" />
+      <SETS SEQ="1" />
+    </INDEX>
+  </POSPAGE>
+</PAGE>
+

@@ -1,0 +1,245 @@
+form.new {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+form.new fieldset {
+    clear: both;
+    font-size: 100%;
+    border-color: #000000;
+    border-width: 1px 0 0 0;
+    border-style: solid none none none;
+    padding: 10px;
+    margin: 0 0 0 0;
+}
+
+form.new fieldset div.buttons {
+    padding: 0 0 0 145px;
+}
+
+form.new fieldset legend {
+    font-size: 150%;
+    font-weight: normal;
+    color: #000000;
+    margin: 0 0 0 0;
+    padding: 0 5px;
+}
+
+label {
+    font-size: 100%;
+}
+
+label u {
+    font-style: normal;
+    text-decoration: underline;
+}
+
+input, select, textarea {
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 100%;
+    color: #000000;
+}
+
+textarea {
+    overflow: auto;
+}
+
+form.new div {
+    clear: left;
+    display: block;
+    zoom: 1;
+    margin: 5px 0 0 0;
+    padding: 1px 3px;
+}
+
+form.new fieldset div.notas {
+    margin: 0px 0px 0px 0px;
+    float: right;
+    width: 175px;
+    height: auto;
+    padding: 5px;
+    border: 1px solid #666666;
+    background-color: #ffffe1;
+    color: #666666;
+    font-size: 88%;
+}
+
+form.new fieldset div.notas h4 {
+    background-image: url(../img/icones/info.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+    padding: 3px 0px 10px 25px;
+    margin: 0px 0px 10px 0px;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #666666;
+    color: #666666;
+    font-size: 120%;
+    height: auto;
+}
+
+form.new fieldset div.notas p {
+    margin: 0em 0em 1em 0em;
+    color: #666666;
+}
+
+form.new fieldset div.notas p.last {
+    margin: 0em;
+}
+
+form.new div fieldset {
+    clear: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #666666;
+    margin: 0 0 0 144px;
+    padding: 0 5px 5px 5px;
+    width: 197px;
+}
+
+form.new div fieldset legend {
+    font-size: 100%;
+    padding: 0 3px 0 9px;
+}
+
+form.new div.required fieldset legend {
+    font-weight: bold;
+}
+
+form div label {
+    display: block;
+    float: left;
+    width: 130px;
+    padding: 3px 5px;
+    margin: 0 0 5px 0;
+    text-align: right;
+}
+
+form.new div.optional label, label.optional {
+    font-weight: normal;
+}
+
+form.new div.required label, label.required {
+    font-weight: bold;
+}
+input.invalid, textarea.invalid {
+    border:1px dotted red;
+}
+label.invalid {
+    background:url("../../imgs/icones/exclamation.png") no-repeat scroll 0 0 transparent;
+    color:red;    
+    text-align: left;
+    width: 800px;
+    padding-left: 20px;
+    margin-bottom: 0px;
+    margin-left: 8px;
+    padding-top: 0px;
+    background-color: #FBD3B1;
+}
+form.new div label.labelCheckbox, form div label.labelRadio {
+    float: none;
+    display: block;
+    width: 200px;
+    zoom: 1;
+    padding: 0;
+    margin: 0 0 5px 142px;
+    text-align: left;
+}
+
+form.new div fieldset label.labelCheckbox, form div fieldset label.labelRadio {
+    margin: 0 0 5px 0;
+    width: 170px;
+}
+
+p.error {
+    background-color: #ff0000;
+    background-image: url(/images/icon_error.gif);
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+    color: #ffffff;
+    padding: 3px 3px 5px 27px;
+    border: 1px solid #000000;
+    margin: auto 100px;
+}
+
+form.new div.error {
+    background-color: #ffffe1;
+    background-image: url(/images/required_bg.gif);
+    background-repeat: no-repeat;
+    background-position: top left;
+    color: #666666;
+    border: 1px solid #ff0000;
+}
+
+form.new div.error p.error {
+    background-image: url(/images/icon_error.gif);
+    background-position: top left;
+    background-color: transparent;
+    border-style: none;
+    font-size: 88%;
+    font-weight: bold;
+    margin: 0 0 0 118px;
+    width: 200px;
+    color: #ff0000;
+}
+
+form.new div select, form div textarea {
+    float:left;
+    width: 200px;
+    padding: 1px 3px;
+    margin: 0 0 0 0;
+}
+
+form.new div input.inputText, form div input.inputPassword {
+    float:left;
+    width: 200px;
+    padding: 1px 3px;
+    margin: 0 0 0 0;
+}
+
+form.new div table {
+    width: 210px;
+    margin: 0 0 0 0;
+    border: 1px #0066FF;
+}
+
+form.new div table thead tr {
+    padding: 10px;
+    text-align: center;
+}
+
+form.new div table tbody tr {
+    padding: 4px;
+}
+
+form.new div table tbody tr td img {
+    margin: 0 auto;
+}
+
+form.new div input.inputFile {
+    width: 211px;
+}
+
+form.new div select.selectOne, form div select.selectMultiple {
+    width: 211px;
+    padding: 1px 3px;
+}
+
+form.new div input.inputCheckbox, form div input.inputRadio, input.inputCheckbox, input.inputRadio {
+    display: inline;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    border-width: 0;
+    padding: 0;
+    margin: 0 0 0 140px;
+}
+
+form.new div small {
+    display: block;
+    margin: 0 0 5px 142px;
+    padding: 1px 3px;
+    font-size: 88%;
+    zoom: 1;
+}

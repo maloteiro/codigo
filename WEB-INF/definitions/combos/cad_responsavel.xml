@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<COMBO>
+  <DESCRIPTION>Combo: cad_responsavel</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT &#xD;
+ tbl_responsavel.seq_responsavel, tbl_responsavel.nom_responsavel_nome &#xD;
+FROM tbl_responsavel&#xD;
+WHERE (tbl_responsavel.flg_responsavel_ativo = 'S')&#xD;
+and tbl_responsavel.flg_responsavel_excluido='N'&#xD;
+ORDER BY tbl_responsavel.nom_responsavel_nome </SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <KEY>|seq_responsavel|</KEY>
+  <TEXT>|nom_responsavel_nome|</TEXT>
+</COMBO>
+

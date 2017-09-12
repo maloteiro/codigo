@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<GRID TYPE="SQL">
+  <DESCRIPTION>Grid SQL: cad_consulta_servidor</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT &#xD;
+ tbl_servidor.seq_servidor, &#xD;
+ tbl_servidor.seq_sistema,&#xD;
+ aux_sistema.dsc_sistema_descricao, &#xD;
+ tbl_servidor.nom_servidor_nome, &#xD;
+ tbl_servidor.dsc_servidor_funcao, &#xD;
+ tbl_servidor.txt_servidor_descricao, &#xD;
+ tbl_servidor.dsc_servidor_rede, &#xD;
+ tbl_servidor.nom_servidor_nome_dns, &#xD;
+ tbl_servidor.num_servidor_disco, &#xD;
+ tbl_servidor.txt_servidor_risco, &#xD;
+ tbl_servidor.flg_servidor_impacto, &#xD;
+ tbl_servidor.flg_servidor_urgencia, &#xD;
+ tbl_servidor.flg_servidor_atuacao_noc, &#xD;
+ tbl_servidor.txt_servidor_noc_procedimento,&#xD;
+ tbl_servidor.flg_servidor_ativo &#xD;
+FROM tbl_servidor&#xD;
+inner join aux_sistema on tbl_servidor.seq_sistema=aux_sistema.seq_sistema&#xD;
+where (tbl_servidor.nom_servidor_nome like '%|tmp.argumento_pesquisa|%'&#xD;
+or tbl_servidor.dsc_servidor_funcao like '%|tmp.argumento_pesquisa|%'&#xD;
+or tbl_servidor.txt_servidor_descricao like '%|tmp.argumento_pesquisa|%'&#xD;
+or tbl_servidor.dsc_servidor_rede like '%|tmp.argumento_pesquisa|%'&#xD;
+or tbl_servidor.nom_servidor_nome_dns like '%|tmp.argumento_pesquisa|%'&#xD;
+or tbl_servidor.txt_servidor_noc_procedimento like '%|tmp.argumento_pesquisa|%'&#xD;
+or aux_sistema.dsc_sistema_descricao like '%|tmp.argumento_pesquisa|%')&#xD;
+AND flg_servidor_excluido='N'</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <HDISPOSITION>H</HDISPOSITION>
+  <CONTENT>
+    <UNIQUE />
+    <START><![CDATA[<table align="center" id="tb_entrevista" class="display dataTables">
+  <thead>
+    <tr>            	
+      <th>
+        <b>Nome</b>
+      </th>                            	
+      <th>
+        <b>Sistema Operacional</b>
+      </th>
+      <th>
+        <b>Ativo</b>
+      </th>             
+      
+      <th width="1%">
+        <b>Ações</b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+]]></START>
+    <ROWSTART><![CDATA[<tr>
+]]></ROWSTART>
+    <REGISTER><![CDATA[<td width="40%">
+  <b>|nom_servidor_nome|</b>
+</td>
+<td align="left" width="150px">
+  <b>|dsc_sistema_descricao|</b>
+</td>
+<td width="150px">
+  <b>|$if(|flg_servidor_ativo|==S,SIM,NÃO)$|</b>
+</td>                         
+
+<td align="center" width="150px">
+  <img src="/|wi.proj.id|/imgs/icones/page_white_edit.png" title="Editar" class="btn_editar tooltip" onclick="wiOpen('/|wi.proj.id|/cadastro/servidor/cadastro.wsp?tmp.id=|seq_servidor|')"/>
+  <img src="/|wi.proj.id|/imgs/icones/application_go.png" title="IR" class="btn_editar tooltip" onclick="wiOpen('/|wi.proj.id|/publico/comunicacao.wsp?tmp.servidor=|seq_servidor|','_publico')"/>
+</td>
+]]></REGISTER>
+    <NOREGISTER />
+    <NOROW />
+    <ROWEND><![CDATA[</tr>
+]]></ROWEND>
+    <END><![CDATA[	</tbody>
+</table>
+]]></END>
+  </CONTENT>
+</GRID>
+

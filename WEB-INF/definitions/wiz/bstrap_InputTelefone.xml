@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<WIZ>
+  <CONTENT><![CDATA[<div class="form-group">  
+  
+    <label>|wiz[1].Label={label}|</label>
+  <input class="form-control telefone |wiz.Obrigatório.combo={Sim[required]},Não[n]|" name="|wiz[2].Nome|" id="|wiz[3].ID|" value="|wiz[4].Valor|" placeholder="|wiz[1].Label={label}|" />
+  
+</div>]]></CONTENT>
+</WIZ>
+

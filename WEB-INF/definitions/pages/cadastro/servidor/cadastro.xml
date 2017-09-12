@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Cadastro de Servidores / Hosts</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>OFF</NOLOGIN>
+    <SECURITY>ON</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <DESCRIPTION>Objeto tmp.edt</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>tmp.edt</WIOBJ>
+        <SQL>SELECT 	tbl_servidor.seq_sistema, &#xD;
+		tbl_servidor.nom_servidor_nome, &#xD;
+ 		tbl_servidor.dsc_servidor_funcao, &#xD;
+        tbl_servidor.txt_servidor_descricao, &#xD;
+        tbl_servidor.dsc_servidor_rede, &#xD;
+ 		tbl_servidor.nom_servidor_nome_dns, &#xD;
+        tbl_servidor.num_servidor_disco, &#xD;
+        tbl_servidor.txt_servidor_risco, &#xD;
+ 		tbl_servidor.flg_servidor_impacto, &#xD;
+        tbl_servidor.flg_servidor_urgencia, &#xD;
+        tbl_servidor.flg_servidor_atuacao_noc, &#xD;
+ 		tbl_servidor.txt_servidor_noc_procedimento, &#xD;
+ 		tbl_servidor.flg_servidor_ativo,&#xD;
+ 		tbl_servidor.dat_data_cadastro, &#xD;
+        tbl_servidor.seq_usuario_cadastro, &#xD;
+ 		tbl_servidor.dat_data_alteracao, &#xD;
+        tbl_servidor.seq_usuario_alteracao, &#xD;
+        tbl_servidor.cod_token_codigo,&#xD;
+ 		tbl_servidor.tip_servidor_tipo&#xD;
+FROM tbl_servidor&#xD;
+WHERE (tbl_servidor.seq_servidor = ?|tmp.id|)&#xD;
+AND (tbl_servidor.flg_servidor_excluido='N')</SQL>
+        <SQLFILTER>%*?'</SQLFILTER>
+        <DATABASE>principal</DATABASE>
+      </OBJECT>
+    </OBJECTS>
+    <SETS>
+      <SET SEQ="1">
+        <DESCRIPTION>Gravar tmp.tabs</DESCRIPTION>
+        <CONDITION>|tmp.id|!=</CONDITION>
+        <WIOBJ>tmp.tabs</WIOBJ>
+        <IFTRUE>&lt;div id="tabs"&gt;&#xD;
+	  &lt;ul&gt;                        &#xD;
+		  &lt;li&gt;&lt;a href="#tabs-1"&gt;Desastre e Alta&lt;/a&gt;&lt;/li&gt;&#xD;
+                  &lt;li&gt;&lt;a href="#tabs-2"&gt;Média e Atenção&lt;/a&gt;&lt;/li&gt;&#xD;
+	  &lt;/ul&gt;&#xD;
+	  &lt;div id="tabs-1"&gt;&#xD;
+&lt;table align="center" width="100%"&gt;&#xD;
+  &lt;tr&gt;&#xD;
+    &lt;td align="center"&gt;      &#xD;
+      &lt;button type="button" name="tmp.btn_add_novo" id="btn_add_novo" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para nova escala" alt="Clique no botão para nova escala" onclick="wiOpen('/|wi.proj.id|/cadastro/servidor/escala.wsp?tmp.seq_servidor=|tmp.id|&amp;tmp.tip_escala_evento=D');"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Novo&lt;/span&gt;&#xD;
+      &lt;/button&gt;&#xD;
+    &lt;/td&gt;						&#xD;
+  &lt;/tr&gt;&#xD;
+&lt;/table&gt;&#xD;
+&#xD;
+		 &lt;p&gt;&#xD;
+		  |grid.aux_consulta_escala_desastre|&#xD;
+		 &lt;/p&gt;&#xD;
+		 &#xD;
+	  &lt;/div&gt;&#xD;
+&lt;div id="tabs-2"&gt;&#xD;
+&lt;table align="center" width="100%"&gt;&#xD;
+  &lt;tr&gt;&#xD;
+    &lt;td align="center"&gt;      &#xD;
+      &lt;button type="button" name="tmp.btn_add_novo_atencao" id="btn_add_novo_atencao" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para nova escala" alt="Clique no botão para nova escala" onclick="wiOpen('/|wi.proj.id|/cadastro/servidor/escala.wsp?tmp.seq_servidor=|tmp.id|&amp;tmp.tip_escala_evento=A');"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Novo&lt;/span&gt;&#xD;
+      &lt;/button&gt;&#xD;
+    &lt;/td&gt;						&#xD;
+  &lt;/tr&gt;&#xD;
+&lt;/table&gt;&#xD;
+&#xD;
+		 &lt;p&gt;&#xD;
+		  |grid.aux_consulta_escala_atencao|&#xD;
+		 &lt;/p&gt;&#xD;
+  &lt;/div&gt;&#xD;
+		  &#xD;
+		  &#xD;
+&#xD;
+&#xD;
+ </IFTRUE>
+      </SET>
+    </SETS>
+    <GRIDREFS>
+      <GRIDREF SEQ="1">
+        <GRIDID>aux_consulta_escala_desastre</GRIDID>
+        <CONDITION>true</CONDITION>
+        <TYPE>SQLS</TYPE>
+      </GRIDREF>
+      <GRIDREF SEQ="2">
+        <GRIDID>aux_consulta_escala_atencao</GRIDID>
+        <CONDITION>true</CONDITION>
+        <TYPE>SQLS</TYPE>
+      </GRIDREF>
+      <GRIDREF SEQ="3">
+        <GRIDID>aux_consulta_rede</GRIDID>
+        <CONDITION>true</CONDITION>
+        <TYPE>SQLS</TYPE>
+      </GRIDREF>
+    </GRIDREFS>
+    <INDEX>
+      <GRIDREFS SEQ="1" />
+      <GRIDREFS SEQ="2" />
+      <GRIDREFS SEQ="3" />
+      <SETS SEQ="1" />
+      <OBJECTS SEQ="1" />
+    </INDEX>
+  </PREPAGE>
+  <POSPAGE>
+    <UPDATES>
+      <UPDATE SEQ="1">
+        <DESCRIPTION>Insert do objeto tmp.edt</DESCRIPTION>
+        <CONDITION>|tmp.id|= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQL>INSERT INTO tbl_servidor (&#xD;
+	 seq_sistema, &#xD;
+     nom_servidor_nome, &#xD;
+     dsc_servidor_funcao, &#xD;
+     txt_servidor_descricao, &#xD;
+     dsc_servidor_rede, &#xD;
+     nom_servidor_nome_dns,&#xD;
+     num_servidor_disco, &#xD;
+     txt_servidor_risco, &#xD;
+     flg_servidor_impacto, &#xD;
+     flg_servidor_urgencia, &#xD;
+     flg_servidor_atuacao_noc, &#xD;
+     txt_servidor_noc_procedimento,&#xD;
+     flg_servidor_ativo,&#xD;
+     dat_data_cadastro, &#xD;
+     seq_usuario_cadastro, &#xD;
+     cod_token_codigo,&#xD;
+     tip_servidor_tipo,&#xD;
+     flg_servidor_excluido&#xD;
+) VALUES (&#xD;
+	 ?|tmp.edt.seq_sistema|, &#xD;
+     ?|tmp.edt.nom_servidor_nome|, &#xD;
+     ?|tmp.edt.dsc_servidor_funcao|, &#xD;
+     ?|tmp.edt.txt_servidor_descricao|, &#xD;
+     ?|tmp.edt.dsc_servidor_rede|, &#xD;
+     ?|tmp.edt.nom_servidor_nome_dns|, &#xD;
+     ?|tmp.edt.num_servidor_disco|, &#xD;
+     ?|tmp.edt.txt_servidor_risco|, &#xD;
+     ?|tmp.edt.flg_servidor_impacto|, &#xD;
+     ?|tmp.edt.flg_servidor_urgencia|, &#xD;
+     ?|tmp.edt.flg_servidor_atuacao_noc|, &#xD;
+     ?|tmp.edt.txt_servidor_noc_procedimento|,&#xD;
+     ?|tmp.edt.flg_servidor_ativo|,&#xD;
+     now(), &#xD;
+     ?|pvt.login.seq_usuario|, &#xD;
+     ?|wi.token|,&#xD;
+     ?|tmp.edt.tip_servidor_tipo|,&#xD;
+     'N'&#xD;
+)</SQL>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>Registro inserido com sucesso</MSGTRUE>
+        <MSGFALSE>
+          <NOMESSAGE>|wi.sql.msg|</NOMESSAGE>
+        </MSGFALSE>
+        <AUTOCOMMIT>OFF</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+      </UPDATE>
+      <UPDATE SEQ="2">
+        <DESCRIPTION>Update do objeto tmp.edt</DESCRIPTION>
+        <CONDITION>|tmp.id|!= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQL>UPDATE tbl_servidor&#xD;
+ SET seq_sistema = ?|tmp.edt.seq_sistema|, &#xD;
+ 	 nom_servidor_nome = ?|tmp.edt.nom_servidor_nome|, &#xD;
+     dsc_servidor_funcao = ?|tmp.edt.dsc_servidor_funcao|, &#xD;
+     txt_servidor_descricao = ?|tmp.edt.txt_servidor_descricao|, &#xD;
+     dsc_servidor_rede = ?|tmp.edt.dsc_servidor_rede|, &#xD;
+     nom_servidor_nome_dns = ?|tmp.edt.nom_servidor_nome_dns|, &#xD;
+     num_servidor_disco = ?|tmp.edt.num_servidor_disco|, &#xD;
+     txt_servidor_risco = ?|tmp.edt.txt_servidor_risco|, &#xD;
+     flg_servidor_impacto = ?|tmp.edt.flg_servidor_impacto|, &#xD;
+     flg_servidor_urgencia = ?|tmp.edt.flg_servidor_urgencia|, &#xD;
+     flg_servidor_atuacao_noc = ?|tmp.edt.flg_servidor_atuacao_noc|, &#xD;
+     txt_servidor_noc_procedimento = ?|tmp.edt.txt_servidor_noc_procedimento|,&#xD;
+     flg_servidor_ativo=?|tmp.edt.flg_servidor_ativo|,&#xD;
+     dat_data_alteracao = now(), &#xD;
+     seq_usuario_alteracao = ?|pvt.login.seq_usuario|,&#xD;
+     tip_servidor_tipo = ?|tmp.edt.tip_servidor_tipo|&#xD;
+ WHERE (tbl_servidor.seq_servidor = ?|tmp.id|)</SQL>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>Registro alterado com sucesso</MSGTRUE>
+        <MSGFALSE>
+          <NOMESSAGE>|wi.sql.msg|</NOMESSAGE>
+        </MSGFALSE>
+        <AUTOCOMMIT>OFF</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+      </UPDATE>
+      <UPDATE SEQ="3">
+        <DESCRIPTION>Adicionar as placas de rede</DESCRIPTION>
+        <CONDITION>|wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <SIZE>|tmp.qtd|</SIZE>
+        <SQL>INSERT INTO aux_servidor_rede (&#xD;
+	seq_servidor, &#xD;
+  	num_rede_ip&#xD;
+) VALUES (&#xD;
+	?|tmp.id|, &#xD;
+  	?|tmp.rede.valor|&#xD;
+)</SQL>
+        <AUTOCOMMIT>ON</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+        <PREFIX>tmp.rede</PREFIX>
+        <WIOBJ>tmp.resp_update</WIOBJ>
+        <ROWCONDITION>|tmp.rede.valor|!=</ROWCONDITION>
+        <MSGTRUE>Dados gravados com sucesso.</MSGTRUE>
+      </UPDATE>
+      <UPDATE SEQ="4">
+        <DESCRIPTION>Remover as redes</DESCRIPTION>
+        <CONDITION>|wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <SQL>DELETE FROM aux_servidor_rede&#xD;
+ WHERE (seq_servidor = ?|tmp.id|)</SQL>
+        <AUTOCOMMIT>ON</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+        <WIOBJ>tmp.resp_delete</WIOBJ>
+        <MSGTRUE>Dados excluídos com sucesso.</MSGTRUE>
+      </UPDATE>
+      <UPDATE SEQ="5">
+        <DESCRIPTION>Update tmp.resp</DESCRIPTION>
+        <CONDITION>|tmp.id|!= &amp;&amp; |tmp.action|=delete &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <SQL>update tbl_servidor&#xD;
+set flg_servidor_excluido='S'&#xD;
+where seq_servidor=?|tmp.id|</SQL>
+        <AUTOCOMMIT>ON</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>Dados excluído com sucesso.</MSGTRUE>
+      </UPDATE>
+    </UPDATES>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <CONDITION>|tmp.id|= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <DESCRIPTION>Localiza chaves do registro recém-inserido</DESCRIPTION>
+        <SQLFILTER>%*?'"</SQLFILTER>
+        <SQL>SELECT tbl_servidor.seq_servidor AS key1&#xD;
+ FROM tbl_servidor&#xD;
+ WHERE cod_token_codigo = ?|wi.token|&#xD;
+ ORDER BY tbl_servidor.seq_servidor DESC</SQL>
+        <WIOBJ>tmp.wi</WIOBJ>
+      </OBJECT>
+    </OBJECTS>
+    <SETS>
+      <SET SEQ="1">
+        <CONDITION>|tmp.id|= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DESCRIPTION>Grava chaves em variáveis</DESCRIPTION>
+        <WIOBJ>tmp.id</WIOBJ>
+        <IFTRUE>|tmp.wi.key1|</IFTRUE>
+      </SET>
+    </SETS>
+    <INDEX>
+      <UPDATES SEQ="1" />
+      <UPDATES SEQ="2" />
+      <OBJECTS SEQ="1" />
+      <SETS SEQ="1" />
+      <UPDATES SEQ="4" />
+      <UPDATES SEQ="3" />
+      <UPDATES SEQ="5" />
+    </INDEX>
+  </POSPAGE>
+</PAGE>
+

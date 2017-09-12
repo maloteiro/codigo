@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DOWNLOAD TYPE="LOCAL">
+  <DESCRIPTION>Download Local: down_concurso_anexo</DESCRIPTION>
+  <DIRECTORY>/|wi.webapps.path|/arquivos_prova/concurso/</DIRECTORY>
+  <FILE>|tmp.down.dsc_anexo_link|</FILE>
+  <REALNAME>|tmp.down.nom_anexo_nome|</REALNAME>
+  <MIME>attachment</MIME>
+</DOWNLOAD>
+

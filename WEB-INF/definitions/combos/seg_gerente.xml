@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<COMBO>
+  <DESCRIPTION>Combo: seg_gerente</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>select seq_usuario, dsc_usuario_nome&#xD;
+from seg_usuario&#xD;
+where seq_perfil='4' and&#xD;
+ flg_usuario_status='1'</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <KEY>|seq_usuario|</KEY>
+  <TEXT>|dsc_usuario_nome|</TEXT>
+</COMBO>
+

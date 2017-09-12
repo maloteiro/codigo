@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<GRID TYPE="SQL">
+  <DESCRIPTION>Grid SQL: seg_consulta_usuario</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT * &#xD;
+FROM seg_usuario &#xD;
+where dsc_usuario_nome like '%|tmp.argumento_pesquisa|%'&#xD;
+or dsc_usuario_email like '%|tmp.argumento_pesquisa|%'&#xD;
+or dsc_usuario_email2 like '%|tmp.argumento_pesquisa|%'</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <HDISPOSITION>H</HDISPOSITION>
+  <CONTENT>
+    <UNIQUE />
+    <START><![CDATA[<table align="center" id="tb_usuario" class="display dataTables">
+  <thead>
+    <tr>            	
+      <th>
+        <b>Nome</b>
+      </th>                            	
+      <th>
+        <b>E-mail</b>
+      </th>
+      <th>
+        <b>CPF</b>
+      </th>
+      <th>
+        <b>Ativo</b>
+      </th>
+      <th width="1%">
+        <b>Ações</b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+]]></START>
+    <ROWSTART><![CDATA[<tr>
+]]></ROWSTART>
+    <REGISTER><![CDATA[<td>
+<b>|dsc_usuario_nome|</b>
+</td>
+<td>
+  <b>|dsc_usuario_email|</b>
+</td>                
+<td>
+  <b>|dsc_usuario_cpf|</b>
+</td> 
+<td align="left">
+  <b>|$if(|flg_usuario_status|==1,SIM,NÃO)$|</b>
+</td>
+<td align="center">
+  <img src="/|wi.proj.id|/imgs/icones/page_white_edit.png" title="Editar" class="btn_editar tooltip" onclick="wiOpen('/|wi.proj.id|/seguranca/usuario/cadastro.wsp?tmp.id=|seq_usuario|')"/>				
+</td>
+]]></REGISTER>
+    <NOREGISTER />
+    <NOROW />
+    <ROWEND><![CDATA[</tr>
+]]></ROWEND>
+    <END><![CDATA[	</tbody>
+</table>
+]]></END>
+  </CONTENT>
+</GRID>
+

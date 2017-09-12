@@ -1,0 +1,79 @@
+.ui-wrapper { border: 1px solid #50A029; }
+.ui-wrapper input, .ui-wrapper textarea { border: 0; }
+
+/*area*/
+ul.ui-accordion-container { margin: 0; padding: 0; list-style-type: none; }
+ul.ui-accordion-container li { margin: 0; margin-bottom: 2px; padding: 0; background-image: url(i/accordion-left.png); background-repeat: no-repeat; }
+ul.ui-accordion-container li a.ui-accordion-link { display: block; padding-left: 5px; margin-right: 3px; /*height: 28px;*/ background-image: url(i/accordion-middle.png); color: #000; text-decoration: none; line-height: 28px; }
+ul.ui-accordion-container li .ui-accordion-right { display: block; background-image: url(i/accordion-right.png); position: absolute; top: 0px; right: 0px; height: 28px; width: 3px;  }
+/*
+ul.ui-accordion-container li:hover { background-image: url(i/accordion-left-over.png); }
+ul.ui-accordion-container li:hover a.ui-accordion-link { background-image: url(i/accordion-middle-over.png); }
+ul.ui-accordion-container li:hover .ui-accordion-right { background-image: url(i/accordion-right-over.png); }
+*/
+ul.ui-accordion-container li.active { background-image: url(i/accordion-left-act.png); }
+ul.ui-accordion-container li.active a.ui-accordion-link { background-image: url(i/accordion-middle-act.png); }
+ul.ui-accordion-container li.active .ui-accordion-right { background-image: url(i/accordion-right-act.png); }
+
+/*item*/
+ul.ui-accordion-container-item { margin: 0; padding: 0; list-style-type: none; }
+ul.ui-accordion-container-item li { margin: 0; margin-bottom: 2px; padding: 0; background-image: url(i/accordion-left-over.png); background-repeat: no-repeat; }
+ul.ui-accordion-container-item li a.ui-accordion-link { display: block; padding-left: 5px; margin-right: 3px; /*height: 28px;*/ background-image: url(i/accordion-middle-over.png); color: #000; text-decoration: none; line-height: 28px; }
+ul.ui-accordion-container-item li .ui-accordion-right { display: block; background-image: url(i/accordion-right-over.png); position: absolute; top: 0px; right: 0px; height: 28px; width: 3px;  }
+/*
+ul.ui-accordion-container-item li:hover { background-image: url(i/accordion-left-over.png); }
+ul.ui-accordion-container-item li:hover a.ui-accordion-link { background-image: url(i/accordion-middle-over.png); }
+ul.ui-accordion-container-item li:hover .ui-accordion-right { background-image: url(i/accordion-right-over.png); }
+*/
+ul.ui-accordion-container-item li.active { background-image: url(i/accordion-left-act.png); }
+ul.ui-accordion-container-item li.active a.ui-accordion-link { background-image: url(i/accordion-middle-act.png); }
+ul.ui-accordion-container-item li.active .ui-accordion-right { background-image: url(i/accordion-right-act.png); }
+
+/*requisito*/
+ul.ui-accordion-container-requisito { margin: 0; padding: 0; list-style-type: none; }
+ul.ui-accordion-container-requisito li { margin: 0; margin-bottom: 2px; padding: 0; background-image: url(i/accordion-left-over-2.png); background-repeat: no-repeat; }
+ul.ui-accordion-container-requisito li a.ui-accordion-link { display: block; padding-left: 5px; margin-right: 3px; /*height: 28px;*/ background-image: url(i/accordion-middle-over-2.png); color: #000; text-decoration: none; line-height: 28px; }
+ul.ui-accordion-container-requisito li .ui-accordion-right { display: block; background-image: url(i/accordion-right-over-2.png); position: absolute; top: 0px; right: 0px; height: 28px; width: 3px;  }
+/*
+ul.ui-accordion-container-item li:hover { background-image: url(i/accordion-left-over.png); }
+ul.ui-accordion-container-item li:hover a.ui-accordion-link { background-image: url(i/accordion-middle-over.png); }
+ul.ui-accordion-container-item li:hover .ui-accordion-right { background-image: url(i/accordion-right-over.png); }
+*/
+ul.ui-accordion-container-requisito li.active { background-image: url(i/accordion-left-act.png); }
+ul.ui-accordion-container-requisito li.active a.ui-accordion-link { background-image: url(i/accordion-middle-act.png); }
+ul.ui-accordion-container-requisito li.active .ui-accordion-right { background-image: url(i/accordion-right-act.png); }
+
+/*Questao*/
+ul.ui-accordion-container-questao { margin: 0; padding: 0; list-style-type: none; }
+ul.ui-accordion-container-questao li { margin: 0; margin-bottom: 2px; padding: 0; background-image: url(i/accordion-left-over-3.png); background-repeat: no-repeat; }
+ul.ui-accordion-container-questao li a.ui-accordion-link { display: block; padding-left: 5px; margin-right: 3px; /*height: 28px;*/ background-image: url(i/accordion-middle-over-3.png); color: #000; text-decoration: none; line-height: 28px; }
+ul.ui-accordion-container-questao li .ui-accordion-right { display: block; background-image: url(i/accordion-right-over-3.png); position: absolute; top: 0px; right: 0px; height: 28px; width: 3px;  }
+
+/*
+ul.ui-accordion-container-item li:hover { background-image: url(i/accordion-left-over.png); }
+ul.ui-accordion-container-item li:hover a.ui-accordion-link { background-image: url(i/accordion-middle-over.png); }
+ul.ui-accordion-container-item li:hover .ui-accordion-right { background-image: url(i/accordion-right-over.png); }
+*/
+ul.ui-accordion-container-questao li.active { background-image: url(i/accordion-left-act.png); }
+ul.ui-accordion-container-questao li.active a.ui-accordion-link { background-image: url(i/accordion-middle-act.png); }
+ul.ui-accordion-container-questao li.active .ui-accordion-right { background-image: url(i/accordion-right-act.png); }
+
+
+/*
+ .ui-wrapper { border: 1px solid #50A029; }
+.ui-wrapper input, .ui-wrapper textarea { border: 0; }
+
+ul.ui-accordion-container { margin: 0; padding: 0; list-style-type: none; }
+ul.ui-accordion-container li { margin: 0; margin-bottom: 2px; padding: 0; background-image: url(i/accordion-left.png); background-repeat: no-repeat; }
+ul.ui-accordion-container li a.ui-accordion-link { display: block; padding-left: 5px; margin-right: 3px; height: 28px; background-image: url(i/accordion-middle.png); color: #000; text-decoration: none; line-height: 28px; }
+ul.ui-accordion-container li .ui-accordion-right { display: block; background-image: url(i/accordion-right.png); position: absolute; top: 0px; right: 0px; height: 28px; width: 3px;  }
+
+ul.ui-accordion-container li:hover { background-image: url(i/accordion-left-over.png); }
+ul.ui-accordion-container li:hover a.ui-accordion-link { background-image: url(i/accordion-middle-over.png); }
+ul.ui-accordion-container li:hover .ui-accordion-right { background-image: url(i/accordion-right-over.png); }
+
+ul.ui-accordion-container li.active { background-image: url(i/accordion-left-act.png); }
+ul.ui-accordion-container li.active a.ui-accordion-link { background-image: url(i/accordion-middle-act.png); }
+ul.ui-accordion-container li.active .ui-accordion-right { background-image: url(i/accordion-right-act.png); }
+
+ */

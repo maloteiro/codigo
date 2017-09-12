@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<UPLOAD TYPE="LOCAL">
+  <DESCRIPTION>Upload da LogoMarca da examinadora</DESCRIPTION>
+  <DIRECTORY>/|wi.webapps.path|/arquivos_prova</DIRECTORY>
+  <FILE>|tmp.dsc_examinadora_logo|.|tmp.edt.dsc_examinadora_logo.ext|</FILE>
+  <CREATEDIR>ON</CREATEDIR>
+  <FORMFIELD>tmp.edt.dsc_examinadora_logo</FORMFIELD>
+</UPLOAD>
+

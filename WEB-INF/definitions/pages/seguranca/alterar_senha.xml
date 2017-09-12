@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Nova senha</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>ON</NOLOGIN>
+    <SECURITY>OFF</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <POSPAGE>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <DESCRIPTION>Objeto tmp.em</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>tmp.em</WIOBJ>
+        <SQL>select count(0) qtd&#xD;
+from seg_usuario&#xD;
+where dsc_usuario_email='|tmp.user|'</SQL>
+        <SQLFILTER>%*?'</SQLFILTER>
+        <DATABASE>principal</DATABASE>
+      </OBJECT>
+    </OBJECTS>
+    <INDEX>
+      <OBJECTS SEQ="1" />
+      <SETS SEQ="1" />
+      <UPDATES SEQ="1" />
+      <SENDMAILS SEQ="1" />
+      <REDIRS SEQ="1" />
+    </INDEX>
+    <SETS>
+      <SET SEQ="1">
+        <DESCRIPTION>Gravar tmp.senha</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>tmp.senha</WIOBJ>
+        <IFTRUE>|$random(8,false)$|</IFTRUE>
+      </SET>
+    </SETS>
+    <UPDATES>
+      <UPDATE SEQ="1">
+        <DESCRIPTION>Update tmp.resp</DESCRIPTION>
+        <CONDITION>|tmp.em.qtd|&gt;0</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <SQL>update seg_usuario&#xD;
+set dsc_usuario_senha=md5('|tmp.senha|')&#xD;
+where dsc_usuario_email='|tmp.user|'</SQL>
+        <AUTOCOMMIT>ON</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>A senha foi enviada para o seu e-mail, por favor verifique.</MSGTRUE>
+      </UPDATE>
+    </UPDATES>
+    <SENDMAILS>
+      <SENDMAIL SEQ="1">
+        <DESCRIPTION>Enviar e-mail para |tmp.user|</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <HOSTID>email</HOSTID>
+        <FROM>citcomunica@ebserh.gov.br</FROM>
+        <SENDER>CIT Comunica</SENDER>
+        <SUBJECT>[CITComunica] Nova senha</SUBJECT>
+        <TO>|tmp.user|</TO>
+        <MIME>HTML</MIME>
+        <EACHONE>OFF</EACHONE>
+        <NOTIFICATION>OFF</NOTIFICATION>
+        <ATTACHREMOVE>OFF</ATTACHREMOVE>
+        <HTMLCONTENT><![CDATA[Prezado(a),<br />
+<br />
+Recentemente, a senha de sua ID do sistema CIT Comunica foi alterada.<br />
+Segue sua nova senha: <strong>|tmp.senha|</strong><br />
+<br />
+<br />
+Att,]]></HTMLCONTENT>
+      </SENDMAIL>
+    </SENDMAILS>
+    <REDIRS>
+      <CONDITIONALS>
+        <REDIR SEQ="1">
+          <DESCRIPTION>Desviar para index.wsp</DESCRIPTION>
+          <CONDITION>false</CONDITION>
+          <GO>index.wsp</GO>
+        </REDIR>
+      </CONDITIONALS>
+    </REDIRS>
+  </POSPAGE>
+</PAGE>
+

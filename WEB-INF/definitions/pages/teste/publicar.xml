@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Página teste/publicar</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>ON</NOLOGIN>
+    <SECURITY>OFF</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <POSPAGE>
+    <UPLOADREFS>
+      <UPLOADREF SEQ="1">
+        <UPLOADID>UplDoc</UPLOADID>
+        <CONDITION>|tmp.publicar| = publicar &amp;&amp; |tmp.arquivo| !=</CONDITION>
+        <TYPE>LOCAL</TYPE>
+      </UPLOADREF>
+    </UPLOADREFS>
+    <INDEX>
+      <UPLOADREFS SEQ="1" />
+    </INDEX>
+  </POSPAGE>
+  <PREPAGE>
+    <CONNECTORS>
+      <CONNECTOR SEQ="1">
+        <DESCRIPTION>Conector Java br.com.webinside.modules.search.WIPublisher</DESCRIPTION>
+        <CONDITION>|tmp.publicar| = publicar &amp;&amp; |wi.upl.ok| = true &amp;&amp; |tmp.arquivo| !=</CONDITION>
+        <CLASSNAME>br.com.webinside.modules.search.WIPublisher</CLASSNAME>
+        <INPREPAGE>ON</INPREPAGE>
+        <PARAMETERS>
+          <PARAMETER ID="tmp.indexName" VALUE="documentos" />
+          <PARAMETER ID="tmp.publishingDir" VALUE="/|wi.webapps.path|/temis_arquivos/" />
+        </PARAMETERS>
+      </CONNECTOR>
+    </CONNECTORS>
+    <INDEX>
+      <CONNECTORS SEQ="1" />
+    </INDEX>
+  </PREPAGE>
+</PAGE>
+

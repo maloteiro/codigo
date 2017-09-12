@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LAYOUT>
+  <HEAD>
+    <SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/js/page.js">***EMPTY_TEXT***</SCRIPT>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="expires" CONTENT="0" />
+    <META HTTP-EQUIV="cache-control" CONTENT="no-cache" />
+    <TITLE>|wi.page.title|</TITLE>
+    <TEMPLATE>padrao_em_branco.html</TEMPLATE>
+  </HEAD>
+  <INDEX>
+    <GENERICFIELDS SEQ="1" />
+  </INDEX>
+  <GENERICFIELDS>
+    <GENERICFIELD SEQ="1">
+      <NAME>conteudo</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;div class="box_cabecalho"&gt;&#xD;
+  |wi.page.title|&#xD;
+&lt;/div&gt;&#xD;
+&#xD;
+&lt;div class="box"&gt;&#xD;
+  &lt;center&gt;&#xD;
+	&lt;!--br&gt;	&#xD;
+		&lt;table&gt;	&#xD;
+			&lt;tr&gt;&#xD;
+				&lt;td&gt; &lt;/td&gt;&#xD;
+	            &#xD;
+				&lt;td&gt;&#xD;
+                  &lt;img src="/|wi.proj.id|/imgs/cadeado_fechado.jpg"/&gt;&#xD;
+				&lt;/td&gt;&#xD;
+				&lt;td&gt;	&#xD;
+	                &lt;a href="#" alt="Alterar Senha" title="Alterar Senha" id="lnk_alterarSenha"&gt;Alterar Senha&lt;/a&gt;&#xD;
+	            &lt;/td&gt;	           &#xD;
+			&lt;/tr&gt;&#xD;
+		&lt;/table--&gt;&#xD;
+&#xD;
+&lt;br/&gt;&#xD;
+&lt;table&gt;&#xD;
+  &lt;tr&gt;&#xD;
+    &lt;td align="center" &gt;      &#xD;
+      &lt;button type="button" name="tmp.btn_alterar_senha" id="lnk_alterarSenha" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para alterar senha" alt="Clique no botão para alterar senha"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Alterar Senha&lt;/span&gt;&#xD;
+      &lt;/button&gt;      																	&#xD;
+    &lt;/td&gt;&#xD;
+    &lt;!--td align="center" &gt;      &#xD;
+      &lt;button type="button" name="tmp.btn_add_novo" id="btn_add_novo" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para novo cadastro" alt="Clique no botão para novo cadastro" onclick="wiOpen('/|wi.proj.id|/seguranca/usuario/nova_assinatura.wsp');"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Gerar Nova assinatura&lt;/span&gt;&#xD;
+      &lt;/button&gt;      																	&#xD;
+    &lt;/td--&gt;						&#xD;
+  &lt;/tr&gt;&#xD;
+&lt;/table&gt;&#xD;
+&#xD;
+		&#xD;
+	    &lt;script&gt;&#xD;
+	        $(document).ready(function(){&#xD;
+              $('#tbl_notificacao_processo').dataTable({&#xD;
+		            "bSort": true,&#xD;
+		            "bJQueryUI": true,&#xD;
+					"sPaginationType": "full_numbers",&#xD;
+		            "bLengthChange": false,&#xD;
+		            "oLanguage": {&#xD;
+		                "sUrl": "/|wi.proj.id|/libs/js/datatables/language/ptBR.txt"&#xD;
+		            },&#xD;
+		            "bStateSave": true,&#xD;
+		            "aoColumnDefs": [{&#xD;
+		                    "bSortable": false,&#xD;
+		                    "aTargets": [-1]&#xD;
+		                }]&#xD;
+		        });&#xD;
+              /*    	&#xD;
+	        	$(".btn_visualizar_notificacao").click(function(){&#xD;
+	        		//alert('aqui');&#xD;
+					var notificacao_id = $(this).parents("tr:first").attr("id");&#xD;
+					&#xD;
+					$.ajax({&#xD;
+						url: '?d=processos&amp;a=processos&amp;f=dadosNotificacao',&#xD;
+						type: 'POST',&#xD;
+						data: ({					&#xD;
+							seq_notificacao: notificacao_id&#xD;
+						}),&#xD;
+						success: function(txt){&#xD;
+							jQuery("#dialog-notificacao").hide();&#xD;
+							jQuery("#dialog-notificacao").dialog("destroy");&#xD;
+							jQuery("#dialog-notificacao").dialog({&#xD;
+								height: 'auto',&#xD;
+								width: 'auto',&#xD;
+								modal: true,&#xD;
+								resizable: false&#xD;
+							});&#xD;
+							$('#dialog-notificacao').html(txt);					&#xD;
+							return false;					&#xD;
+						}&#xD;
+					});	&#xD;
+                    });*/&#xD;
+	            jQuery("#dialog-alterarSenha").hide();&#xD;
+	            jQuery("#dialog-alterarSenha").dialog("destroy");&#xD;
+	            jQuery("#formAlteraSenha").validate({&#xD;
+	                rules: {&#xD;
+	                    "senha": "required",&#xD;
+	                    "confirmar_senha": {&#xD;
+	                        equalTo: "#senha"&#xD;
+	                    }&#xD;
+	                }&#xD;
+	            });&#xD;
+	            jQuery("#lnk_alterarSenha").click(function(){&#xD;
+	                jQuery("#dialog-alterarSenha").dialog({&#xD;
+	                    height: 'auto',&#xD;
+	                    modal: true,&#xD;
+	                    resizable: false&#xD;
+	                });&#xD;
+	                return false;&#xD;
+	            });&#xD;
+              /*&#xD;
+	            $('#acessar_como').change(function(){&#xD;
+	            	wiOpen('?a=usuario&amp;d=usuario&amp;f=formTrocaPerfil&amp;acessar_como='+$(this).val())&#xD;
+                    });*/&#xD;
+	        });&#xD;
+	    &lt;/script&gt;&#xD;
+	    &#xD;
+	    &lt;div class="box" id="dialog-alterarSenha" title="Alterar Senha" style="height: auto"&gt;&#xD;
+              &lt;form action="/|wi.proj.id|/|wi.page.id|.wsp" method="POST" name="formulario" id="formulario"&gt;&#xD;
+	        	&lt;input type="hidden" name="wi.token" id="wi.token" value="|wi.token|" /&gt;&#xD;
+				&lt;input type="hidden" name="wi.page.prev" id="wi.page.prev" value="|wi.page.id|" /&gt;								&#xD;
+	            &lt;input type="hidden" name="tmp.seq_usuario" id="tmp.seq_usuario" value="|pvt.login.seq_usuario|"&gt;&#xD;
+	            &lt;table&gt;&#xD;
+	                &lt;tr&gt;&#xD;
+	                    &lt;td align="right" class="linha1"&gt;&#xD;
+	                        Usuário:&#xD;
+	                    &lt;/td&gt;&#xD;
+	                    &lt;td class="linha1"&gt;&#xD;
+	                        |pvt.login.dsc_usuario_nome|&#xD;
+	                    &lt;/td&gt;&#xD;
+	                &lt;/tr&gt;&#xD;
+	                &lt;tr&gt;&#xD;
+	                    &lt;td align="right" class="linha2"&gt;&#xD;
+	                        Senha:&#xD;
+	                    &lt;/td&gt;&#xD;
+	                    &lt;td class="linha2"&gt;&#xD;
+	                        &lt;input type="password" class="text required" name="senha" id="senha" value="" size="20" maxlength="40"/&gt;&#xD;
+	                    &lt;/td&gt;&#xD;
+	                &lt;/tr&gt;&#xD;
+	                &lt;tr&gt;&#xD;
+	                    &lt;td align="right" class="linha1"&gt;&#xD;
+	                        Confirmar:&#xD;
+	                    &lt;/td&gt;&#xD;
+	                    &lt;td class="linha1"&gt;&#xD;
+	                        &lt;input type="password" class="text required" name="confirmar_senha" id="confirmar_senha" value="" size="20" maxlength="40"/&gt;&#xD;
+	                    &lt;/td&gt;&#xD;
+	                &lt;/tr&gt;&#xD;
+	                &lt;tr&gt;&#xD;
+	                    &lt;td colspan="2" align="center"&gt;&#xD;
+                          &lt;button type="submit" name="tmp.btn_gravar" id="btn_gravar" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão gravar os dados" alt="Clique no botão gravar os dados"&gt;&#xD;
+                            &lt;span class="ui-button-text"&gt;Alterar Senha&lt;/span&gt;&#xD;
+                          &lt;/button&gt;&#xD;
+	                        &lt;!--input type="submit" name="submit" value="Alterar Senha"--&gt;&#xD;
+	                    &lt;/td&gt;&#xD;
+	                &lt;/tr&gt;&#xD;
+	            	&lt;/table&gt;&#xD;
+	        	&lt;/form&gt;&#xD;
+	    	&lt;/div&gt;&#xD;
+		&#xD;
+		&lt;br&gt;&#xD;
+		&lt;table&gt;&#xD;
+			&lt;tr&gt;&#xD;
+				&lt;td&gt;&#xD;
+					&lt;img src="/|wi.proj.id|/imgs/kuzer.png" align="absmiddle" /&gt;&#xD;
+				&lt;/td&gt;&#xD;
+				&#xD;
+				&lt;td&gt;&#xD;
+					&lt;strong&gt;Usuario:&lt;/strong&gt; |pvt.login.dsc_usuario_nome|&#xD;
+					&lt;br&gt;&#xD;
+					&lt;strong&gt;E-mail:&lt;/strong&gt; |pvt.login.dsc_usuario_email|&#xD;
+					&lt;br&gt;&#xD;
+					&lt;strong&gt;CPF:&lt;/strong&gt; |pvt.login.dsc_usuario_cpf|&#xD;
+					&lt;br&gt;&#xD;
+					&lt;strong&gt;Perfil:&lt;/strong&gt; |pvt.login.dsc_perfil_nome|					 &#xD;
+				&lt;/td&gt;&#xD;
+			&lt;/tr&gt;&#xD;
+		&lt;/table&gt;&#xD;
+		&lt;br&gt;																&#xD;
+&lt;/center&gt;&#xD;
+&lt;/div&gt;&#xD;
+&lt;!--br /&gt;&#xD;
+&lt;div class="box_cabecalho"&gt;&#xD;
+  RAT a assinar&#xD;
+&lt;/div&gt;&#xD;
+&#xD;
+&lt;div class="box"&gt;&#xD;
+  |grid.cad_consulta_rat_assinar||grid.cad_consulta_rat_assinar_gerente|&#xD;
+&lt;/div--&gt;</VALUE>
+      <DATAFIELD TYPE="USR:$botoes.xml">USR:$botoes.xml</DATAFIELD>
+    </GENERICFIELD>
+  </GENERICFIELDS>
+</LAYOUT>
+

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LAYOUT>
+  <HEAD>
+    <SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/js/page.js">***EMPTY_TEXT***</SCRIPT>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="expires" CONTENT="0" />
+    <META HTTP-EQUIV="cache-control" CONTENT="no-cache" />
+    <TITLE>|wi.page.title|</TITLE>
+    <TEMPLATE>padrao_ac.html</TEMPLATE>
+    <CODE>&lt;SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/js/wievent.js"&gt;&lt;/SCRIPT&gt; &#xD;
+&#xD;
+&lt;script&gt;&#xD;
+  &#xD;
+  function seleciona(){&#xD;
+    var doc = document.forms[0];&#xD;
+    wiOpen('/|wi.proj.id|/|wi.page.id|.wsp?tmp.edt.seq_perfil='+doc['tmp.edt.seq_perfil'].value+'&amp;tmp.edt.seq_modulo='+doc['tmp.edt.seq_modulo'].value);&#xD;
+  }&#xD;
+&#xD;
+&#xD;
+  function salvar(obj){&#xD;
+    var doc = document.forms[0];&#xD;
+    //alert(doc[obj].checked);&#xD;
+    &#xD;
+    var evt = new WIEvent(); &#xD;
+    //evt.debug = true; // se desejar ver o debug da comunicação do WIEvent &#xD;
+    evt.writeobj("tmp.seq_perfil", doc['tmp.edt.seq_perfil'].value); &#xD;
+    evt.writeobj("tmp.seq_rotina", doc[obj].value);&#xD;
+    if(doc[obj].checked){&#xD;
+      	evt.updatedb("seg_insert_permissao"); &#xD;
+    	evt.execute();&#xD;
+      	evt.preread("tmp.resp");&#xD;
+        resposta = evt.readobj("tmp.resp");&#xD;
+        $('#resposta').html(resposta);&#xD;
+      	dialog.dialog( "open" );&#xD;
+      	&#xD;
+    } else {&#xD;
+    	evt.updatedb("seg_delete_permissao"); &#xD;
+    	evt.execute();&#xD;
+        evt.preread("tmp.resp");&#xD;
+       	resposta = evt.readobj("tmp.resp");&#xD;
+        $('#resposta').html(resposta);&#xD;
+       	dialog.dialog( "open" );      	&#xD;
+    }&#xD;
+    &#xD;
+  }&#xD;
+&lt;/script&gt; &#xD;
+</CODE>
+  </HEAD>
+  <INDEX>
+    <FORMS SEQ="1" />
+    <TEXTFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="2" />
+    <GROUPFIELDS SEQ="1" />
+    <GROUPFIELDS SEQ="2" />
+    <GENERICFIELDS SEQ="1" />
+    <GENERICFIELDS SEQ="2" />
+  </INDEX>
+  <TEXTFIELDS>
+    <TEXTFIELD SEQ="1">
+      <NAME>wi.page.prev</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.page.id|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="2">
+      <NAME>wi.token</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.token|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+  </TEXTFIELDS>
+  <GROUPFIELDS>
+    <GROUPFIELD SEQ="1">
+      <NAME>tmp.edt.seq_perfil</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.edt.seq_perfil|</VALUE>
+      <INPUTCLASSNAME>field</INPUTCLASSNAME>
+      <LABEL>Perfil:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>COMBO</TYPE>
+      <LABELSLIST>--Selecione--,|combo.seg_perfil|</LABELSLIST>
+      <VALUESLIST>,</VALUESLIST>
+      <ALIGN>LEFT</ALIGN>
+      <EVENTS>
+        <EVENT TYPE="4" ACTION="seleciona()" />
+      </EVENTS>
+    </GROUPFIELD>
+    <GROUPFIELD SEQ="2">
+      <NAME>tmp.edt.seq_modulo</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.edt.seq_modulo|</VALUE>
+      <INPUTCLASSNAME> field</INPUTCLASSNAME>
+      <LABEL>Módulo:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>COMBO</TYPE>
+      <LABELSLIST>--Selecione--,|combo.seg_modulo|</LABELSLIST>
+      <VALUESLIST>,</VALUESLIST>
+      <ALIGN>LEFT</ALIGN>
+      <EVENTS>
+        <EVENT TYPE="4" ACTION="seleciona()" />
+      </EVENTS>
+    </GROUPFIELD>
+  </GROUPFIELDS>
+  <GENERICFIELDS>
+    <GENERICFIELD SEQ="1">
+      <NAME>Texto6</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;br /&gt;&#xD;
+|grid.seg_consulta_permissao|</VALUE>
+    </GENERICFIELD>
+    <GENERICFIELD SEQ="2">
+      <NAME>Texto7</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&#xD;
+&lt;div id="dialog-resposta" title="Aviso"&gt;&#xD;
+  &lt;p&gt;&#xD;
+    &lt;span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"&gt;&lt;/span&gt;					&#xD;
+    &lt;div id="resposta"&gt;&lt;/div&gt;&#xD;
+  &lt;/p&gt;						&#xD;
+&lt;/div&gt;&#xD;
+&#xD;
+&#xD;
+  &lt;script type="text/javascript"&gt;&#xD;
+  $(function() {&#xD;
+  &#xD;
+	dialog = $( "#dialog-resposta" ).dialog({&#xD;
+      autoOpen: false,&#xD;
+      height: 150,&#xD;
+      width: 350,&#xD;
+      modal: true,&#xD;
+      buttons: {&#xD;
+        Ok: function() {&#xD;
+          $(this).dialog('close');&#xD;
+        }&#xD;
+      }&#xD;
+    });&#xD;
+   });&#xD;
+&lt;/script&gt;</VALUE>
+    </GENERICFIELD>
+  </GENERICFIELDS>
+  <FORMS>
+    <FORM SEQ="1">
+      <NAME>Texto2</NAME>
+      <ACTION>/|wi.proj.id|/|wi.page.id|.wsp</ACTION>
+      <METHOD>post</METHOD>
+      <CLASSNAME>frm</CLASSNAME>
+      <LABELPOSITION>1</LABELPOSITION>
+    </FORM>
+  </FORMS>
+</LAYOUT>
+

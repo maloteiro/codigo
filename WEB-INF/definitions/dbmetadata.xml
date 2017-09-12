@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DBMETADATA>
+  <DATABASE ID="principal">
+    <RELATIONSHIPS>
+      <RELATIONSHIP PARENT="aux_uf" CHILD="tbl_advogado">
+        <LINKS>
+          <LINK PRIMARY="seq_uf" FOREIGN="seq_advogado_oab_uf" />
+        </LINKS>
+      </RELATIONSHIP>
+    </RELATIONSHIPS>
+  </DATABASE>
+</DBMETADATA>
+

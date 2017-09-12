@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<GRID TYPE="SQL">
+  <DESCRIPTION>Grid SQL: aux_publica_vaga</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT &#xD;
+ tbl_vaga.seq_vaga, tbl_vaga.dsc_vaga_titulo, tbl_vaga.dsc_vaga_email, &#xD;
+ tbl_vaga.txt_vaga_descricao, tbl_vaga.num_vaga_salario, tbl_vaga.tip_vaga_tipo, &#xD;
+ tbl_vaga.dat_vaga_data &#xD;
+FROM tbl_vaga</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <HDISPOSITION>H</HDISPOSITION>
+  <CONTENT>
+    <UNIQUE />
+    <START><![CDATA[<table class="table table-striped">
+  <thead>
+    <tr>            	
+      <th>Tipo</th>
+      <th>Vaga</th>
+      <th>Data</th>      
+    </tr>
+  </thead>
+  <tbody>]]></START>
+    <ROWSTART><![CDATA[<tr>
+]]></ROWSTART>
+    <REGISTER><![CDATA[<td>|tip_vaga_tipo|</td>
+<td>
+  |dsc_vaga_titulo|  
+</td>
+<td>
+  |$df(|dat_vaga_data|,FMT,yyyy-MM-dd,dd/MM/yyyy)$|
+ </td>]]></REGISTER>
+    <NOREGISTER />
+    <NOROW />
+    <ROWEND><![CDATA[</tr>
+]]></ROWEND>
+    <END><![CDATA[	</tbody>
+</table>
+]]></END>
+  </CONTENT>
+</GRID>
+

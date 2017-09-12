@@ -1,0 +1,28 @@
+<HTML> 
+<HEAD>
+<TITLE>Formulário de Pesquisa</TITLE>
+<META HTTP-EQUIV=PRAGMA CONTENT=NO-CACHE>
+<META HTTP-EQUIV=EXPIRES CONTENT=0>
+</HEAD>
+<BODY BGCOLOR="#D5EEE2">
+  <FORM ACTION="/|wi.proj.id|/|wi.page.id|.wsp" METHOD="post">
+<INPUT TYPE="hidden" NAME="tmp.indexName" VALUE="modelo">
+Expressão:<BR>
+<INPUT TYPE="text" NAME="tmp.search.query" size='40' value="|tmp.search.query|">
+<input type="checkbox" value="AND" name="tmp.search.queryOperator" 
+  |$if(|tmp.search.queryOperator|=AND, checked,)$| />
+Com todas as palavras 
+<br>
+<INPUT TYPE="submit" NAME="tmp.procurar" VALUE="Procurar">
+<INPUT TYPE="reset" VALUE="Limpar Campos">
+</FORM>
+|$if(|tmp.procurar|=Procurar,
+<P STYLE="FONT: 8pt Verdana\,Arial;">|tmp.resposta|</P>
+|grid.resultadoPesquisa|
+|grid.resultadoPesquisa.link|
+,)$|
+
+  <wi:out />
+  
+</BODY>
+</HTML> 

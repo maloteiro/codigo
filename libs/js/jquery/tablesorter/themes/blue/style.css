@@ -1,0 +1,87 @@
+/* tables */
+table.tablesorter {
+	font-family:arial;
+	background-color: #E3E3E3;
+	margin:5px 0pt 10px;
+	font-size: 8pt;
+	width: 99%;
+	text-align: left;
+}
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+	background-color: #E9E9E9;
+	border: 1px solid #FFF;
+	font-size: 8pt;
+	padding: 4px;
+	color: #555555;
+}
+table.tablesorter thead tr .header {
+	background-image: url(bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+table.tablesorter tbody td {
+	color: #3D3D3D;
+	padding: 1px;
+	background-color: #FFFFFF;
+	vertical-align: middle;
+        padding: 4px;
+}
+table.tablesorter tbody tr.odd td {
+	background-color:#F3F3F3;
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+	background-color: #E3E3E3;
+}
+th.header { 
+    background-image: url(../img/small.gif);     
+    cursor: pointer; 
+    font-weight: bold; 
+    background-repeat: no-repeat; 
+    background-position: center left; 
+    padding-left: 20px; 
+    border-right: 1px solid #dad9c7; 
+    margin-left: -1px; 
+}
+.boxPaginacaoTablesorter {
+	position: absolute;
+	width: 750px;
+}
+.cellPaginacaoTablesorter {
+	position: absolute;
+	top: -43px;
+	right: -30px;
+	
+	width: 300px;
+}
+
+.boxPaginacaoTablesorter-4 {
+	position: absolute;
+	width: 676px;
+}
+.cellPaginacaoTablesorter-4 {
+	position: absolute;
+	top: -20px;
+	right: 0px;
+	width: 200px;
+}
+
+.alinhaBotaoTablesorter { 
+	position: relative; 
+	top: 3px; 
+}
+
+.campoPaginacao {
+	width: 60px;
+	font-size: 12px;
+	font-weight:bold;
+	color: #8C8C73;
+	padding: 0px;
+	border: 2px #CCCCCC solid;
+}

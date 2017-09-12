@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Pesquisa de Responsáveis</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>OFF</NOLOGIN>
+    <SECURITY>ON</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <GRIDREFS>
+      <GRIDREF SEQ="1">
+        <GRIDID>cad_consulta_responsavel</GRIDID>
+        <CONDITION>true</CONDITION>
+        <GENERATEINPAGE>ON</GENERATEINPAGE>
+        <TYPE>SQLS</TYPE>
+      </GRIDREF>
+    </GRIDREFS>
+    <INDEX>
+      <GRIDREFS SEQ="1" />
+    </INDEX>
+  </PREPAGE>
+</PAGE>
+

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Página inicial</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>OFF</NOLOGIN>
+    <SECURITY>ON</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <POSPAGE>
+    <UPDATES>
+      <UPDATE SEQ="1">
+        <DESCRIPTION>Update tmp.message</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <SQL>update seg_usuario&#xD;
+set dsc_usuario_senha=md5('|tmp.senha|')&#xD;
+where seq_usuario='|pvt.login.seq_usuario|'</SQL>
+        <AUTOCOMMIT>ON</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>Senha alterada com sucesso.</MSGTRUE>
+      </UPDATE>
+    </UPDATES>
+    <SETS>
+      <SET SEQ="1">
+        <DESCRIPTION>Gravar tmp.senha</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>tmp.senha</WIOBJ>
+        <IFTRUE>|senha|</IFTRUE>
+      </SET>
+    </SETS>
+    <INDEX>
+      <SETS SEQ="1" />
+      <UPDATES SEQ="1" />
+      <KILLS SEQ="1" />
+    </INDEX>
+    <KILLS>
+      <KILL SEQ="1">
+        <DESCRIPTION>Apagar senha</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>senha</WIOBJ>
+      </KILL>
+    </KILLS>
+  </POSPAGE>
+</PAGE>
+

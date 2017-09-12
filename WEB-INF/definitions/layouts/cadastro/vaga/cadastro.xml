@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LAYOUT>
+  <HEAD>
+    <SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/js/page.js">***EMPTY_TEXT***</SCRIPT>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="expires" CONTENT="0" />
+    <META HTTP-EQUIV="cache-control" CONTENT="no-cache" />
+    <TITLE>|wi.page.title|</TITLE>
+    <TEMPLATE>padrao_ac_novo.html</TEMPLATE>
+  </HEAD>
+  <INDEX>
+    <GENERICFIELDS SEQ="1" />
+    <FORMS SEQ="1" />
+    <TEXTFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="2" />
+    <TEXTFIELDS SEQ="3" />
+    <TEXTFIELDS SEQ="4" />
+    <TEXTFIELDS SEQ="5" />
+    <TEXTFIELDS SEQ="6" />
+    <TEXTFIELDS SEQ="7" />
+    <TEXTFIELDS SEQ="8" />
+    <GROUPFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="10" />
+    <GROUPFIELDS SEQ="2" />
+    <GENERICFIELDS SEQ="2" />
+    <USERFIELDS SEQ="1" />
+  </INDEX>
+  <TEXTFIELDS>
+    <TEXTFIELD SEQ="1">
+      <NAME>wi.page.prev</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.page.id|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="2">
+      <NAME>wi.token</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.token|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="3">
+      <NAME>tmp.action</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="4">
+      <NAME>tmp.id</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.id|</VALUE>
+      <DATAFIELD>tbl_vaga.seq_vaga</DATAFIELD>
+      <LABEL>tbl vaga.seq vaga:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="5">
+      <NAME>tmp.edt.dsc_vaga_titulo</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <MAXLENGTH>255</MAXLENGTH>
+      <SIZE>60</SIZE>
+      <VALUE>|tmp.edt.dsc_vaga_titulo|</VALUE>
+      <DATAFIELD>tbl_vaga.dsc_vaga_titulo</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Título:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="6">
+      <NAME>tmp.edt.dsc_vaga_email</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <MAXLENGTH>255</MAXLENGTH>
+      <SIZE>60</SIZE>
+      <VALUE>|tmp.edt.dsc_vaga_email|</VALUE>
+      <DATAFIELD>tbl_vaga.dsc_vaga_email</DATAFIELD>
+      <INPUTCLASSNAME>field required email</INPUTCLASSNAME>
+      <LABEL>E-mail:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="7">
+      <NAME>tmp.edt.txt_vaga_descricao</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <SIZE>60</SIZE>
+      <ROWS>10</ROWS>
+      <VALUE>|tmp.edt.txt_vaga_descricao|</VALUE>
+      <DATAFIELD>tbl_vaga.txt_vaga_descricao</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Descrição:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="8">
+      <NAME>tmp.edt.num_vaga_salario</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <MAXLENGTH>13</MAXLENGTH>
+      <SIZE>13</SIZE>
+      <VALUE>|tmp.edt.num_vaga_salario|</VALUE>
+      <DATAFIELD TYPE="2">tbl_vaga.num_vaga_salario</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Salário:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+      <COMPLEMENT>alt="decimal"</COMPLEMENT>
+      <EVENTS />
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="10">
+      <NAME>tmp.edt.dat_vaga_data</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <MAXLENGTH>10</MAXLENGTH>
+      <SIZE>10</SIZE>
+      <VALUE>|$df(|tmp.edt.dat_vaga_data|,FMT,yyyy-MM-dd,dd/MM/yyyy)$|</VALUE>
+      <DATAFIELD TYPE="3">tbl_vaga.dat_vaga_data</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Data:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+      <COMPLEMENT> alt="dateBR"</COMPLEMENT>
+      <EVENTS />
+    </TEXTFIELD>
+  </TEXTFIELDS>
+  <GROUPFIELDS>
+    <GROUPFIELD SEQ="1">
+      <NAME>tmp.edt.tip_vaga_tipo</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.edt.tip_vaga_tipo|</VALUE>
+      <DATAFIELD>tbl_vaga.tip_vaga_tipo</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Tipo de Vaga:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>COMBO</TYPE>
+      <LABELSLIST>--Selecione--,|combo.aux_tipo_vaga|</LABELSLIST>
+      <VALUESLIST>,</VALUESLIST>
+      <ALIGN>LEFT</ALIGN>
+    </GROUPFIELD>
+    <GROUPFIELD SEQ="2">
+      <NAME>tmp.edt.flg_vaga_ativa</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.edt.flg_vaga_ativa|</VALUE>
+      <DATAFIELD>tbl_vaga.flg_vaga_ativa</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Ativa:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>COMBO</TYPE>
+      <LABELSLIST>--Selecione--,SIM,NÃO</LABELSLIST>
+      <VALUESLIST>,S,N</VALUESLIST>
+      <ALIGN>LEFT</ALIGN>
+    </GROUPFIELD>
+  </GROUPFIELDS>
+  <GENERICFIELDS>
+    <GENERICFIELD SEQ="1">
+      <NAME>title</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <CLASSNAME>title</CLASSNAME>
+    </GENERICFIELD>
+    <GENERICFIELD SEQ="2">
+      <NAME>space</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;br&gt;</VALUE>
+    </GENERICFIELD>
+  </GENERICFIELDS>
+  <USERFIELDS>
+    <USERFIELD SEQ="1">
+      <NEWLINE>OFF</NEWLINE>
+      <DATAFIELD>USR:#botoes.xml</DATAFIELD>
+      <NAME>tmp.edt_new</NAME>
+      <STYLE>text-align:center</STYLE>
+      <LABELPOSITION>0</LABELPOSITION>
+      <PARAMETERS>
+        <paginapesquisa>cadastro/vaga/pesquisa.wsp</paginapesquisa>
+      </PARAMETERS>
+    </USERFIELD>
+  </USERFIELDS>
+  <FORMS>
+    <FORM SEQ="1">
+      <NAME>tmp.edt</NAME>
+      <ACTION>/|wi.proj.id|/|wi.page.id|.wsp</ACTION>
+      <METHOD>post</METHOD>
+      <CLASSNAME>frm</CLASSNAME>
+      <LABEL>Objeto tmp.edt</LABEL>
+      <LABELPOSITION>1</LABELPOSITION>
+      <LABELCLASSNAME>text</LABELCLASSNAME>
+      <WIOBJECT>tmp.edt</WIOBJECT>
+      <COMPLEMENT> id="formulario"</COMPLEMENT>
+    </FORM>
+  </FORMS>
+</LAYOUT>
+

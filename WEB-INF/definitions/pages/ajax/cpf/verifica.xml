@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Página ajax/cpf/verifica</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>ON</NOLOGIN>
+    <SECURITY>OFF</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <DESCRIPTION>Objeto tmp.verifica</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>tmp.verifica</WIOBJ>
+        <SQL>select count(0) as quantidade &#xD;
+from seg_usuario&#xD;
+where REPLACE(REPLACE(REPLACE(dsc_usuario_cpf,',',''),'.',''),'-','') = REPLACE(REPLACE(REPLACE('|tmp.cpf|',',',''),'.',''),'-','')</SQL>
+        <SQLFILTER>%*?'</SQLFILTER>
+        <DATABASE>principal</DATABASE>
+      </OBJECT>
+    </OBJECTS>
+    <INDEX>
+      <OBJECTS SEQ="1" />
+    </INDEX>
+  </PREPAGE>
+</PAGE>
+

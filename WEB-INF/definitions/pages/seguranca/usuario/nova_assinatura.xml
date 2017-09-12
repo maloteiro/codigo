@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Nova assinatura</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>OFF</NOLOGIN>
+    <SECURITY>ON</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <SETS>
+      <SET SEQ="1">
+        <DESCRIPTION>Gravar tmp.assinatura</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>tmp.assinatura</WIOBJ>
+        <IFTRUE>|$random(4,true)$|</IFTRUE>
+      </SET>
+    </SETS>
+    <SENDMAILS>
+      <SENDMAIL SEQ="1">
+        <DESCRIPTION>Enviar e-mail para |tmp.edt.dsc_usuario_email|</DESCRIPTION>
+        <CONDITION>|tmp.message|=Foi gerada uma nova assinatura. Por favor, verifique o seu e-mail.</CONDITION>
+        <HOSTID>email</HOSTID>
+        <FROM>senha@i9tecnologia.com</FROM>
+        <SENDER>senha@i9tecnologia.com</SENDER>
+        <SUBJECT>[RAT] Nova assinatura gerada</SUBJECT>
+        <TO>|tmp.edt.dsc_usuario_email|</TO>
+        <MIME>PLAIN</MIME>
+        <EACHONE>OFF</EACHONE>
+        <NOTIFICATION>OFF</NOTIFICATION>
+        <ATTACHREMOVE>OFF</ATTACHREMOVE>
+        <HTMLCONTENT><![CDATA[Olá,
+
+Sua assinatura para o sistema RAT foi gerada com sucesso.
+
+Por favor, memorize essa assinatura e não passe para ninguém.
+
+Assinatura: |tmp.assinatura|
+
+Att,
+RAT Online]]></HTMLCONTENT>
+      </SENDMAIL>
+    </SENDMAILS>
+    <UPDATES>
+      <UPDATE SEQ="1">
+        <DESCRIPTION>Update tmp.message</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <SQL>update seg_usuario&#xD;
+set dsc_usuario_assinatura=md5('|tmp.assinatura|')&#xD;
+where seq_usuario = '|pvt.login.seq_usuario|'</SQL>
+        <AUTOCOMMIT>ON</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>Foi gerada uma nova assinatura. Por favor, verifique o seu e-mail.</MSGTRUE>
+      </UPDATE>
+    </UPDATES>
+    <INDEX>
+      <SETS SEQ="1" />
+      <UPDATES SEQ="1" />
+      <SENDMAILS SEQ="1" />
+      <REDIRS SEQ="1" />
+    </INDEX>
+    <REDIRS>
+      <CONDITIONALS>
+        <REDIR SEQ="1">
+          <DESCRIPTION>Desviar para /admin/home.wsp</DESCRIPTION>
+          <CONDITION>true</CONDITION>
+          <GO>/admin/home.wsp</GO>
+        </REDIR>
+      </CONDITIONALS>
+    </REDIRS>
+  </PREPAGE>
+</PAGE>
+

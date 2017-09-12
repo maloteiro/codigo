@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<COMBO>
+  <DESCRIPTION>Combo: seg_modulo</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT &#xD;
+ seg_modulo.seq_modulo, seg_modulo.dsc_modulo_descricao, seg_modulo.flg_modulo_ativo,   &#xD;
+ seg_modulo.num_modulo_ordem &#xD;
+FROM seg_modulo&#xD;
+WHERE (seg_modulo.flg_modulo_ativo = 'S')&#xD;
+ORDER BY seg_modulo.num_modulo_ordem ASC</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <KEY>|seq_modulo|</KEY>
+  <TEXT>|dsc_modulo_descricao|</TEXT>
+</COMBO>
+

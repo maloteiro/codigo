@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Cadastro de Vagas</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>OFF</NOLOGIN>
+    <SECURITY>ON</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <DESCRIPTION>Objeto tmp.edt</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>tmp.edt</WIOBJ>
+        <SQL>SELECT tbl_vaga.dsc_vaga_titulo, tbl_vaga.dsc_vaga_email, &#xD;
+ tbl_vaga.txt_vaga_descricao, tbl_vaga.num_vaga_salario, tbl_vaga.tip_vaga_tipo, &#xD;
+ tbl_vaga.dat_vaga_data, tbl_vaga.flg_vaga_ativa, tbl_vaga.dat_data_cadastro, &#xD;
+ tbl_vaga.seq_usuario_cadastro, tbl_vaga.dat_data_alteracao, tbl_vaga.seq_usuario_alteracao, &#xD;
+ tbl_vaga.cod_token_codigo &#xD;
+FROM tbl_vaga&#xD;
+WHERE (tbl_vaga.seq_vaga = ?|tmp.id|)</SQL>
+        <SQLFILTER>%*?'</SQLFILTER>
+        <DATABASE>principal</DATABASE>
+      </OBJECT>
+    </OBJECTS>
+    <INDEX>
+      <OBJECTS SEQ="1" />
+    </INDEX>
+  </PREPAGE>
+  <POSPAGE>
+    <UPDATES>
+      <UPDATE SEQ="1">
+        <DESCRIPTION>Insert do objeto tmp.edt</DESCRIPTION>
+        <CONDITION>|tmp.id|= &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQL>INSERT INTO tbl_vaga (&#xD;
+		dsc_vaga_titulo, &#xD;
+        dsc_vaga_email, &#xD;
+        txt_vaga_descricao, &#xD;
+        num_vaga_salario, &#xD;
+        tip_vaga_tipo, &#xD;
+     	dat_vaga_data, &#xD;
+        flg_vaga_ativa, &#xD;
+        dat_data_cadastro, &#xD;
+        seq_usuario_cadastro,&#xD;
+        cod_token_codigo&#xD;
+) VALUES (&#xD;
+		?|tmp.edt.dsc_vaga_titulo|, &#xD;
+        ?|tmp.edt.dsc_vaga_email|, &#xD;
+        ?|tmp.edt.txt_vaga_descricao|, &#xD;
+     	?|$nf(|tmp.edt.num_vaga_salario|,CLR)$|, &#xD;
+        ?|tmp.edt.tip_vaga_tipo|, &#xD;
+        ?|$df(|tmp.edt.dat_vaga_data|,FMT,dd/MM/yyyy,yyyy-MM-dd)$|, &#xD;
+     	?|tmp.edt.flg_vaga_ativa|, &#xD;
+        now(), &#xD;
+        ?|pvt.login.seq_usuario|,&#xD;
+        ?|wi.token|&#xD;
+)</SQL>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>Registro inserido com sucesso</MSGTRUE>
+        <MSGFALSE>
+          <NOMESSAGE>|wi.sql.msg|</NOMESSAGE>
+        </MSGFALSE>
+        <AUTOCOMMIT>OFF</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+      </UPDATE>
+      <UPDATE SEQ="2">
+        <DESCRIPTION>Update do objeto tmp.edt</DESCRIPTION>
+        <CONDITION>|tmp.id|!= &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQL>UPDATE tbl_vaga&#xD;
+ SET 	dsc_vaga_titulo = ?|tmp.edt.dsc_vaga_titulo|, &#xD;
+ 		dsc_vaga_email = ?|tmp.edt.dsc_vaga_email|, &#xD;
+     	txt_vaga_descricao = ?|tmp.edt.txt_vaga_descricao|, &#xD;
+        num_vaga_salario = ?|$nf(|tmp.edt.num_vaga_salario|,CLR)$| , &#xD;
+     	tip_vaga_tipo = ?|tmp.edt.tip_vaga_tipo|, &#xD;
+        dat_vaga_data = ?|$df(|tmp.edt.dat_vaga_data|,FMT,dd/MM/yyyy,yyyy-MM-dd)$|, &#xD;
+     	flg_vaga_ativa = ?|tmp.edt.flg_vaga_ativa|, &#xD;
+        &#xD;
+     	 &#xD;
+        dat_data_alteracao = now(), &#xD;
+     	seq_usuario_alteracao = ?|pvt.login.seq_usuario|&#xD;
+ WHERE (tbl_vaga.seq_vaga = ?|tmp.id|)</SQL>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>Registro alterado com sucesso</MSGTRUE>
+        <MSGFALSE>
+          <NOMESSAGE>|wi.sql.msg|</NOMESSAGE>
+        </MSGFALSE>
+        <AUTOCOMMIT>OFF</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+      </UPDATE>
+    </UPDATES>
+    <INDEX>
+      <UPDATES SEQ="1" />
+      <UPDATES SEQ="2" />
+      <OBJECTS SEQ="1" />
+      <SETS SEQ="1" />
+    </INDEX>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <CONDITION>|tmp.id|= &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <DESCRIPTION>Localiza chaves do registro recém-inserido</DESCRIPTION>
+        <SQLFILTER>%*?'"</SQLFILTER>
+        <SQL>SELECT tbl_vaga.seq_vaga AS key1&#xD;
+ FROM tbl_vaga&#xD;
+ WHERE cod_token_codigo = ?|wi.token|&#xD;
+ ORDER BY tbl_vaga.seq_vaga DESC</SQL>
+        <WIOBJ>tmp.wi</WIOBJ>
+      </OBJECT>
+    </OBJECTS>
+    <SETS>
+      <SET SEQ="1">
+        <CONDITION>|tmp.id|= &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DESCRIPTION>Grava chaves em variáveis</DESCRIPTION>
+        <WIOBJ>tmp.id</WIOBJ>
+        <IFTRUE>|tmp.wi.key1|</IFTRUE>
+      </SET>
+    </SETS>
+  </POSPAGE>
+</PAGE>
+

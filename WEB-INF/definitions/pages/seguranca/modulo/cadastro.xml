@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Cadastro de Módulos</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>OFF</NOLOGIN>
+    <SECURITY>ON</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <DESCRIPTION>Objeto tmp.edt</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>tmp.edt</WIOBJ>
+        <SQL>SELECT &#xD;
+ 	seg_modulo.seq_modulo, &#xD;
+ 	seg_modulo.dsc_modulo_descricao, &#xD;
+    seg_modulo.num_modulo_ordem, &#xD;
+ 	seg_modulo.flg_modulo_ativo, &#xD;
+    seg_modulo.cod_token_codigo &#xD;
+FROM seg_modulo&#xD;
+WHERE (seg_modulo.seq_modulo = ?|tmp.id|)</SQL>
+        <SQLFILTER>%*?'</SQLFILTER>
+        <DATABASE>principal</DATABASE>
+      </OBJECT>
+    </OBJECTS>
+    <INDEX>
+      <OBJECTS SEQ="1" />
+    </INDEX>
+  </PREPAGE>
+  <POSPAGE>
+    <UPDATES>
+      <UPDATE SEQ="1">
+        <DESCRIPTION>Insert do objeto tmp.edt</DESCRIPTION>
+        <CONDITION>|tmp.id|= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQL>INSERT INTO seg_modulo (&#xD;
+	dsc_modulo_descricao, &#xD;
+    num_modulo_ordem, &#xD;
+    flg_modulo_ativo, &#xD;
+    cod_token_codigo&#xD;
+) VALUES (&#xD;
+	?|tmp.edt.dsc_modulo_descricao|, &#xD;
+    ?|tmp.edt.num_modulo_ordem|, &#xD;
+    ?|$if(|tmp.edt.flg_modulo_ativo| != , S, N)$|, &#xD;
+    ?|wi.token|)</SQL>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>Registro inserido com sucesso</MSGTRUE>
+        <MSGFALSE>
+          <NOMESSAGE>|wi.sql.msg|</NOMESSAGE>
+        </MSGFALSE>
+        <AUTOCOMMIT>OFF</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+      </UPDATE>
+      <UPDATE SEQ="2">
+        <DESCRIPTION>Update do objeto tmp.edt</DESCRIPTION>
+        <CONDITION>|tmp.id|!= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <SQL>UPDATE seg_modulo&#xD;
+ SET 	dsc_modulo_descricao = ?|tmp.edt.dsc_modulo_descricao|, &#xD;
+ 		num_modulo_ordem = ?|tmp.edt.num_modulo_ordem|, &#xD;
+     	flg_modulo_ativo = ?|$if(|tmp.edt.flg_modulo_ativo| != , S, N)$|&#xD;
+ WHERE (seg_modulo.seq_modulo = ?|tmp.id|)</SQL>
+        <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+        <WIOBJ>tmp.message</WIOBJ>
+        <MSGTRUE>Registro alterado com sucesso</MSGTRUE>
+        <MSGFALSE>
+          <NOMESSAGE>|wi.sql.msg|</NOMESSAGE>
+        </MSGFALSE>
+        <AUTOCOMMIT>OFF</AUTOCOMMIT>
+        <NOEXCEPTION>OFF</NOEXCEPTION>
+      </UPDATE>
+    </UPDATES>
+    <INDEX>
+      <UPDATES SEQ="1" />
+      <UPDATES SEQ="2" />
+      <OBJECTS SEQ="1" />
+      <SETS SEQ="1" />
+    </INDEX>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <CONDITION>|tmp.id|= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DATABASE>principal</DATABASE>
+        <DESCRIPTION>Localiza chaves do registro recém-inserido</DESCRIPTION>
+        <SQLFILTER>%*?'"</SQLFILTER>
+        <SQL>SELECT seg_modulo.seq_modulo AS key1&#xD;
+ FROM seg_modulo&#xD;
+ WHERE  cod_token_codigo = ?|wi.token|&#xD;
+ ORDER BY seg_modulo.seq_modulo DESC</SQL>
+        <WIOBJ>tmp.wi</WIOBJ>
+      </OBJECT>
+    </OBJECTS>
+    <SETS>
+      <SET SEQ="1">
+        <CONDITION>|tmp.id|= &amp;&amp; |tmp.action|=save &amp;&amp; |wi.token.ok|=true</CONDITION>
+        <DESCRIPTION>Grava chaves em variáveis</DESCRIPTION>
+        <WIOBJ>tmp.id</WIOBJ>
+        <IFTRUE>|tmp.wi.key1|</IFTRUE>
+        <FROMOBJECT>tmp.edt</FROMOBJECT>
+      </SET>
+    </SETS>
+  </POSPAGE>
+</PAGE>
+

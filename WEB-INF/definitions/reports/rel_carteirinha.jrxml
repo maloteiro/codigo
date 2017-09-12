@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+
+<jasperReport name="rel_carteirinha" language="java" columnCount="2" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="262" columnSpacing="10" leftMargin="30" rightMargin="30" topMargin="30" bottomMargin="30">
+	<reportFont name="Padrão" isDefault="true" fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="Valores" isDefault="false" fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="Cabecalho" isDefault="false" fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="Titulo" isDefault="false" fontName="Arial" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="fonte_tam_8" isDefault="false" fontName="Lucida Sans" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="fonte_tam_8_bold" isDefault="false" fontName="Lucida Sans" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="fonte_tam_6" isDefault="false" fontName="Lucida Sans" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="fonte_tam_6_bold" isDefault="false" fontName="Lucida Sans" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="fonte_tam_14_bold" isDefault="false" fontName="Lucida Sans" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="fonte_tam_12_bold" isDefault="false" fontName="Lucida Sans" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="fonte_tam_11_bold" isDefault="false" fontName="Lucida Sans" size="11" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="fonte_tam_7_bold" isDefault="false" fontName="Lucida Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="fonte_tam_7" isDefault="false" fontName="Lucida Sans" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="fonte_tam_5" isDefault="false" fontName="Lucida Sans" size="5" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<parameter name="reportDB" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["principal"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="reportTemplate" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["br.com.itx.modules.report.templates.DefaultTemplate"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tmp_associado" class="java.lang.String">
+		<parameterDescription><![CDATA[tmp.associado]]></parameterDescription>
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString><![CDATA[SELECT upper(tbl_associado.nom_associado_nome) as nom_associado_nome, 
+  /*case  tbl_associado.flg_associado_sexo when 'M' then 'Masculino' else 'Feminino' end flg_associado_sexo, */
+flg_associado_sexo,
+ DATE_FORMAT(tbl_associado.dat_associado_nascimento,'%d/%m/%Y') as dat_associado_nascimento, tbl_associado.num_associado_cpf, tbl_associado.num_associado_numero, 
+ DATE_FORMAT(tbl_associado.dat_associado_emissao,'%d/%m/%Y') as dat_associado_emissao, tbl_associado.cod_token_codigo 
+FROM tbl_associado
+WHERE (tbl_associado.seq_associado = '$P!{tmp_associado}' or '' = '$P!{tmp_associado}')]]></queryString>
+	<field name="nom_associado_nome" class="java.lang.String">
+		<fieldDescription><![CDATA[Nom associado nome]]></fieldDescription>
+	</field>
+	<field name="flg_associado_sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[Flg associado sexo]]></fieldDescription>
+	</field>
+	<field name="dat_associado_nascimento" class="java.lang.String">
+		<fieldDescription><![CDATA[Dat associado nascimento]]></fieldDescription>
+	</field>
+	<field name="num_associado_cpf" class="java.lang.String">
+		<fieldDescription><![CDATA[Num associado cpf]]></fieldDescription>
+	</field>
+	<field name="num_associado_numero" class="java.lang.String">
+		<fieldDescription><![CDATA[Num associado numero]]></fieldDescription>
+	</field>
+	<field name="dat_associado_emissao" class="java.lang.String">
+		<fieldDescription><![CDATA[Dat associado emissao]]></fieldDescription>
+	</field>
+	<field name="cod_token_codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[Cod token codigo]]></fieldDescription>
+	</field>
+	<group name="Detalhe">
+	</group>
+	<background>
+		<band>
+		</band>
+	</background>
+	<title>
+		<band>
+		</band>
+	</title>
+	<columnHeader>
+		<band>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="149">
+			<rectangle radius="10">
+				<reportElement key="element_126867133" positionType="Float" x="0" y="0" width="229" height="141" forecolor="#661a00" backcolor="#f2f2f2"/>
+				<graphicElement pen="2Point"/>
+			</rectangle>
+			<staticText>
+				<reportElement key="element_1970205556" positionType="Float" x="7" y="66" width="27" height="10" forecolor="#661a00"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_7"/>
+				</textElement>
+				<text><![CDATA[NOME:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="element_377266907" positionType="Float" x="34" y="66" width="153" height="10" forecolor="#661a00"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_7_bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nom_associado_nome}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="element_1564010045" positionType="Float" x="124" y="76" width="100" height="10" forecolor="#661a00"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font reportFont="fonte_tam_7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["CPF: "+$F{num_associado_cpf}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="element_1763489394" positionType="Float" x="7" y="76" width="100" height="10" forecolor="#661a00"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["DATA NASC: "+$F{dat_associado_nascimento}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="element_1992975857" positionType="Float" x="189" y="66" width="35" height="10" forecolor="#661a00"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font reportFont="fonte_tam_7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["SEXO: "+$F{flg_associado_sexo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="element_50580646" positionType="Float" x="7" y="86" width="110" height="10" forecolor="#661a00"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Nº BENEFICIÁRIO: "+$F{num_associado_numero}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="element_427481330" positionType="Float" x="114" y="86" width="110" height="10" forecolor="#661a00"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font reportFont="fonte_tam_7"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["DATA DE EMISSÃO: "+$F{dat_associado_emissao}]]></textFieldExpression>
+			</textField>
+			<image isUsingCache="true">
+				<reportElement key="element_1012066569" positionType="Float" x="7" y="6" width="95" height="40"/>
+				<graphicElement/>
+				<imageExpression class="java.lang.String"><![CDATA["http://www4.i9tecnologia.com/associado/imagens/logo_multilife.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement key="element_1072773918" positionType="Float" x="106" y="18" width="120" height="20" forecolor="#f23001"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_11_bold"/>
+				</textElement>
+				<text><![CDATA[CARTÃO DESCONTO]]></text>
+			</staticText>
+			<line>
+				<reportElement key="element_1262141119" positionType="Float" x="0" y="49" width="229" height="1" forecolor="#661a00"/>
+				<graphicElement/>
+			</line>
+			<staticText>
+				<reportElement key="element_329117861" positionType="Float" x="0" y="51" width="229" height="15" forecolor="#25b748"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font reportFont="Padrão"/>
+				</textElement>
+				<text><![CDATA[Convênio Médico-Ambulatorial]]></text>
+			</staticText>
+			<line>
+				<reportElement key="element_1309431406" positionType="Float" x="0" y="102" width="229" height="1" forecolor="#661a00"/>
+				<graphicElement/>
+			</line>
+			<staticText>
+				<reportElement key="element_176674987" positionType="Float" x="0" y="105" width="229" height="10" forecolor="#25b748"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font reportFont="fonte_tam_6"/>
+				</textElement>
+				<text><![CDATA[SGAS 915 CONJ B BLOCO C TÉRREO - ED. OFFICE CENTER - ASA SUL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="element_1432525497" positionType="Float" x="0" y="115" width="229" height="10" forecolor="#f23001"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font reportFont="fonte_tam_7_bold"/>
+				</textElement>
+				<text><![CDATA[MARCAÇÃO DE CONSULTAS - (61) 3445-5500]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="element_1009586306" positionType="Float" x="0" y="125" width="229" height="10" forecolor="#f23001"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font reportFont="fonte_tam_5"/>
+				</textElement>
+				<text><![CDATA[VÁLIDO MEDIANTE APRESENTAÇÃO DE DOCUMENTO DE IDENTIDADE]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band>
+		</band>
+	</columnFooter>
+	<lastPageFooter>
+		<band>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band>
+		</band>
+	</summary>
+</jasperReport>

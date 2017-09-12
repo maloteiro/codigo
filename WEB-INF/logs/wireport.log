@@ -1,0 +1,79 @@
+<LOG DATE="2016-02-16" TIME="12:05:16" CLASS="br.com.webinside.runtime.report.CoreReportShow - Error on show report.">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0</USER-AGENT>
+<TEXT><![CDATA[java.sql.SQLException: Bad format for DATE '11/02/2016' in column 6.: Unable to get value for field 'dat_associado_emissao' of class 'java.util.Date'
+java.sql.SQLException: Bad format for DATE '11/02/2016' in column 6.
+	at com.mysql.jdbc.ResultSet.getDateFromString(ResultSet.java:2083)
+	at com.mysql.jdbc.ResultSet.getNativeDateViaParseConversion(ResultSet.java:3509)
+	at com.mysql.jdbc.ResultSet.getNativeDateTimeValue(ResultSet.java:8215)
+	at com.mysql.jdbc.ResultSet.getNativeDate(ResultSet.java:3496)
+	at com.mysql.jdbc.ResultSet.getDate(ResultSet.java:1902)
+	at com.mysql.jdbc.ResultSet.getDate(ResultSet.java:1880)
+	at net.sf.jasperreports.engine.JRResultSetDataSource.getFieldValue(JRResultSetDataSource.java:132)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.next(JRBaseFiller.java:1222)
+	at net.sf.jasperreports.engine.fill.JRVerticalFiller.fillReport(JRVerticalFiller.java:126)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:953)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:781)
+	at net.sf.jasperreports.engine.fill.JRFiller.fillReport(JRFiller.java:63)
+	at net.sf.jasperreports.engine.JasperFillManager.fillReport(JasperFillManager.java:247)
+	at br.com.webinside.runtime.report.CoreReportShow.fillReport(CoreReportShow.java:249)
+	at br.com.webinside.runtime.report.CoreReportShow.showReport(CoreReportShow.java:113)
+	at br.com.webinside.runtime.core.CoreReport.showReport(CoreReport.java:176)
+	at br.com.webinside.runtime.core.CoreReport.execute(CoreReport.java:120)
+	at br.com.webinside.runtime.core.Execute.doPost(Execute.java:447)
+	at br.com.webinside.runtime.core.Execute.doGet(Execute.java:122)
+	at javax.servlet.http...]]></TEXT>
+</LOG>
+<LOG DATE="2016-02-16" TIME="15:23:26" CLASS="br.com.webinside.runtime.report.CoreReportShow - Error on show report.">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0</USER-AGENT>
+<TEXT><![CDATA[java.sql.SQLException: No parameters defined during prepareCall(): Error preparing statement for executing the report query : 
+
+SELECT tbl_associado.nom_associado_nome, tbl_associado.flg_associado_sexo, 
+ DATE_FORMAT(tbl_associado.dat_associado_nascimento,'%d/%m/%Y') as dat_associado_nascimento, tbl_associado.num_associado_cpf, tbl_associado.num_associado_numero, 
+ DATE_FORMAT(tbl_associado.dat_associado_emissao,'%d/%m/%Y') as dat_associado_emissao, tbl_associado.cod_token_codigo 
+FROM tbl_associado
+WHERE (tbl_associado.seq_associado = '?' or '' = '?')
+
+
+java.sql.SQLException: No parameters defined during prepareCall()
+	at com.mysql.jdbc.ServerPreparedStatement.getBinding(ServerPreparedStatement.java:747)
+	at com.mysql.jdbc.ServerPreparedStatement.setString(ServerPreparedStatement.java:1822)
+	at net.sf.jasperreports.engine.util.JRQueryExecuter.getStatement(JRQueryExecuter.java:288)
+	at net.sf.jasperreports.engine.util.JRQueryExecuter.getStatement(JRQueryExecuter.java:98)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:763)
+	at net.sf.jasperreports.engine.fill.JRFiller.fillReport(JRFiller.java:63)
+	at net.sf.jasperreports.engine.JasperFillManager.fillReport(JasperFillManager.java:247)
+	at br.com.webinside.runtime.report.CoreReportShow.fillReport(CoreReportShow.java:249)
+	at br.com.webinside.runtime.report.CoreReportShow.showReport(CoreReportShow.java:113)
+	at br.com.webinside.runtime.core.CoreReport.showReport(CoreReport.java:176)
+	at br.com.webinside.runtime.core.CoreReport.execute(CoreReport.java:120)
+	at br.com.webinside.runtime.core.Execute.doPost(Execute.java:447)
+	at br.com.webinside.runtime.core.Execute.doGet(Execute.java:122)
+	at javax.servlet.http...]]></TEXT>
+</LOG>
+<LOG DATE="2016-02-16" TIME="15:24:34" CLASS="br.com.webinside.runtime.report.CoreReportShow - Error on show report.">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0</USER-AGENT>
+<TEXT><![CDATA[java.sql.SQLException: No parameters defined during prepareCall(): Error preparing statement for executing the report query : 
+
+SELECT tbl_associado.nom_associado_nome, tbl_associado.flg_associado_sexo, 
+ DATE_FORMAT(tbl_associado.dat_associado_nascimento,'%d/%m/%Y') as dat_associado_nascimento, tbl_associado.num_associado_cpf, tbl_associado.num_associado_numero, 
+ DATE_FORMAT(tbl_associado.dat_associado_emissao,'%d/%m/%Y') as dat_associado_emissao, tbl_associado.cod_token_codigo 
+FROM tbl_associado
+WHERE (tbl_associado.seq_associado = '?' or '' = '?')
+
+
+java.sql.SQLException: No parameters defined during prepareCall()
+	at com.mysql.jdbc.ServerPreparedStatement.getBinding(ServerPreparedStatement.java:747)
+	at com.mysql.jdbc.ServerPreparedStatement.setString(ServerPreparedStatement.java:1822)
+	at net.sf.jasperreports.engine.util.JRQueryExecuter.getStatement(JRQueryExecuter.java:288)
+	at net.sf.jasperreports.engine.util.JRQueryExecuter.getStatement(JRQueryExecuter.java:98)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:763)
+	at net.sf.jasperreports.engine.fill.JRFiller.fillReport(JRFiller.java:63)
+	at net.sf.jasperreports.engine.JasperFillManager.fillReport(JasperFillManager.java:247)
+	at br.com.webinside.runtime.report.CoreReportShow.fillReport(CoreReportShow.java:249)
+	at br.com.webinside.runtime.report.CoreReportShow.showReport(CoreReportShow.java:113)
+	at br.com.webinside.runtime.core.CoreReport.showReport(CoreReport.java:176)
+	at br.com.webinside.runtime.core.CoreReport.execute(CoreReport.java:120)
+	at br.com.webinside.runtime.core.Execute.doPost(Execute.java:447)
+	at br.com.webinside.runtime.core.Execute.doGet(Execute.java:122)
+	at javax.servlet.http...]]></TEXT>
+</LOG>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LAYOUT>
+  <HEAD>
+    <SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/js/page.js">***EMPTY_TEXT***</SCRIPT>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="expires" CONTENT="0" />
+    <META HTTP-EQUIV="cache-control" CONTENT="no-cache" />
+    <TITLE>|wi.page.title|</TITLE>
+    <TEMPLATE>padrao_ac.html</TEMPLATE>
+  </HEAD>
+  <INDEX>
+    <FORMS SEQ="1" />
+    <TEXTFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="2" />
+    <GROUPFIELDS SEQ="2" />
+    <GROUPFIELDS SEQ="1" />
+    <GENERICFIELDS SEQ="1" />
+    <GENERICFIELDS SEQ="2" />
+  </INDEX>
+  <TEXTFIELDS>
+    <TEXTFIELD SEQ="1">
+      <NAME>wi.page.prev</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.page.id|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="2">
+      <NAME>wi.token</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.token|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+  </TEXTFIELDS>
+  <GROUPFIELDS>
+    <GROUPFIELD SEQ="1">
+      <NAME>tmp.mes</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.mes|</VALUE>
+      <INPUTCLASSNAME>required</INPUTCLASSNAME>
+      <LABEL>Mês:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>COMBO</TYPE>
+      <LABELSLIST>--Selecione--,|combo.aux_mes|</LABELSLIST>
+      <VALUESLIST>,</VALUESLIST>
+      <ALIGN>LEFT</ALIGN>
+    </GROUPFIELD>
+    <GROUPFIELD SEQ="2">
+      <NAME>tmp.ano</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.ano|</VALUE>
+      <INPUTCLASSNAME>required</INPUTCLASSNAME>
+      <LABEL>Ano:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>COMBO</TYPE>
+      <LABELSLIST>--Selecione--,|combo.aux_ano|</LABELSLIST>
+      <VALUESLIST>,</VALUESLIST>
+      <ALIGN>LEFT</ALIGN>
+    </GROUPFIELD>
+  </GROUPFIELDS>
+  <GENERICFIELDS>
+    <GENERICFIELD SEQ="1">
+      <NAME>Texto6</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;br /&gt;</VALUE>
+    </GENERICFIELD>
+    <GENERICFIELD SEQ="2">
+      <NAME>tmp.botao</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;br/&gt;&#xD;
+&lt;table align="center"&gt;&#xD;
+  &lt;tr&gt;&#xD;
+    &lt;td align="center" &gt;&#xD;
+      &#xD;
+      &lt;button type="button" name="tmp.btn_pesquisar" id="btn_pesquisar" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para pesquisar" alt="Clique no botão para pesquisar" onclick="wiOpen('/|wi.proj.id|/relatorio/rat/listagem.wsp?tmp.mes='+document.getElementById('tmp.mes').value+'&amp;tmp.ano='+document.getElementById('tmp.ano').value,'_relatorio');"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Gerar&lt;/span&gt;&#xD;
+      &lt;/button&gt;																		&#xD;
+    &lt;/td&gt;						&#xD;
+  &lt;/tr&gt;&#xD;
+&lt;/table&gt;</VALUE>
+    </GENERICFIELD>
+  </GENERICFIELDS>
+  <FORMS>
+    <FORM SEQ="1">
+      <NAME>tmp.rel</NAME>
+      <ACTION>/|wi.proj.id|/|wi.page.id|.wsp</ACTION>
+      <METHOD>post</METHOD>
+      <CLASSNAME>frm</CLASSNAME>
+      <LABELPOSITION>1</LABELPOSITION>
+      <COMPLEMENT> id="formulario"</COMPLEMENT>
+    </FORM>
+  </FORMS>
+</LAYOUT>
+

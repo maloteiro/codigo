@@ -1,0 +1,16 @@
+<LOG DATE="2016-09-30" TIME="16:29:30" CLASS="CoreSendmail - Email retry log">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36</USER-AGENT>
+<TEXT><![CDATA[Emails stored to retry later. Connection failure to smtp.gmail.com]]></TEXT>
+</LOG>
+<LOG DATE="2016-09-30" TIME="16:30:31" CLASS="CoreSendmail - Email retry log">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36</USER-AGENT>
+<TEXT><![CDATA[Emails stored to retry later. Connection failure to smtp.gmail.com]]></TEXT>
+</LOG>
+<LOG DATE="2016-09-30" TIME="17:09:35" CLASS="CoreSendmail - Email retry log">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36</USER-AGENT>
+<TEXT><![CDATA[Emails stored to retry later. Connection failure to 172.17.61.41]]></TEXT>
+</LOG>
+<LOG DATE="2016-09-30" TIME="17:10:03" CLASS="CoreSendmail - Email retry log">
+<USER-AGENT>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36</USER-AGENT>
+<TEXT><![CDATA[Emails stored to retry later. Connection failure to 172.17.61.41]]></TEXT>
+</LOG>

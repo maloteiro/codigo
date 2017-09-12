@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LAYOUT>
+  <HEAD>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="expires" CONTENT="0" />
+    <META HTTP-EQUIV="cache-control" CONTENT="no-cache" />
+    <TITLE>|wi.page.title|</TITLE>
+    <TEMPLATE>malote_padrao.html</TEMPLATE>
+  </HEAD>
+  <INDEX>
+    <GENERICFIELDS SEQ="1" />
+  </INDEX>
+  <GENERICFIELDS>
+    <GENERICFIELD SEQ="1">
+      <NAME>conteudo</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;div class="row"&gt;&#xD;
+                    &#xD;
+                    &lt;div class="col-md-3 col-sm-12 col-xs-12"&gt;&#xD;
+                        &lt;div class="panel panel-primary text-center no-boder blue"&gt;&#xD;
+                            &lt;div class="panel-left pull-left blue"&gt;&#xD;
+                                &lt;i class="fa fa-file-archive-o fa-5x"&gt;&lt;/i&gt;&#xD;
+                                &#xD;
+                            &lt;/div&gt;&#xD;
+                            &lt;div class="panel-right"&gt;&#xD;
+								&lt;h3&gt;10,253&lt;/h3&gt;&#xD;
+                               &lt;strong&gt; Arquivos&lt;/strong&gt;&#xD;
+                            &lt;/div&gt;&#xD;
+                        &lt;/div&gt;&#xD;
+                    &lt;/div&gt;&#xD;
+                    &#xD;
+                    &lt;div class="col-md-3 col-sm-12 col-xs-12"&gt;&#xD;
+                        &lt;div class="panel panel-primary text-center no-boder blue"&gt;&#xD;
+                            &lt;div class="panel-left pull-left blue"&gt;&#xD;
+                                &lt;i class="fa fa fa-comments fa-5x"&gt;&lt;/i&gt;&#xD;
+                               &#xD;
+                            &lt;/div&gt;&#xD;
+                            &lt;div class="panel-right"&gt;&#xD;
+							 &lt;h3&gt;16,022 &lt;/h3&gt;&#xD;
+                               &lt;strong&gt; Recados &lt;/strong&gt;&#xD;
+&#xD;
+                            &lt;/div&gt;&#xD;
+                        &lt;/div&gt;&#xD;
+                    &lt;/div&gt;&#xD;
+                    &lt;div class="col-md-3 col-sm-12 col-xs-12"&gt;&#xD;
+                        &lt;div class="panel panel-primary text-center no-boder blue"&gt;&#xD;
+                            &lt;div class="panel-left pull-left blue"&gt;&#xD;
+                                &lt;i class="fa fa-book fa-5x"&gt;&lt;/i&gt;&#xD;
+                                &#xD;
+                            &lt;/div&gt;&#xD;
+                            &lt;div class="panel-right"&gt;&#xD;
+							&lt;h3&gt;36,752 &lt;/h3&gt;&#xD;
+                             &lt;strong&gt; Laudos&lt;/strong&gt;&#xD;
+&#xD;
+                            &lt;/div&gt;&#xD;
+                        &lt;/div&gt;&#xD;
+                    &lt;/div&gt;&#xD;
+  &#xD;
+  					&lt;div class="col-md-3 col-sm-12 col-xs-12"&gt;&#xD;
+                        &lt;div class="panel panel-primary text-center no-boder blue"&gt;&#xD;
+                              &lt;div class="panel-left pull-left blue"&gt;&#xD;
+                                &lt;i class="fa fa-sticky-note-o fa-5x"&gt;&lt;/i&gt;&#xD;
+								&lt;/div&gt;&#xD;
+                                &#xD;
+                            &lt;div class="panel-right"&gt;&#xD;
+							&lt;h3&gt;33,180 &lt;/h3&gt;&#xD;
+                               &lt;strong&gt; Atestados&lt;/strong&gt;&#xD;
+&#xD;
+                            &lt;/div&gt;&#xD;
+                        &lt;/div&gt;&#xD;
+                    &lt;/div&gt;&#xD;
+                &lt;/div&gt;&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+				&lt;div class="row"&gt;&#xD;
+&#xD;
+			  		&lt;div class="col-md-12"&gt;&#xD;
+						&lt;div class="panel panel-default"&gt;&#xD;
+							&lt;div class="panel-heading"&gt;&#xD;
+				 				Messages&#xD;
+							&lt;/div&gt;        &#xD;
+							  &#xD;
+							&lt;div class="panel-body"&gt;&#xD;
+              					&lt;div class="list-group"&gt;&#xD;
+&#xD;
+                                    &lt;a href="#" class="list-group-item"&gt;&#xD;
+                                        &lt;span class="badge"&gt;7 minutes ago&lt;/span&gt;&#xD;
+                                        &lt;i class="fa fa-fw fa-comment"&gt;&lt;/i&gt; Commented on a post&#xD;
+                                    &lt;/a&gt;&#xD;
+                                    &lt;a href="#" class="list-group-item"&gt;&#xD;
+                                        &lt;span class="badge"&gt;16 minutes ago&lt;/span&gt;&#xD;
+                                        &lt;i class="fa fa-fw fa-truck"&gt;&lt;/i&gt; Order 392 shipped&#xD;
+                                    &lt;/a&gt;&#xD;
+                                    &lt;a href="#" class="list-group-item"&gt;&#xD;
+                                        &lt;span class="badge"&gt;36 minutes ago&lt;/span&gt;&#xD;
+                                        &lt;i class="fa fa-fw fa-globe"&gt;&lt;/i&gt; Invoice 653 has paid&#xD;
+                                    &lt;/a&gt;&#xD;
+                                    &lt;a href="#" class="list-group-item"&gt;&#xD;
+                                        &lt;span class="badge"&gt;1 hour ago&lt;/span&gt;&#xD;
+                                        &lt;i class="fa fa-fw fa-user"&gt;&lt;/i&gt; A new user has been added&#xD;
+                                    &lt;/a&gt;&#xD;
+                                    &lt;a href="#" class="list-group-item"&gt;&#xD;
+                                        &lt;span class="badge"&gt;1.23 hour ago&lt;/span&gt;&#xD;
+                                        &lt;i class="fa fa-fw fa-user"&gt;&lt;/i&gt; A new user has added&#xD;
+                                    &lt;/a&gt;&#xD;
+                                    &lt;a href="#" class="list-group-item"&gt;&#xD;
+                                        &lt;span class="badge"&gt;yesterday&lt;/span&gt;&#xD;
+                                        &lt;i class="fa fa-fw fa-globe"&gt;&lt;/i&gt; Saved the world&#xD;
+                                    &lt;/a&gt;&#xD;
+                                &lt;/div&gt;&#xD;
+                                &lt;div class="text-right"&gt;&#xD;
+                                    &lt;a href="#"&gt;More Tasks &lt;i class="fa fa-arrow-circle-right"&gt;&lt;/i&gt;&lt;/a&gt;&#xD;
+                                &lt;/div&gt;&#xD;
+                            &lt;/div&gt;&#xD;
+                       &lt;/div&gt;&#xD;
+                   &lt;/div&gt;&#xD;
+                &lt;/div&gt;</VALUE>
+      <DATAFIELD TYPE="USR:$botoes.xml">USR:$botoes.xml</DATAFIELD>
+    </GENERICFIELD>
+  </GENERICFIELDS>
+</LAYOUT>
+

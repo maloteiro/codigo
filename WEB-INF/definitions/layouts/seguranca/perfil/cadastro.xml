@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LAYOUT>
+  <HEAD>
+    <SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/js/page.js">***EMPTY_TEXT***</SCRIPT>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="expires" CONTENT="0" />
+    <META HTTP-EQUIV="cache-control" CONTENT="no-cache" />
+    <TITLE>|wi.page.title|</TITLE>
+    <TEMPLATE>padrao_ac_novo.html</TEMPLATE>
+  </HEAD>
+  <INDEX>
+    <FORMS SEQ="1" />
+    <TEXTFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="2" />
+    <TEXTFIELDS SEQ="3" />
+    <TEXTFIELDS SEQ="4" />
+    <TEXTFIELDS SEQ="5" />
+    <TEXTFIELDS SEQ="6" />
+    <CHECKBOXFIELDS SEQ="1" />
+    <GENERICFIELDS SEQ="2" />
+  </INDEX>
+  <TEXTFIELDS>
+    <TEXTFIELD SEQ="1">
+      <NAME>wi.page.prev</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.page.id|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="2">
+      <NAME>wi.token</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.token|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="3">
+      <NAME>tmp.action</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="4">
+      <NAME>tmp.id</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.id|</VALUE>
+      <DATAFIELD>seg_perfil.seq_perfil</DATAFIELD>
+      <LABEL>seg perfil.seq perfil:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="5">
+      <NAME>tmp.edt.dsc_perfil_nome</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <MAXLENGTH>45</MAXLENGTH>
+      <SIZE>100</SIZE>
+      <VALUE>|tmp.edt.dsc_perfil_nome|</VALUE>
+      <DATAFIELD>seg_perfil.dsc_perfil_nome</DATAFIELD>
+      <INPUTCLASSNAME>required field</INPUTCLASSNAME>
+      <LABEL>Descrição:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="6">
+      <NAME>tmp.edt.sig_perfil_sigla</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <MAXLENGTH>4</MAXLENGTH>
+      <SIZE>8</SIZE>
+      <VALUE>|tmp.edt.sig_perfil_sigla|</VALUE>
+      <DATAFIELD>seg_perfil.sig_perfil_sigla</DATAFIELD>
+      <INPUTCLASSNAME>field</INPUTCLASSNAME>
+      <LABEL>Sigla:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+  </TEXTFIELDS>
+  <CHECKBOXFIELDS>
+    <CHECKBOXFIELD SEQ="1">
+      <NAME>tmp.edt.flg_perfil_status</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.edt.flg_perfil_status|</VALUE>
+      <DATAFIELD TYPE="2">seg_perfil.flg_perfil_status</DATAFIELD>
+      <LABEL>Ativo:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <IFTRUE>1</IFTRUE>
+      <IFFALSE>0</IFFALSE>
+    </CHECKBOXFIELD>
+  </CHECKBOXFIELDS>
+  <GENERICFIELDS>
+    <GENERICFIELD SEQ="2">
+      <NAME>space</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;br/&gt;&#xD;
+&lt;table align="center"&gt;&#xD;
+  &lt;tr&gt;&#xD;
+    &lt;td align="center" &gt;&#xD;
+      &lt;button type="submit" name="tmp.btn_gravar" id="btn_gravar" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão gravar os dados" alt="Clique no botão gravar os dados"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Salvar&lt;/span&gt;&#xD;
+      &lt;/button&gt;&#xD;
+      &#xD;
+      &lt;button type="button" name="tmp.btn_add_novo" id="btn_add_novo" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para novo cadastro" alt="Clique no botão para novo cadastro" onclick="wiOpen('/|wi.proj.id|/|wi.page.id|.wsp');"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Novo&lt;/span&gt;&#xD;
+      &lt;/button&gt;&#xD;
+      &lt;button type="button" name="tmp.btn_pesquisar" id="btn_pesquisar" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para pesquisar" alt="Clique no botão para pesquisar" onclick="wiOpen('/|wi.proj.id|/seguranca/perfil/pesquisa.wsp');"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Pesquisar&lt;/span&gt;&#xD;
+      &lt;/button&gt;																		&#xD;
+    &lt;/td&gt;						&#xD;
+  &lt;/tr&gt;&#xD;
+&lt;/table&gt;&#xD;
+&lt;br&gt;	</VALUE>
+    </GENERICFIELD>
+  </GENERICFIELDS>
+  <FORMS>
+    <FORM SEQ="1">
+      <NAME>tmp.edt</NAME>
+      <ACTION>/|wi.proj.id|/|wi.page.id|.wsp</ACTION>
+      <METHOD>post</METHOD>
+      <CLASSNAME>frm</CLASSNAME>
+      <LABEL>Objeto tmp.edt</LABEL>
+      <LABELPOSITION>1</LABELPOSITION>
+      <LABELCLASSNAME>text</LABELCLASSNAME>
+      <WIOBJECT>tmp.edt</WIOBJECT>
+      <COMPLEMENT> id="formulario" </COMPLEMENT>
+    </FORM>
+  </FORMS>
+</LAYOUT>
+

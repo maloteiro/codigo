@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LAYOUT>
+  <HEAD>
+    <SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/js/page.js">***EMPTY_TEXT***</SCRIPT>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="expires" CONTENT="0" />
+    <TITLE>Página de Login</TITLE>
+    <TEMPLATE>login.html</TEMPLATE>
+    <CODE>&lt;script type="text/javascript" src="/|wi.proj.id|/js/md5.js"&gt;&lt;/script&gt;&#xD;
+&lt;script&gt;&#xD;
+history.go(1)&#xD;
+function encodePass() {&#xD;
+  var wipwd="|wi.pwd.md5|";&#xD;
+  var pass = calcMD5(document.forms[0]["tmp.pass"].value);&#xD;
+  var codpass = calcMD5(pass+wipwd);&#xD;
+  document.forms[0]["tmp.pass"].value=codpass;&#xD;
+  return true;&#xD;
+}&#xD;
+&lt;/script&gt;&#xD;
+</CODE>
+  </HEAD>
+  <INDEX>
+    <FORMS SEQ="1" />
+    <TEXTFIELDS SEQ="3" />
+    <GENERICFIELDS SEQ="1" />
+  </INDEX>
+  <TEXTFIELDS>
+    <TEXTFIELD SEQ="3">
+      <NAME>wi.page.prev</NAME>
+      <VALUE>|wi.page.id|</VALUE>
+      <LABELPOSITION>0</LABELPOSITION>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+  </TEXTFIELDS>
+  <GENERICFIELDS>
+    <GENERICFIELD SEQ="1">
+      <NAME>Texto6</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;br /&gt;&#xD;
+&lt;table cellpadding="0" cellspacing="0" border="0" class="login_box"&gt;&#xD;
+			&lt;tr&gt;&#xD;
+				&lt;td colspan="2" class="login_box_e_d_t"&gt;					&#xD;
+					&lt;br /&gt;&#xD;
+				&lt;/td&gt;&#xD;
+			&lt;/tr&gt;&#xD;
+			&lt;tr valign="center" height="30px"&gt;				&#xD;
+				&lt;td align="right" class="login_box_e"&gt;&#xD;
+					&lt;label class="login_txt_label"&gt;&#xD;
+						  Login&#xD;
+					&lt;/label&gt;								&#xD;
+				&lt;/td&gt;				&#xD;
+				&lt;td align="right" width="300px" class="login_box_d"&gt;&#xD;
+					&lt;div style="margin-right:20px;"&gt;					&#xD;
+						&lt;input class="campo_login required" name="tmp.user" id="tmp.user" type="text" size="40"&gt;					&#xD;
+					&lt;/div&gt;&#xD;
+				&lt;/td&gt;				&#xD;
+			&lt;/tr&gt;			&#xD;
+					&#xD;
+			&lt;tr valign="top" height="25px"&gt;&#xD;
+				&lt;td align="right" class="login_box_e"&gt;&#xD;
+					&lt;label class="login_txt_label"&gt;&#xD;
+						  Senha&#xD;
+					&lt;/label&gt;								&#xD;
+				&lt;/td&gt;&#xD;
+				&lt;td align="right" width="295px" class="login_box_d"&gt;&#xD;
+					&lt;div style="margin-right:20px;"&gt;						&#xD;
+						&lt;input class="campo_login required" name="tmp.pass" id="tmp.pass" type="password" size="40"&gt;						&#xD;
+					&lt;/div&gt;&#xD;
+				&lt;/td&gt;&#xD;
+			&lt;/tr&gt;&#xD;
+					&#xD;
+			&lt;tr&gt;&#xD;
+				&lt;td colspan="2" class="login_box_e_d"&gt;					&#xD;
+					&lt;br /&gt;&#xD;
+				&lt;/td&gt;&#xD;
+			&lt;/tr&gt;					&#xD;
+			&lt;tr valign="top"&gt;&#xD;
+				&lt;td align="right" class="login_box_e"&gt;&#xD;
+					 								&#xD;
+				&lt;/td&gt;&#xD;
+				&lt;td align="center" width="295px" class="login_box_d_txt_center"&gt;&#xD;
+					&#xD;
+						&lt;button type="submit" name="bt_salvar" id="bt_salvar" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para acessar o sistema" alt="Clique no botão para acessar o sistema"&gt;&#xD;
+							&lt;span class="ui-button-text"&gt;ACESSAR&lt;/span&gt;&#xD;
+						&lt;/button&gt;																								&#xD;
+                        &lt;button type="button" name="bt_esqueci" id="bt_esqueci" onclick="wiOpen('/|wi.proj.id|/seguranca/alterar_senha.wsp')" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para envio de nova senha" alt="Clique no botão para envio de nova senha"&gt;&#xD;
+							&lt;span class="ui-button-text"&gt;ESQUECI SENHA&lt;/span&gt;&#xD;
+						&lt;/button&gt;&#xD;
+					&#xD;
+				&lt;/td&gt;													&#xD;
+			&lt;/tr&gt;&#xD;
+			&lt;tr&gt;&#xD;
+				&lt;td colspan="2" class="login_box_e_d_b"&gt;					&#xD;
+					&lt;br /&gt;&#xD;
+				&lt;/td&gt;&#xD;
+			&lt;/tr&gt;&#xD;
+		&lt;/table&gt;&#xD;
+		&lt;br /&gt;</VALUE>
+    </GENERICFIELD>
+  </GENERICFIELDS>
+  <FORMS>
+    <FORM SEQ="1">
+      <NAME>frm</NAME>
+      <ACTION>/|wi.proj.id|/admin/home.wsp</ACTION>
+      <METHOD>post</METHOD>
+      <ONSUBMIT>return encodePass()</ONSUBMIT>
+      <LABELPOSITION>1</LABELPOSITION>
+      <COMPLEMENT>style = 'display:inline'</COMPLEMENT>
+    </FORM>
+  </FORMS>
+</LAYOUT>
+

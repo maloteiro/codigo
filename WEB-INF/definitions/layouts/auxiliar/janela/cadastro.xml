@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LAYOUT>
+  <HEAD>
+    <SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/js/page.js">***EMPTY_TEXT***</SCRIPT>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="expires" CONTENT="0" />
+    <META HTTP-EQUIV="cache-control" CONTENT="no-cache" />
+    <TITLE>|wi.page.title|</TITLE>
+    <TEMPLATE>padrao_ac.html</TEMPLATE>
+  </HEAD>
+  <INDEX>
+    <GENERICFIELDS SEQ="1" />
+    <FORMS SEQ="1" />
+    <TEXTFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="2" />
+    <TEXTFIELDS SEQ="3" />
+    <TEXTFIELDS SEQ="4" />
+    <TEXTFIELDS SEQ="5" />
+    <GROUPFIELDS SEQ="1" />
+    <GENERICFIELDS SEQ="2" />
+    <USERFIELDS SEQ="1" />
+  </INDEX>
+  <TEXTFIELDS>
+    <TEXTFIELD SEQ="1">
+      <NAME>wi.page.prev</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.page.id|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="2">
+      <NAME>wi.token</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.token|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="3">
+      <NAME>tmp.action</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>save</VALUE>
+      <LABELPOSITION>1</LABELPOSITION>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="4">
+      <NAME>tmp.id</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.id|</VALUE>
+      <DATAFIELD>aux_tipo_atividade.seq_tipo_atividade</DATAFIELD>
+      <LABEL>aux tipo atividade.seq tipo atividade:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="5">
+      <NAME>tmp.edt.dsc_janela_descricao</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <MAXLENGTH>150</MAXLENGTH>
+      <SIZE>100</SIZE>
+      <VALUE>|tmp.edt.dsc_janela_descricao|</VALUE>
+      <DATAFIELD>aux_tipo_atividade.dsc_tipo_atividade</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Descrição:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label_form</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+  </TEXTFIELDS>
+  <GROUPFIELDS>
+    <GROUPFIELD SEQ="1">
+      <NAME>tmp.edt.flg_janela_ativa</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.edt.flg_janela_ativa|</VALUE>
+      <DATAFIELD>aux_tipo_atividade.flg_tipo_atividade_ativa</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Ativa:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label_form</LABELCLASSNAME>
+      <TYPE>COMBO</TYPE>
+      <LABELSLIST>--Selecione--,SIM,NÃO</LABELSLIST>
+      <VALUESLIST>,S,N</VALUESLIST>
+      <ALIGN>LEFT</ALIGN>
+    </GROUPFIELD>
+  </GROUPFIELDS>
+  <GENERICFIELDS>
+    <GENERICFIELD SEQ="1">
+      <NAME>title</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <CLASSNAME>title</CLASSNAME>
+    </GENERICFIELD>
+    <GENERICFIELD SEQ="2">
+      <NAME>space</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;br&gt;</VALUE>
+    </GENERICFIELD>
+  </GENERICFIELDS>
+  <USERFIELDS>
+    <USERFIELD SEQ="1">
+      <NEWLINE>OFF</NEWLINE>
+      <DATAFIELD>USR:$botoes.xml</DATAFIELD>
+      <NAME>tmp.edt_new</NAME>
+      <STYLE>text-align:center</STYLE>
+      <LABELPOSITION>0</LABELPOSITION>
+      <PARAMETERS>
+        <paginapesquisa>auxiliar/janela/pesquisa.wsp</paginapesquisa>
+      </PARAMETERS>
+    </USERFIELD>
+  </USERFIELDS>
+  <FORMS>
+    <FORM SEQ="1">
+      <NAME>tmp.edt</NAME>
+      <ACTION>/|wi.proj.id|/|wi.page.id|.wsp</ACTION>
+      <METHOD>post</METHOD>
+      <CLASSNAME>frm</CLASSNAME>
+      <LABEL>Objeto tmp.edt</LABEL>
+      <LABELPOSITION>1</LABELPOSITION>
+      <LABELCLASSNAME>text</LABELCLASSNAME>
+      <WIOBJECT>tmp.edt</WIOBJECT>
+      <COMPLEMENT> id="formulario"</COMPLEMENT>
+    </FORM>
+  </FORMS>
+</LAYOUT>
+

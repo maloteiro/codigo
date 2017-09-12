@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Página teste/index</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>ON</NOLOGIN>
+    <SECURITY>OFF</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <POSPAGE>
+    <CONNECTORS>
+      <CONNECTOR SEQ="1">
+        <DESCRIPTION>Conector Java br.com.webinside.modules.search.WIIndexer</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <CLASSNAME>br.com.webinside.modules.search.WIIndexer</CLASSNAME>
+        <PARAMETERS>
+          <PARAMETER ID="tmp.dirName" VALUE="/|wi.proj.path|/documentos" />
+        </PARAMETERS>
+      </CONNECTOR>
+    </CONNECTORS>
+    <SETS>
+      <SET SEQ="1">
+        <DESCRIPTION>Gravar tmp.dirName</DESCRIPTION>
+        <CONDITION>|tmp.dirName|== &amp;&amp; false</CONDITION>
+        <WIOBJ>tmp.dirName</WIOBJ>
+        <IFTRUE>/|wi.webapps.path|/temis_arquivos/</IFTRUE>
+      </SET>
+    </SETS>
+    <INDEX>
+      <SETS SEQ="1" />
+      <CONNECTORS SEQ="1" />
+    </INDEX>
+  </POSPAGE>
+</PAGE>
+

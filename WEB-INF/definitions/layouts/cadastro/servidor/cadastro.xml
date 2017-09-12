@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LAYOUT>
+  <HEAD>
+    <SCRIPT TYPE="text/javascript" SRC="/|wi.proj.id|/js/page.js">***EMPTY_TEXT***</SCRIPT>
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="expires" CONTENT="0" />
+    <META HTTP-EQUIV="cache-control" CONTENT="no-cache" />
+    <TITLE>|wi.page.title|</TITLE>
+    <TEMPLATE>padrao_ac_detalhar.html</TEMPLATE>
+    <CODE>&lt;script type="text/javascript"&gt;&#xD;
+$(document).ready(function() {&#xD;
+    $('#resposta').hide();&#xD;
+	$( "#tabs" ).tabs();&#xD;
+});&#xD;
+&#xD;
+function salvar(obj){&#xD;
+  var doc = document.forms[0];&#xD;
+  //alert(doc[obj].checked);&#xD;
+  &#xD;
+  var evt = new WIEvent(); &#xD;
+  //evt.debug = true; // se desejar ver o debug da comunicação do WIEvent &#xD;
+  evt.writeobj("tmp.seq_concurso", doc['tmp.id'].value); &#xD;
+  evt.writeobj("tmp.seq_uf", $('#'+obj).val());&#xD;
+  $('#resposta').hide();&#xD;
+  if(document.getElementById(obj).checked){&#xD;
+    evt.updatedb(" seg_insert_concurso_uf"); &#xD;
+    evt.execute();&#xD;
+    evt.preread("tmp.resp");&#xD;
+    resposta = evt.readobj("tmp.resp");&#xD;
+    $('#resposta').html("&lt;strong&gt;"+resposta+"&lt;/strong&gt;");&#xD;
+    //dialog.dialog( "open" );&#xD;
+    &#xD;
+  } else {&#xD;
+    evt.updatedb("seg_delete_concurso_uf"); &#xD;
+    evt.execute();&#xD;
+    evt.preread("tmp.resp");&#xD;
+    resposta = evt.readobj("tmp.resp");&#xD;
+    $('#resposta').html("&lt;strong&gt;"+resposta+"&lt;/strong&gt;");&#xD;
+    //dialog.dialog( "open" );      	&#xD;
+  }&#xD;
+  $('#resposta').show();&#xD;
+  setTimeout("$('#resposta').hide();", 3000);&#xD;
+  &#xD;
+}&#xD;
+&lt;/script&gt;&#xD;
+&#xD;
+</CODE>
+  </HEAD>
+  <INDEX>
+    <GENERICFIELDS SEQ="1" />
+    <FORMS SEQ="1" />
+    <TEXTFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="2" />
+    <TEXTFIELDS SEQ="3" />
+    <TEXTFIELDS SEQ="4" />
+    <TEXTFIELDS SEQ="5" />
+    <GROUPFIELDS SEQ="6" />
+    <TEXTFIELDS SEQ="6" />
+    <TEXTFIELDS SEQ="7" />
+    <TEXTFIELDS SEQ="8" />
+    <GROUPFIELDS SEQ="4" />
+    <GENERICFIELDS SEQ="3" />
+    <TEXTFIELDS SEQ="10" />
+    <TEXTFIELDS SEQ="11" />
+    <TEXTFIELDS SEQ="12" />
+    <GROUPFIELDS SEQ="3" />
+    <GROUPFIELDS SEQ="2" />
+    <GROUPFIELDS SEQ="1" />
+    <TEXTFIELDS SEQ="16" />
+    <GROUPFIELDS SEQ="5" />
+    <GENERICFIELDS SEQ="2" />
+    <GENERICFIELDS SEQ="5" />
+    <GENERICFIELDS SEQ="4" />
+  </INDEX>
+  <TEXTFIELDS>
+    <TEXTFIELD SEQ="1">
+      <NAME>wi.page.prev</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.page.id|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="2">
+      <NAME>wi.token</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|wi.token|</VALUE>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="3">
+      <NAME>tmp.action</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>save</VALUE>
+      <LABELPOSITION>1</LABELPOSITION>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="4">
+      <NAME>tmp.id</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.id|</VALUE>
+      <DATAFIELD>tbl_servidor.seq_servidor</DATAFIELD>
+      <LABEL>tbl servidor.seq servidor:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="6">
+      <NAME>tmp.edt.nom_servidor_nome</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <MAXLENGTH>255</MAXLENGTH>
+      <SIZE>60</SIZE>
+      <VALUE>|tmp.edt.nom_servidor_nome|</VALUE>
+      <DATAFIELD>tbl_servidor.nom_servidor_nome</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Host:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="7">
+      <NAME>tmp.edt.dsc_servidor_funcao</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <MAXLENGTH>255</MAXLENGTH>
+      <SIZE>60</SIZE>
+      <VALUE>|tmp.edt.dsc_servidor_funcao|</VALUE>
+      <DATAFIELD>tbl_servidor.dsc_servidor_funcao</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Função:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="8">
+      <NAME>tmp.edt.txt_servidor_descricao</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <SIZE>60</SIZE>
+      <ROWS>5</ROWS>
+      <VALUE>|tmp.edt.txt_servidor_descricao|</VALUE>
+      <DATAFIELD>tbl_servidor.txt_servidor_descricao</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Descrição geral do servidor:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="10">
+      <NAME>tmp.edt.nom_servidor_nome_dns</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <MAXLENGTH>255</MAXLENGTH>
+      <SIZE>60</SIZE>
+      <VALUE>|tmp.edt.nom_servidor_nome_dns|</VALUE>
+      <DATAFIELD>tbl_servidor.nom_servidor_nome_dns</DATAFIELD>
+      <INPUTCLASSNAME>field</INPUTCLASSNAME>
+      <LABEL>Nome DNS / Endereço:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="11">
+      <NAME>tmp.edt.num_servidor_disco</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <MAXLENGTH>13</MAXLENGTH>
+      <SIZE>13</SIZE>
+      <VALUE>|tmp.edt.num_servidor_disco|</VALUE>
+      <DATAFIELD TYPE="2">tbl_servidor.num_servidor_disco</DATAFIELD>
+      <INPUTCLASSNAME>field</INPUTCLASSNAME>
+      <LABEL>Discos Virtuais:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+      <COMPLEMENT> alt="inteiroSM"</COMPLEMENT>
+      <EVENTS />
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="12">
+      <NAME>tmp.edt.txt_servidor_risco</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <SIZE>60</SIZE>
+      <ROWS>5</ROWS>
+      <VALUE>|tmp.edt.txt_servidor_risco|</VALUE>
+      <DATAFIELD>tbl_servidor.txt_servidor_risco</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Potenciais Riscos:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="16">
+      <NAME>tmp.edt.txt_servidor_noc_procedimento</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <SIZE>60</SIZE>
+      <ROWS>5</ROWS>
+      <VALUE>|tmp.edt.txt_servidor_noc_procedimento|</VALUE>
+      <DATAFIELD>tbl_servidor.txt_servidor_noc_procedimento</DATAFIELD>
+      <INPUTCLASSNAME>field</INPUTCLASSNAME>
+      <LABEL>Procedimento do NOC:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>0</TYPE>
+    </TEXTFIELD>
+    <TEXTFIELD SEQ="5">
+      <NAME>tmp.qtd</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|grid.aux_consulta_rede.size|</VALUE>
+      <LABELPOSITION>0</LABELPOSITION>
+      <TYPE>4</TYPE>
+    </TEXTFIELD>
+  </TEXTFIELDS>
+  <GROUPFIELDS>
+    <GROUPFIELD SEQ="1">
+      <NAME>tmp.edt.flg_servidor_atuacao_noc</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.edt.flg_servidor_atuacao_noc|</VALUE>
+      <DATAFIELD>tbl_servidor.flg_servidor_atuacao_noc</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Atuação do NOC:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>COMBO</TYPE>
+      <LABELSLIST>--Selecione--,Sim,Não</LABELSLIST>
+      <VALUESLIST>,S,N</VALUESLIST>
+      <ALIGN>LEFT</ALIGN>
+    </GROUPFIELD>
+    <GROUPFIELD SEQ="2">
+      <NAME>tmp.edt.flg_servidor_urgencia</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.edt.flg_servidor_urgencia|</VALUE>
+      <DATAFIELD>tbl_servidor.flg_servidor_urgencia</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Urgência:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>COMBO</TYPE>
+      <LABELSLIST>--Selecione--,Alta,Média,Baixa</LABELSLIST>
+      <VALUESLIST>,A,M,B</VALUESLIST>
+      <ALIGN>LEFT</ALIGN>
+    </GROUPFIELD>
+    <GROUPFIELD SEQ="3">
+      <NAME>tmp.edt.flg_servidor_impacto</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.edt.flg_servidor_impacto|</VALUE>
+      <DATAFIELD>tbl_servidor.flg_servidor_impacto</DATAFIELD>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Impacto:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>COMBO</TYPE>
+      <LABELSLIST>--Selecione--,Alta,Média,Baixa</LABELSLIST>
+      <VALUESLIST>,A,M,B</VALUESLIST>
+      <ALIGN>LEFT</ALIGN>
+    </GROUPFIELD>
+    <GROUPFIELD SEQ="4">
+      <NAME>tmp.edt.seq_sistema</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.edt.seq_sistema|</VALUE>
+      <DATAFIELD TYPE="2">tbl_servidor.seq_sistema</DATAFIELD>
+      <INPUTCLASSNAME>field</INPUTCLASSNAME>
+      <LABEL>Sistema Operacional:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>COMBO</TYPE>
+      <LABELSLIST>--Selecione--,|combo.aux_sistema|</LABELSLIST>
+      <VALUESLIST>,</VALUESLIST>
+      <ALIGN>LEFT</ALIGN>
+    </GROUPFIELD>
+    <GROUPFIELD SEQ="5">
+      <NAME>tmp.edt.flg_servidor_ativo</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.edt.flg_servidor_ativo|</VALUE>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Ativo:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>COMBO</TYPE>
+      <LABELSLIST>--Selecione--,Sim,Não</LABELSLIST>
+      <VALUESLIST>,S,N</VALUESLIST>
+      <ALIGN>LEFT</ALIGN>
+    </GROUPFIELD>
+    <GROUPFIELD SEQ="6">
+      <NAME>tmp.edt.tip_servidor_tipo</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>|tmp.edt.tip_servidor_tipo|</VALUE>
+      <INPUTCLASSNAME>field required</INPUTCLASSNAME>
+      <LABEL>Tipo:</LABEL>
+      <LABELPOSITION>0</LABELPOSITION>
+      <LABELCLASSNAME>label</LABELCLASSNAME>
+      <TYPE>COMBO</TYPE>
+      <LABELSLIST>--Selecione--,Link,Servidor,Página</LABELSLIST>
+      <VALUESLIST>,L,S,P</VALUESLIST>
+      <ALIGN>LEFT</ALIGN>
+    </GROUPFIELD>
+  </GROUPFIELDS>
+  <GENERICFIELDS>
+    <GENERICFIELD SEQ="1">
+      <NAME>title</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <CLASSNAME>title</CLASSNAME>
+    </GENERICFIELD>
+    <GENERICFIELD SEQ="2">
+      <NAME>space</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;br&gt;</VALUE>
+    </GENERICFIELD>
+    <GENERICFIELD SEQ="3">
+      <NAME>Texto23</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <CLASSNAME>label</CLASSNAME>
+      <VALUE>|grid.aux_consulta_rede|</VALUE>
+    </GENERICFIELD>
+    <GENERICFIELD SEQ="4">
+      <NAME>Texto24</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;script&gt;&#xD;
+  $( function() {&#xD;
+    dialog = $( "#dialog-delete" ).dialog({&#xD;
+      autoOpen: false,&#xD;
+      &#xD;
+      width: 350,&#xD;
+      modal: true,&#xD;
+      buttons: {        &#xD;
+        Cancelar: function() {&#xD;
+          document.getElementById('tmp.action').value="save";&#xD;
+          dialog.dialog( "close" );&#xD;
+        },&#xD;
+        Confirmar: function() {&#xD;
+          document.getElementById('tmp.action').value="delete";&#xD;
+          //$('#tmp.action').attr("value", "delete");&#xD;
+          $('#formulario').submit();&#xD;
+          //form[ 0 ].reset();&#xD;
+          //allFields.removeClass( "ui-state-error" );&#xD;
+        }&#xD;
+      }&#xD;
+      &#xD;
+    });&#xD;
+	&#xD;
+	$( "#btn_excluir" ).click( function() {&#xD;
+      dialog.dialog( "open" );&#xD;
+    });&#xD;
+  } );&#xD;
+  &lt;/script&gt;&#xD;
+  &#xD;
+  &#xD;
+  &lt;div id="dialog-delete" title="Exclusão"&gt;&#xD;
+  &lt;p&gt;&lt;span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"&gt;&lt;/span&gt;Deseja realmente excluir esse registro? Essa operação não poderá ser desfeita.&lt;/p&gt;&#xD;
+&lt;/div&gt;</VALUE>
+    </GENERICFIELD>
+    <GENERICFIELD SEQ="5">
+      <NAME>Texto25</NAME>
+      <NEWLINE>ON</NEWLINE>
+      <VALUE>&lt;br/&gt;&#xD;
+&lt;table align="center" width="100%"&gt;&#xD;
+  &lt;tr&gt;&#xD;
+    &lt;td align="center" &gt;&#xD;
+      &lt;button type="submit" name="tmp.btn_gravar" id="btn_gravar" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão gravar os dados" alt="Clique no botão gravar os dados"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Salvar&lt;/span&gt;&#xD;
+      &lt;/button&gt;&#xD;
+      &#xD;
+      &lt;button type="button" name="tmp.btn_add_novo" id="btn_add_novo" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para novo cadastro" alt="Clique no botão para novo cadastro" onclick="wiOpen('/|wi.proj.id|/|wi.page.id|.wsp');"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Novo&lt;/span&gt;&#xD;
+      &lt;/button&gt;&#xD;
+      &lt;button type="button" name="tmp.btn_pesquisar" id="btn_pesquisar" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para pesquisar" alt="Clique no botão para pesquisar" onclick="wiOpen('/|wi.proj.id|/cadastro/servidor/pesquisa.wsp');"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Pesquisar&lt;/span&gt;&#xD;
+      &lt;/button&gt;	&#xD;
+      |$if(|tmp.id|!= &amp;&amp; |pvt.login.seq_perfil|==1,&#xD;
+      &lt;button type="button" name="tmp.btn_excluir" id="btn_excluir" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para excluir" alt="Clique no botão para excluir"&gt;&#xD;
+        &lt;span class="ui-button-text"&gt;Excluir&lt;/span&gt;&#xD;
+      &lt;/button&gt;&#xD;
+      )$|&#xD;
+      &#xD;
+    &lt;/td&gt;						&#xD;
+  &lt;/tr&gt;&#xD;
+&lt;/table&gt;&#xD;
+&lt;br /&gt;&#xD;
+&#xD;
+</VALUE>
+    </GENERICFIELD>
+  </GENERICFIELDS>
+  <FORMS>
+    <FORM SEQ="1">
+      <NAME>tmp.edt</NAME>
+      <ACTION>/|wi.proj.id|/|wi.page.id|.wsp</ACTION>
+      <METHOD>post</METHOD>
+      <CLASSNAME>frm</CLASSNAME>
+      <LABEL>Objeto tmp.edt</LABEL>
+      <LABELPOSITION>1</LABELPOSITION>
+      <LABELCLASSNAME>text</LABELCLASSNAME>
+      <WIOBJECT>tmp.edt</WIOBJECT>
+      <COMPLEMENT> id="formulario"</COMPLEMENT>
+    </FORM>
+  </FORMS>
+</LAYOUT>
+

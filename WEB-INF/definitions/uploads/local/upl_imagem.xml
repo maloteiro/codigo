@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<UPLOAD TYPE="LOCAL">
+  <DESCRIPTION>Upload Local: upl_imagem</DESCRIPTION>
+  <DIRECTORY>/|wi.proj.path|/|tmp.caminho|</DIRECTORY>
+  <FILE>|tmp.arquivo|</FILE>
+  <CREATEDIR>ON</CREATEDIR>
+  <FORMFIELD>tmp.arquivo</FORMFIELD>
+</UPLOAD>
+

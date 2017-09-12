@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<WIZ>
+  <CONTENT><![CDATA[<br/>
+<table align="center">
+  <tr>
+    <td align="center" >
+      <button type="submit" name="tmp.btn_gravar" id="btn_gravar" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão gravar os dados" alt="Clique no botão gravar os dados">
+        <span class="ui-button-text">Salvar</span>
+      </button>
+      
+      <button type="button" name="tmp.btn_add_novo" id="btn_add_novo" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para novo cadastro" alt="Clique no botão para novo cadastro" onclick="wiOpen('/|wi.proj.id|/|wi.page.id|.wsp');">
+        <span class="ui-button-text">Novo</span>
+      </button>
+      <button type="button" name="tmp.btn_pesquisar" id="btn_pesquisar" role="button" class="botoes ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" title="Clique no botão para pesquisar" alt="Clique no botão para pesquisar" onclick="wiOpen('/|wi.proj.id|/|wiz[1].PaginaPesquisa|');">
+        <span class="ui-button-text">Pesquisar</span>
+      </button>																		
+    </td>						
+  </tr>
+</table>
+<br>]]></CONTENT>
+</WIZ>
+

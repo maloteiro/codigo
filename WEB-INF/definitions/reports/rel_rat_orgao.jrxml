@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+
+<jasperReport name="rel_rat_orgao" language="java" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="30" bottomMargin="30">
+	<reportFont name="Padrão" isDefault="true" fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="Valores" isDefault="false" fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="Cabecalho" isDefault="false" fontName="Arial" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="Titulo" isDefault="false" fontName="Arial" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="fonte_tam_8" isDefault="false" fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<reportFont name="fonte_tam_8_bold" isDefault="false" fontName="Arial" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<parameter name="reportDB" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["principal"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="reportTemplate" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["br.com.itx.modules.report.templates.DefaultTemplate"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wi_proj_path" class="java.lang.String">
+		<parameterDescription><![CDATA[wi.proj.path]]></parameterDescription>
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tmp_mes" class="java.lang.String">
+		<parameterDescription><![CDATA[tmp.mes]]></parameterDescription>
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tmp_ano" class="java.lang.String">
+		<parameterDescription><![CDATA[tmp.ano]]></parameterDescription>
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tmp_seq_local" class="java.lang.String">
+		<parameterDescription><![CDATA[tmp.seq_local]]></parameterDescription>
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString><![CDATA[SELECT 	LPAD(seq_rat,6,'0') seq_rat,
+        dsc_responsavel_nome,
+	dsc_gerente_nome,
+	dat_data_cadastro,
+	nom_local_nome,
+	dsc_tipo_atividade,
+	flg_rat_situacao,
+	flg_rat_avaliacao_execucao,
+        seq_local
+FROM vw_rat
+WHERE MONTH(dat_data_cadastro) = '$P!{tmp_mes}'
+AND YEAR(dat_data_cadastro) = '$P!{tmp_ano}'
+AND (seq_local = '$P!{tmp_seq_local}' or ''='$P!{tmp_seq_local}')
+ORDER BY seq_local,seq_rat]]></queryString>
+	<field name="dsc_responsavel_nome" class="java.lang.String">
+		<fieldDescription><![CDATA[Dsc responsavel nome]]></fieldDescription>
+	</field>
+	<field name="dsc_gerente_nome" class="java.lang.String">
+		<fieldDescription><![CDATA[Dsc gerente nome]]></fieldDescription>
+	</field>
+	<field name="dat_data_cadastro" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[Dat data cadastro]]></fieldDescription>
+	</field>
+	<field name="nom_local_nome" class="java.lang.String">
+		<fieldDescription><![CDATA[Nom local nome]]></fieldDescription>
+	</field>
+	<field name="dsc_tipo_atividade" class="java.lang.String">
+		<fieldDescription><![CDATA[Dsc tipo atividade]]></fieldDescription>
+	</field>
+	<field name="flg_rat_situacao" class="java.lang.String">
+		<fieldDescription><![CDATA[Flg rat situacao]]></fieldDescription>
+	</field>
+	<field name="flg_rat_avaliacao_execucao" class="java.lang.String">
+		<fieldDescription><![CDATA[Flg rat avaliacao execucao]]></fieldDescription>
+	</field>
+	<field name="seq_rat" class="java.lang.String">
+		<fieldDescription><![CDATA[seq_rat]]></fieldDescription>
+	</field>
+	<field name="seq_local" class="java.lang.Integer">
+		<fieldDescription><![CDATA[seq_local]]></fieldDescription>
+	</field>
+	<variable name="seq_local_nom_local_nome_Group_GroupFooter_CNT" class="java.lang.Integer" resetType="Group" resetGroup="nom_local_nome_Group" calculation="Count">
+		<variableExpression><![CDATA[$F{seq_local}]]></variableExpression>
+	</variable>
+	<group name="nom_local_nome_Group" minHeightToStartNewPage="60">
+		<groupExpression><![CDATA[$F{nom_local_nome}]]></groupExpression>
+		<groupHeader>
+		<band height="25">
+			<staticText>
+				<reportElement key="element_label_nom_local_nome" positionType="Float" mode="Opaque" x="0" y="5" width="40" height="15" backcolor="#cccccc"/>
+				<box topBorder="Thin" topBorderColor="#0" topPadding="0" leftBorder="Thin" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="None" rightBorderColor="#0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="Padrão"/>
+				</textElement>
+				<text><![CDATA[Local:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="element_value_nom_local_nome" positionType="Float" mode="Opaque" x="40" y="5" width="495" height="15" backcolor="#cccccc"/>
+				<box topBorder="Thin" topBorderColor="#0" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="0" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="Padrão"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nom_local_nome}]]></textFieldExpression>
+			</textField>
+		</band>
+		</groupHeader>
+		<groupFooter>
+		<band height="15">
+			<staticText>
+				<reportElement key="element_1138787674" positionType="Float" mode="Opaque" x="0" y="0" width="75" height="15" backcolor="#cccccc"/>
+				<box topBorder="Thin" topBorderColor="#0" topPadding="0" leftBorder="Thin" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Total de RATs]]></text>
+			</staticText>
+			<textField evaluationTime="Group" evaluationGroup="nom_local_nome_Group" pattern="#,##0">
+				<reportElement key="element_seq_local_nom_local_nome_Group_GroupFooter_CNT" positionType="Float" mode="Opaque" x="75" y="0" width="460" height="15" backcolor="#cccccc"/>
+				<box topBorder="Thin" topBorderColor="#0" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="0" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{seq_local_nom_local_nome_Group_GroupFooter_CNT}]]></textFieldExpression>
+			</textField>
+		</band>
+		</groupFooter>
+	</group>
+	<group name="Detalhe">
+		<groupHeader>
+		<band height="24">
+			<staticText>
+				<reportElement key="element_20909971" positionType="Float" mode="Opaque" x="0" y="0" width="75" height="12" backcolor="#e1e1e1"/>
+				<box topBorder="Thin" topBorderColor="#0" topPadding="0" leftBorder="Thin" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Número]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="element_label_dsc_responsavel_nome" positionType="Float" mode="Opaque" x="75" y="0" width="230" height="12" backcolor="#e1e1e1"/>
+				<box topBorder="Thin" topBorderColor="#0" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<text><![CDATA[Responsável]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="element_label_dsc_gerente_nome" positionType="Float" mode="Opaque" x="305" y="0" width="230" height="12" backcolor="#e1e1e1"/>
+				<box topBorder="Thin" topBorderColor="#0" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Gerente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="element_label_dat_data_cadastro" positionType="Float" mode="Opaque" x="0" y="12" width="75" height="12" backcolor="#e1e1e1"/>
+				<box topBorder="None" topBorderColor="#0" topPadding="0" leftBorder="Thin" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Data de Cadastro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="element_label_flg_rat_avaliacao_execucao" positionType="Float" mode="Opaque" x="75" y="12" width="90" height="12" backcolor="#e1e1e1"/>
+				<box topBorder="None" topBorderColor="#0" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Avaliação]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="element_label_dsc_tipo_atividade" positionType="Float" mode="Opaque" x="165" y="12" width="140" height="12" backcolor="#e1e1e1"/>
+				<box topBorder="None" topBorderColor="#0" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Tipo de Atividade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="element_label_flg_rat_situacao" positionType="Float" mode="Opaque" x="305" y="12" width="230" height="12" backcolor="#e1e1e1"/>
+				<box topBorder="None" topBorderColor="#0" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<text><![CDATA[Situação]]></text>
+			</staticText>
+		</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band>
+		</band>
+	</background>
+	<title>
+		<band>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="60">
+			<rectangle>
+				<reportElement key="element_802751077" positionType="Float" x="0" y="45" width="535" height="4" forecolor="#51a6c2" backcolor="#51a6c2"/>
+				<graphicElement/>
+			</rectangle>
+			<staticText>
+				<reportElement key="element_1732061574" positionType="Float" x="0" y="8" width="535" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[LISTAGEM DE R.A.Ts POR LOCAL]]></text>
+			</staticText>
+			<image hAlign="Right" isUsingCache="true">
+				<reportElement key="element_1153344339" positionType="Float" x="415" y="0" width="120" height="40"/>
+				<graphicElement/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{wi_proj_path}+"/imagens/logo_central.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24">
+			<rectangle>
+				<reportElement key="element_1420070307" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="535" height="24" forecolor="#f1f1f1" backcolor="#f1f1f1">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() % 2 == 0 ? Boolean.TRUE : Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+				<graphicElement/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement key="element_558037067" positionType="Float" x="0" y="0" width="75" height="12"/>
+				<box topBorder="None" topBorderColor="#0" topPadding="0" leftBorder="Thin" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{seq_rat}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_dsc_responsavel_nome" positionType="Float" x="75" y="0" width="230" height="12"/>
+				<box topBorder="None" topBorderColor="#0" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dsc_responsavel_nome}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_dsc_gerente_nome" positionType="Float" x="305" y="0" width="230" height="12"/>
+				<box topBorder="None" topBorderColor="#0" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement>
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dsc_gerente_nome}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_dat_data_cadastro" positionType="Float" x="0" y="12" width="75" height="12"/>
+				<box topBorder="None" topBorderColor="#0" topPadding="0" leftBorder="Thin" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{dat_data_cadastro}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_flg_rat_avaliacao_execucao" positionType="Float" stretchType="RelativeToTallestObject" x="75" y="12" width="90" height="12"/>
+				<box topBorder="None" topBorderColor="#0" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{flg_rat_avaliacao_execucao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_dsc_tipo_atividade" positionType="Float" stretchType="RelativeToTallestObject" x="165" y="12" width="140" height="12"/>
+				<box topBorder="None" topBorderColor="#0" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dsc_tipo_atividade}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="element_field_flg_rat_situacao" positionType="Float" x="305" y="12" width="230" height="12"/>
+				<box topBorder="None" topBorderColor="#0" topPadding="0" leftBorder="None" leftBorderColor="#0" leftPadding="2" bottomBorder="Thin" bottomBorderColor="#0" bottomPadding="0" rightBorder="Thin" rightBorderColor="#0" rightPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font reportFont="fonte_tam_8_bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{flg_rat_situacao}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="27">
+			<line>
+				<reportElement key="element_1926926573" positionType="Float" x="0" y="1" width="535" height="1"/>
+				<graphicElement/>
+			</line>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement key="element_883861216" positionType="Float" x="0" y="3" width="70" height="16"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="element_2098435080" positionType="Float" x="350" y="11" width="160" height="16"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Página " + $V{PAGE_NUMBER} + " de "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement key="element_838322582" positionType="Float" x="515" y="3" width="20" height="16"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band>
+		</band>
+	</summary>
+</jasperReport>

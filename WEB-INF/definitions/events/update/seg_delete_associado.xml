@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<EVENT TYPE="UPDATE">
+  <DESCRIPTION>seg_delete_associado</DESCRIPTION>
+  <CONDITION>true</CONDITION>
+  <WIOBJ>tmp.resp</WIOBJ>
+  <DATABASE>principal</DATABASE>
+  <SQL>DELETE FROM rel_associado&#xD;
+ WHERE (seq_usuario = ?|pvt.login.seq_usuario|)&#xD;
+ and (seq_associado = ?|tmp.seq_associado|)</SQL>
+  <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+  <MSGTRUE>Dados gravados com sucesso</MSGTRUE>
+  <AUTOCOMMIT>ON</AUTOCOMMIT>
+</EVENT>
+

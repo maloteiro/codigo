@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Página seguranca/logoff</TITLE>
+    <MIME>html</MIME>
+    <NOLOGIN>OFF</NOLOGIN>
+    <SECURITY>ON</SECURITY>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+    <SYSPAGE>OFF</SYSPAGE>
+  </DEFINITION>
+  <PREPAGE>
+    <KILLS>
+      <KILL SEQ="1">
+        <DESCRIPTION>Apagar pvt.login, pvt.parametro</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>pvt.login, pvt.parametro</WIOBJ>
+      </KILL>
+    </KILLS>
+    <INDEX>
+      <KILLS SEQ="1" />
+      <REDIRS SEQ="1" />
+    </INDEX>
+    <REDIRS>
+      <CONDITIONALS>
+        <REDIR SEQ="1">
+          <DESCRIPTION>Desviar para admin/index.wsp</DESCRIPTION>
+          <CONDITION>true</CONDITION>
+          <GO>admin/index.wsp</GO>
+        </REDIR>
+      </CONDITIONALS>
+    </REDIRS>
+  </PREPAGE>
+</PAGE>
+

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<GRID TYPE="SQL">
+  <DESCRIPTION>Grid SQL: cad_consulta_entrevista</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT 	`seq_entrevista`, &#xD;
+                                                `seq_cliente`, &#xD;
+                                                `dsc_entrevista_pergunta`, &#xD;
+                                                `dsc_entrevista_resposta`, &#xD;
+                                                `flg_entrevista_ativa`,&#xD;
+                                                `seq_usuario_cadastro`, &#xD;
+                                                `dat_data_cadastro`, &#xD;
+                                                `seq_usuario_alteracao`, &#xD;
+                                                `dat_data_alteracao`, &#xD;
+                                                `cod_token_codigo`&#xD;
+&#xD;
+FROM `tbl_entrevista`&#xD;
+WHERE seq_cliente='|tmp.id|'</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <HDISPOSITION>H</HDISPOSITION>
+  <CONTENT>
+    <UNIQUE />
+    <START><![CDATA[<table align="center" id="tb_entrevista" class="display dataTables">
+  <thead>
+    <tr>            	
+      <th>
+        <b>Pergunta</b>
+      </th>                            	
+      <th>
+        <b>Resposta</b>
+      </th>
+      <th>
+        <b>Ativo</b>
+      </th>             
+      
+      <th width="1%">
+        <b>Ações</b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+]]></START>
+    <ROWSTART><![CDATA[<tr>
+]]></ROWSTART>
+    <REGISTER><![CDATA[<td width="60%">
+  <b>|dsc_entrevista_pergunta|</b>
+</td>
+<td align="left" width="150px">
+  <b>|dsc_entrevista_resposta|</b>
+</td>
+<td width="150px">
+  <b>|$if(|flg_entrevista_ativa|==S,SIM,NÃO)$|</b>
+</td>                         
+
+<td align="center" width="150px">
+  <img src="/|wi.proj.id|/imgs/icones/page_white_edit.png" title="Editar" class="btn_editar tooltip" onclick="wiOpen('?a=cliente&d=cliente&f=formCadastroArtefato&seq_artefato={$artefato.seq_artefato}&seq_cliente={$smarty.request.seq_cliente}&tip_cliente_tipo={$smarty.request.tip_cliente_tipo}')"/>
+  <img src="/|wi.proj.id|/imgs/icones/document_download.png" title="Donwload" class="btn_editar tooltip" onclick="window.open('download.php?arquivo={$artefato.dsc_artefato_nome}&tip_cliente_tipo={$smarty.request.tip_cliente_tipo}')"/> 
+  <img src="/|wi.proj.id|/imgs/icones/document_viewer.png" title="Visualizar" class="btn_editar tooltip" onclick="busca_conteudo({$artefato.seq_artefato});"/>                                           				
+</td>
+]]></REGISTER>
+    <NOREGISTER />
+    <NOROW />
+    <ROWEND><![CDATA[</tr>
+]]></ROWEND>
+    <END><![CDATA[	</tbody>
+</table>
+]]></END>
+  </CONTENT>
+</GRID>
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<COMBO>
+  <DESCRIPTION>Combo: aux_mes</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT &#xD;
+ aux_auxiliar.codigo, aux_auxiliar.descricao &#xD;
+FROM aux_auxiliar&#xD;
+WHERE (aux_auxiliar.nome_coluna = 'ind_mes')</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <KEY>|codigo|</KEY>
+  <TEXT>|descricao|</TEXT>
+</COMBO>
+

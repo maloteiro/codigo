@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<EVENT TYPE="UPDATE">
+  <DESCRIPTION>Evento Update: seg_delete_concurso_uf</DESCRIPTION>
+  <CONDITION>true</CONDITION>
+  <WIOBJ>tmp.resp</WIOBJ>
+  <DATABASE>principal</DATABASE>
+  <SQL>DELETE FROM aux_concurso_uf&#xD;
+ WHERE 	(seq_concurso = ?|tmp.seq_concurso|)&#xD;
+ and 	(seq_uf = ?|tmp.seq_uf|)</SQL>
+  <SQLFILTER>'"&lt;&gt;</SQLFILTER>
+  <MSGTRUE>Dados gravados com sucesso.</MSGTRUE>
+  <AUTOCOMMIT>ON</AUTOCOMMIT>
+</EVENT>
+

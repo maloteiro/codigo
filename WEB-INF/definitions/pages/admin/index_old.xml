@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PAGE>
+  <DEFINITION>
+    <TITLE>Acesso ao sistema</TITLE>
+    <SOURCE>admin/index.wsp</SOURCE>
+    <SECURITY>OFF</SECURITY>
+    <MIME>html</MIME>
+    <NOLOGIN>ON</NOLOGIN>
+    <JSP>OFF</JSP>
+    <NOEXPIRE>OFF</NOEXPIRE>
+    <XML>OFF</XML>
+    <SYSPAGE>OFF</SYSPAGE>
+    <BROWSERCACHE>OFF</BROWSERCACHE>
+    <RERENDER>OFF</RERENDER>
+  </DEFINITION>
+  <PREPAGE>
+    <SETS>
+      <SET SEQ="1">
+        <DESCRIPTION>Gravar tmp.message</DESCRIPTION>
+        <CONDITION>|tmp.msglogin|!=</CONDITION>
+        <WIOBJ>tmp.message</WIOBJ>
+        <IFTRUE>|tmp.msglogin|</IFTRUE>
+      </SET>
+    </SETS>
+    <INDEX>
+      <SETS SEQ="1" />
+      <OBJECTS SEQ="1" />
+    </INDEX>
+    <OBJECTS>
+      <OBJECT SEQ="1">
+        <DESCRIPTION>Objeto pvt.parametro</DESCRIPTION>
+        <CONDITION>true</CONDITION>
+        <WIOBJ>pvt.parametro</WIOBJ>
+        <SQL>SELECT * FROM `cfg_configuracoes`&#xD;
+WHERE `nom_configuracao_parametro`='versao';</SQL>
+        <SQLFILTER>%*?'</SQLFILTER>
+        <DATABASE>principal</DATABASE>
+      </OBJECT>
+    </OBJECTS>
+  </PREPAGE>
+</PAGE>
+

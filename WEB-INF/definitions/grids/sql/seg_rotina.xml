@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<GRID TYPE="SQL">
+  <DESCRIPTION>Grid SQL: seg_rotina</DESCRIPTION>
+  <DATABASE>principal</DATABASE>
+  <SQL>SELECT DISTINCT rot.* &#xD;
+FROM seg_permissao per&#xD;
+INNER JOIN seg_rotina rot ON per.seq_rotina=rot.seq_rotina&#xD;
+INNER JOIN seg_modulo mo ON rot.seq_modulo=mo.seq_modulo&#xD;
+WHERE mo.seq_modulo='|seq_modulo|'&#xD;
+AND per.seq_perfil='|pvt.login.seq_perfil|'&#xD;
+AND rot.flg_rotina_ativa='S'&#xD;
+ORDER BY rot.num_rotina_ordem;</SQL>
+  <SQLFILTER>%*?'"</SQLFILTER>
+  <HDISPOSITION>H</HDISPOSITION>
+  <CONTENT>
+    <UNIQUE />
+    <START><![CDATA[<ul class="nav nav-second-level">]]></START>
+    <ROWSTART />
+    <REGISTER><![CDATA[<li><a href="#" onclick="javascript:wiOpen('/|wi.proj.id|/|dsc_rotina_pagina|');" target="_self">|dsc_rotina_descricao|</a></li>]]></REGISTER>
+    <NOREGISTER />
+    <NOROW />
+    <ROWEND />
+    <END><![CDATA[</ul>
+]]></END>
+  </CONTENT>
+</GRID>
+
